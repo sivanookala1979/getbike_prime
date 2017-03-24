@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/activity_faq"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ToolbarColoredBackArrow"
+        app:titleTextColor="@android:color/white">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="getbike Friends"
+            android:textColor="@android:color/white"/>
+    </android.support.v7.widget.Toolbar>
+
+
+    <RelativeLayout
+        android:id="@+id/web_view_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:visibility="gone">
+
+        <WebView
+            android:id="@+id/web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/faq_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:visibility="visible">
+
+
+        <ImageView
+            android:id="@+id/account_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="75dp"
+            app:srcCompat="@mipmap/account_icon"/>
+
+        <ImageView
+            android:id="@+id/promotions_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/account_icon"
+            android:layout_marginEnd="45dp"
+            app:srcCompat="@mipmap/promotion_icon"/>
+
+        <ImageView
+            android:id="@+id/getbike_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignStart="@+id/account_icon"
+            android:layout_below="@+id/account_icon"
+            android:layout_marginTop="60dp"
+            app:srcCompat="@mipmap/get_bike_icon"/>
+
+        <ImageView
+            android:id="@+id/free_rides_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/getbike_icon"
+            android:layout_alignEnd="@+id/promotions_icon"
+            app:srcCompat="@mipmap/earn_free_rides_icon"/>
+
+        <ImageView
+            android:id="@+id/redeem_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignStart="@+id/getbike_icon"
+            android:layout_below="@+id/getbike_icon"
+            android:layout_marginTop="60dp"
+            app:srcCompat="@mipmap/redeem_money_icon"/>
+
+        <ImageView
+            android:id="@+id/add_money_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/redeem_icon"
+            android:layout_alignEnd="@+id/free_rides_icon"
+            app:srcCompat="@mipmap/add_money_icon"/>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/account_icon"
+            android:layout_below="@+id/account_icon"
+            android:gravity="center"
+            android:text="Account"
+            android:textColor="@color/black"/>
+
+        <Button
+
+            android:id="@+id/contact_us_button"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/contact_us_button"/>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView11"
+            android:layout_below="@+id/add_money_icon"
+            android:gravity="center"
+            android:text="Add Money"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView13"
+            android:layout_below="@+id/promotions_icon"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="Promotions"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView12"
+            android:layout_below="@+id/redeem_icon"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:text="Redeem Money"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/getbike_icon"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:text="How getbike works"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/free_rides_icon"
+            android:layout_marginEnd="22dp"
+            android:gravity="center"
+            android:text="Earn Free Rides"
+            android:textColor="@color/black"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

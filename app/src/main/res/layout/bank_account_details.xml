@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ToolbarColoredBackArrow"
+        app:titleTextColor="@android:color/white">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+            android:text="Bank Account Details"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/black_button_style"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:weightSum="10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/account_holder"
+                            android:scaleType="fitCenter" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/accountHolderName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8.5"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:hint="Account Holder Name"
+                        android:textCursorDrawable="@null"
+                        android:background="@null"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/get_bike_orange"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:padding="2dp"
+                    android:text="* Required"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_very_small" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/black_button_style"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:weightSum="10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/account_holder"
+                            android:scaleType="fitCenter" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/accountNumber"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8.5"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:hint="Account Number"
+                        android:textCursorDrawable="@null"
+                        android:inputType="number"
+                        android:background="@null"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/get_bike_orange"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:padding="2dp"
+                    android:text="* Required"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_very_small" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/black_button_style"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:weightSum="10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/ifsc_icon"
+                            android:scaleType="fitCenter" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/ifscCode"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8.5"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:hint="IFSC Code"
+                        android:textCursorDrawable="@null"
+                        android:background="@null"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/get_bike_orange"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:padding="2dp"
+                    android:text="* Required"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_very_small" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/black_button_style"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:weightSum="10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/bank"
+                            android:scaleType="fitCenter" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/bankName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8.5"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:hint="Bank Name"
+                        android:textCursorDrawable="@null"
+                        android:maxLines="1"
+                        android:background="@null"
+                        android:padding="5dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/get_bike_orange"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:padding="2dp"
+                    android:text="* Required"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_very_small" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/black_button_style"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:weightSum="10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/bank"
+                            android:scaleType="fitCenter" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/branchName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8.5"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:hint="Branch Name"
+                        android:textCursorDrawable="@null"
+                        android:maxLines="1"
+                        android:background="@null"
+                        android:padding="5dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/get_bike_orange"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:padding="2dp"
+                    android:text="* Required"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_very_small" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/updateBankDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:background="@drawable/black_button_style"
+                android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                android:padding="10dp"
+                android:text="UPDATE"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_intermediate" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

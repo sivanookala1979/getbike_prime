@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ToolbarColoredBackArrow"
+        app:titleTextColor="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tipDateTime"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                android:lines="1"
+                android:text="Date TIme"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_intermediate"/>
+
+            <TextView
+                android:id="@+id/tripId"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                android:text="Trip id : XXXX"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small"/>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/payThroughWalletButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/get_bike_orange"
+                android:text="PAY THROUGH WALLET"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/amountReceivedFromCustomerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/get_bike_orange"
+                android:text="AMOUNT RECEIVED FROM CUSTOMER"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/yellow">
+
+                <fragment
+                    android:id="@+id/map"
+                    class="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/profileicon"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:padding="5dp"
+                        android:text="Name"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/currentRatingStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                            android:text="You Rated"
+                            android:textColor="@color/gray_holo_light"
+                            />
+
+                        <RatingBar
+                            android:id="@+id/ratingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:numStars="5"
+                            android:stepSize="1"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_holo_light"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/bike"/>
+
+                <TextView
+                    android:id="@+id/bikeType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:padding="5dp"
+                    android:text="Bike . Activa"
+                    android:textColor="@color/get_bike_black"
+                    android:textSize="@dimen/text_size_intermediate"/>s
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_holo_light"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/fromTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:text="08:10 AM"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_small"/>
+
+                    <TextView
+                        android:id="@+id/toTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:text="10:10 AM"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_small"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/from_to_icon"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/fromAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="From address"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_small"/>
+
+                    <TextView
+                        android:id="@+id/toAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="To address"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_small"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_holo_light"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                android:gravity="center_vertical"
+                android:padding="4dp"
+                android:text="Bill Details"
+                android:textColor="@color/get_bike_black"
+                android:textSize="@dimen/text_size_large"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="Total Fare"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                    <TextView
+                        android:id="@+id/totalFare"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical|right"
+                        android:padding="2dp"
+                        android:text="0.0"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="Taxed And Fees"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                    <TextView
+                        android:id="@+id/taxFee"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical|right"
+                        android:padding="2dp"
+                        android:text="0.0"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/gray_holo_light"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="Sub Total"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                    <TextView
+                        android:id="@+id/subTotal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical|right"
+                        android:padding="2dp"
+                        android:text="0.0"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="Rounding Off"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                    <TextView
+                        android:id="@+id/roundingOff"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical|right"
+                        android:padding="2dp"
+                        android:text="0.0"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/gray_holo_light"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="Total Bill"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                    <TextView
+                        android:id="@+id/totalBill"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical|right"
+                        android:padding="2dp"
+                        android:text="0.0"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/freeRideDiscountPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="Free Ride Discount"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                    <TextView
+                        android:id="@+id/freeRideDiscount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical|right"
+                        android:padding="2dp"
+                        android:text="0.0"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/gray_holo_light"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:gravity="center_vertical"
+                    android:padding="4dp"
+                    android:text="Payment"
+                    android:textColor="@color/get_bike_black"
+                    android:textSize="@dimen/text_size_large"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="Cash"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                    <TextView
+                        android:id="@+id/cashAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:gravity="center_vertical|right"
+                        android:padding="2dp"
+                        android:text="0.0"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "389833135801",
+    "project_id": "get-bike"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:389833135801:android:823d4d2303cc266d",
+        "android_client_info": {
+          "package_name": "com.vave.getbike"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxqQEvtdEtl6dDIvG7vcm6QTO45Si0FZs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

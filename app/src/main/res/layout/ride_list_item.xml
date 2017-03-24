@@ -1,0 +1,63 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_gravity="top"
+             android:paddingTop="0dip">
+
+    <TableRow>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:layout_width="110dp"
+                      android:layout_height="match_parent"
+                      android:paddingBottom="5dp"
+                      android:paddingLeft="10dp"
+                      android:paddingTop="5dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:scaleType="centerCrop"/>
+        </LinearLayout>
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                     android:layout_width="fill_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="top"
+                     android:paddingTop="0dip">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/rideId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="4dip"
+                    android:layout_span="1"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/rideRequestedBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="4dip"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="16sp"/>
+            </TableRow>
+        </TableLayout>
+    </TableRow>
+</TableLayout>

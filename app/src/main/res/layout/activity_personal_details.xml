@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_personal_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.vave.getbike.activity.PersonalDetailsActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ToolbarColoredBackArrow"
+        app:titleTextColor="@android:color/white">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+            android:text="Profile And Settings"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@color/get_bike_orange" />
+
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/circle_shape_style"
+                    android:src="@drawable/male_profile_icon" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:text="NAME"
+                    android:textColor="@color/get_bike_black"
+                    android:textSize="@dimen/text_size_small" />
+
+                <EditText
+                    android:id="@+id/profileUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_border_style"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:maxLines="1"
+                    android:minHeight="40dp"
+                    android:padding="5dp"
+                    android:textColor="@color/get_bike_black"
+                    android:textSize="@dimen/text_size_intermediate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:text="EMAIL*"
+                    android:textColor="@color/get_bike_black"
+                    android:textSize="@dimen/text_size_small" />
+
+                <EditText
+                    android:id="@+id/userEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_border_style"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:maxLines="1"
+                    android:minHeight="40dp"
+                    android:padding="5dp"
+                    android:textColor="@color/get_bike_black"
+                    android:textSize="@dimen/text_size_intermediate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:text="OCOUPATION"
+                    android:textColor="@color/get_bike_black"
+                    android:textSize="@dimen/text_size_small" />
+
+                <EditText
+                    android:id="@+id/userOccupation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_border_style"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:maxLines="1"
+                    android:minHeight="40dp"
+                    android:padding="5dp"
+                    android:textColor="@color/get_bike_black"
+                    android:textSize="@dimen/text_size_intermediate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:text="CITY"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <EditText
+                        android:id="@+id/userCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_border_style"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:maxLines="1"
+                        android:minHeight="40dp"
+                        android:padding="5dp"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:text="YEAR OF BIRTH"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <EditText
+                        android:id="@+id/userYearOfBirth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_border_style"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:minHeight="40dp"
+                        android:padding="5dp"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:text="HOME LOCATION"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <EditText
+                        android:id="@+id/userHomeLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_border_style"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:maxLines="1"
+                        android:minHeight="40dp"
+                        android:padding="5dp"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:text="OFFICE LOCATION"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <EditText
+                        android:id="@+id/userOfficeLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_border_style"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:maxLines="1"
+                        android:minHeight="40dp"
+                        android:padding="5dp"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:text="MOBILE*"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <EditText
+                        android:id="@+id/userMobileNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_border_style"
+                        android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:minHeight="40dp"
+                        android:padding="5dp"
+                        android:textColor="@color/get_bike_black"
+                        android:textSize="@dimen/text_size_intermediate"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"/>
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/verification"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:text="Verified" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:background="@drawable/black_button_style"
+                android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                android:padding="10dp"
+                android:text="UPDATE"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_intermediate" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

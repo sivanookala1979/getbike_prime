@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+dependencies {
+    compile 'junit:junit:4.12'
+    compile files('libs/java-json.jar')
+    compile files('libs/android.jar')
+    compile files('libs/sqlite-jdbc-3.7.2.jar')
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.3.1'
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

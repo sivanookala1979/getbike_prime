@@ -1,0 +1,683 @@
+02-20 19:42:39.407 18687-18687/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197da88 in: STARTED
+02-20 19:42:39.407 18687-18687/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197da88 in: RESUMED
+02-20 19:42:39.407 18687-18820/com.vave.getbike D/PGSDK: New Connection is created.
+02-20 19:42:39.407 18687-18820/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-20 19:42:39.407 18687-18820/com.vave.getbike D/PGSDK: Extracted String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=VaveIn61514259730321&EMAIL=Siva.nookala@gmail.com&THEME=merchant&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=5298dbf9-6c25-4e0a-b1f4-ce955c6c99cf
+02-20 19:42:39.407 18687-18820/com.vave.getbike D/PGSDK: Getting the output stream to post
+02-20 19:42:39.417 18687-18820/com.vave.getbike D/PGSDK: posting......
+02-20 19:42:39.417 18687-18820/com.vave.getbike D/PGSDK: posted parameters and closing output stream
+02-20 19:42:39.507 18687-18687/com.vave.getbike I/Timeline: Timeline: Activity_idle id: android.os.BinderProxy@42150248 time:41162247
+02-20 19:42:39.717 18687-18820/com.vave.getbike D/PGSDK: Response code is 200
+02-20 19:42:39.717 18687-18820/com.vave.getbike D/PGSDK: Response Message is OK
+02-20 19:42:39.717 18687-18820/com.vave.getbike D/PGSDK: Getting the input stream to read response
+02-20 19:42:39.717 18687-18820/com.vave.getbike D/PGSDK: reading......
+02-20 19:42:39.717 18687-18820/com.vave.getbike D/PGSDK: read response and closing input stream
+02-20 19:42:39.717 18687-18820/com.vave.getbike D/PGSDK: connection is disconnected
+02-20 19:42:39.717 18687-18687/com.vave.getbike D/PGSDK: Response is {"CHECKSUMHASH":"tbv4ZV+2xKhllFvPRXXjHmC9DO4HVcMSLCVLKCjAV45olmQrcpuQ4VEV/0/JfOETC7jrx39KOreB\nL+eRiC+zPa0jcxWPbUJB+GPPeM2Q0Ic="}
+02-20 19:42:39.717 18687-18687/com.vave.getbike D/PGSDK: Parsing JSON
+02-20 19:42:39.717 18687-18687/com.vave.getbike D/PGSDK: Appending Key Value pairs
+02-20 19:42:39.717 18687-18687/com.vave.getbike D/PGSDK: Send All Checksum Response Parameters to PG true
+02-20 19:42:39.717 18687-18687/com.vave.getbike D/PGSDK: CHECKSUMHASH = tbv4ZV+2xKhllFvPRXXjHmC9DO4HVcMSLCVLKCjAV45olmQrcpuQ4VEV/0/JfOETC7jrx39KOreB
+                                                         L+eRiC+zPa0jcxWPbUJB+GPPeM2Q0Ic=
+02-20 19:42:39.767 18687-18687/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197da88 in: PAUSED
+02-20 19:42:39.807 18687-18687/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@420eadf0 in: RESUMED
+02-20 19:42:39.897 18687-18687/com.vave.getbike I/Timeline: Timeline: Activity_idle id: android.os.BinderProxy@420df100 time:41162639
+02-20 19:42:39.907 18687-18687/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197da88 in: STOPPED
+02-20 19:42:39.907 18687-18687/com.vave.getbike D/PGSDK: Service Stopped.
+
+
+
+
+02-20 19:45:55.147 21063-21063/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197c1f0 in: RESUMED
+02-20 19:45:55.147 21063-21179/com.vave.getbike D/PGSDK: Setting SSLSocketFactory to connection...
+02-20 19:45:55.147 21063-21179/com.vave.getbike D/PGSDK: Client certificate is not found
+02-20 19:45:55.147 21063-21179/com.vave.getbike D/PGSDK: so, setting only the trust manager
+02-20 19:45:55.147 21063-21179/com.vave.getbike D/PGSDK: set trust manager
+02-20 19:45:55.147 21063-21179/com.vave.getbike D/PGSDK: SSLSocketFactory is set to connection.
+02-20 19:45:55.147 21063-21179/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-20 19:45:55.147 21063-21179/com.vave.getbike D/PGSDK: Extracted String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=VaveIn61514259730321&EMAIL=Siva.nookala@gmail.com&THEME=merchant&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=47f7e85a-37ad-4ec9-8370-a3f04261aff3
+02-20 19:45:55.147 21063-21179/com.vave.getbike D/PGSDK: Getting the output stream to post
+02-20 19:45:55.227 21063-21063/com.vave.getbike I/Timeline: Timeline: Activity_idle id: android.os.BinderProxy@420f1bd0 time:41357968
+02-20 19:45:55.537 21063-21063/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@420edac8 in: STOPPED
+02-20 19:45:55.597 21063-21179/com.vave.getbike D/PGSDK: posting......
+02-20 19:45:55.597 21063-21179/com.vave.getbike D/PGSDK: posted parameters and closing output stream
+02-20 19:45:55.667 21063-21179/com.vave.getbike D/PGSDK: Response code is 200
+02-20 19:45:55.667 21063-21179/com.vave.getbike D/PGSDK: Response Message is OK
+02-20 19:45:55.667 21063-21179/com.vave.getbike D/PGSDK: Getting the input stream to read response
+02-20 19:45:55.677 21063-21179/com.vave.getbike D/PGSDK: reading......
+02-20 19:45:55.677 21063-21179/com.vave.getbike D/PGSDK: read response and closing input stream
+02-20 19:45:55.677 21063-21179/com.vave.getbike D/PGSDK: connection is disconnected
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: Response is {"CHANNEL_ID":"WAP","CHECKSUMHASH":"kdnr40U+S+ljV+GR3Rzvn0b6GBTuDFwkokehzDIYcLKcdDZ/i8FRa6ukYBt3fKXswpuqBlIOBRdq83/G0x8SWgX/yoN8j13FfJECvKmcuuE=","CUST_ID":"CUST23657","EMAIL":"Siva.nookala@gmail.com","INDUSTRY_TYPE_ID":"Retail","MID":"VaveIn61514259730321","MOBILE_NO":"9949287789","ORDER_ID":"47f7e85a-37ad-4ec9-8370-a3f04261aff3","THEME":"merchant","TXN_AMOUNT":"200","WEBSITE":"APP_STAGING","payt_STATUS":"1"}
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: Parsing JSON
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: Appending Key Value pairs
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: Send All Checksum Response Parameters to PG true
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: INDUSTRY_TYPE_ID = Retail
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: payt_STATUS = 1
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: ORDER_ID = 47f7e85a-37ad-4ec9-8370-a3f04261aff3
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: MOBILE_NO = 9949287789
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: CUST_ID = CUST23657
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: CHANNEL_ID = WAP
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: EMAIL = Siva.nookala@gmail.com
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: MID = VaveIn61514259730321
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: WEBSITE = APP_STAGING
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: TXN_AMOUNT = 200
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: THEME = merchant
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: CHECKSUMHASH = kdnr40U+S+ljV+GR3Rzvn0b6GBTuDFwkokehzDIYcLKcdDZ/i8FRa6ukYBt3fKXswpuqBlIOBRdq83/G0x8SWgX/yoN8j13FfJECvKmcuuE=
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-20 19:45:55.677 21063-21063/com.vave.getbike D/PGSDK: URL encoded String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&CHECKSUMHASH=kdnr40U%2BS%2BljV%2BGR3Rzvn0b6GBTuDFwkokehzDIYcLKcdDZ%2Fi8FRa6ukYBt3fKXswpuqBlIOBRdq83%2FG0x8SWgX%2FyoN8j13FfJECvKmcuuE%3D&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=VaveIn61514259730321&EMAIL=Siva.nookala%40gmail.com&THEME=merchant&payt_STATUS=1&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=47f7e85a-37ad-4ec9-8370-a3f04261aff3
+02-20 19:45:55.697 21063-21063/com.vave.getbike W/AwContents: nativeOnDraw failed; clearing to background color.
+02-20 19:45:55.777 21063-21063/com.vave.getbike D/PGSDK: Page started loading https://pguat.paytm.com/oltp-web/processTransaction
+02-20 19:45:55.777 21063-21063/com.vave.getbike D/PGSDK: Progress dialog started
+02-20 19:45:55.937 21063-21063/com.vave.getbike W/UiControllerImpl: Waiting for: DELAY_HAS_PAST for 100 iterations.
+02-20 19:45:55.967 21063-21282/com.vave.getbike D/dalvikvm: GC_FOR_ALLOC freed 1127K, 51% free 5521K/11180K, paused 19ms, total 22ms
+02-20 19:45:56.247 21063-21063/com.vave.getbike D/PGSDK: Page finished loading https://pguat.paytm.com/oltp-web/processTransaction
+02-20 19:45:56.247 21063-21063/com.vave.getbike D/PGSDK: Progress dialog ended
+02-20 19:45:56.267 21063-21063/com.vave.getbike D/PGSDK: Page started loading https://paytm.com/
+02-20 19:45:56.267 21063-21063/com.vave.getbike D/PGSDK: Progress dialog started
+02-20 19:45:57.557 21063-21063/com.vave.getbike D/PGSDK: Page finished loading https://paytm.com/
+02-20 19:45:57.557 21063-21063/com.vave.getbike D/PGSDK: Progress dialog ended
+02-20 19:46:00.257 21063-21139/com.vave.getbike W/DynamiteModule: Local module descriptor class for com.google.firebase.auth not found.
+
+
+02-20 19:55:45.487 25525-25525/com.vave.getbike D/PGSDK: Starting the Client Authentication...
+02-20 19:55:45.487 25525-25653/com.vave.getbike D/PGSDK: URL is http://test.getbike.co.in/paytmCheckSumGenerator
+02-20 19:55:45.497 25525-25525/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@41980870 in: CREATED
+02-20 19:55:45.497 25525-25525/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@41980870 in: STARTED
+02-20 19:55:45.497 25525-25525/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@41980870 in: RESUMED
+02-20 19:55:45.507 25525-25653/com.vave.getbike D/PGSDK: New Connection is created.
+02-20 19:55:45.507 25525-25653/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-20 19:55:45.507 25525-25726/com.vave.getbike W/chromium: [WARNING:proxy_service.cc(890)] PAC support disabled because there is no system implementation
+02-20 19:55:45.517 25525-25653/com.vave.getbike D/PGSDK: Extracted String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=VaveIn61514259730321&EMAIL=Siva.nookala@gmail.com&THEME=merchant&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=641e30c6-b573-4716-8dec-4eee69aa9836
+02-20 19:55:45.517 25525-25653/com.vave.getbike D/PGSDK: Getting the output stream to post
+02-20 19:55:45.527 25525-25653/com.vave.getbike D/PGSDK: posting......
+02-20 19:55:45.527 25525-25653/com.vave.getbike D/PGSDK: posted parameters and closing output stream
+02-20 19:55:45.557 25525-25525/com.vave.getbike I/Timeline: Timeline: Activity_idle id: android.os.BinderProxy@41b9c628 time:41948299
+02-20 19:55:45.887 25525-25525/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@421062b8 in: STOPPED
+02-20 19:55:45.907 25525-25653/com.vave.getbike D/PGSDK: Response code is 200
+02-20 19:55:45.907 25525-25653/com.vave.getbike D/PGSDK: Response Message is OK
+02-20 19:55:45.907 25525-25653/com.vave.getbike D/PGSDK: Getting the input stream to read response
+02-20 19:55:45.907 25525-25653/com.vave.getbike D/PGSDK: reading......
+02-20 19:55:45.907 25525-25653/com.vave.getbike D/PGSDK: read response and closing input stream
+02-20 19:55:45.907 25525-25653/com.vave.getbike D/PGSDK: connection is disconnected
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: Response is {"CHECKSUMHASH":"USrc9aFc7d2t3VHUZlANDs9AF5Yo1Pz9qpQQRmsZ24Ib1+aDUckctvOFt6zJiHei52ZepvR7k2L7\nbJZ9fzt8VOQbqvcJ5McM/NwYqPuUN1Y=","payt_STATUS":"1","CHANNEL_ID":"WAP","CUST_ID":"CUST23657","INDUSTRY_TYPE_ID":"Retail","MID":"VaveIn61514259730321","ORDER_ID":"641e30c6-b573-4716-8dec-4eee69aa9836","TXN_AMOUNT":"200","WEBSITE":"APP_STAGING"}
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: Parsing JSON
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: Appending Key Value pairs
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: Send All Checksum Response Parameters to PG true
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: INDUSTRY_TYPE_ID = Retail
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: ORDER_ID = 641e30c6-b573-4716-8dec-4eee69aa9836
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: payt_STATUS = 1
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: CUST_ID = CUST23657
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: CHANNEL_ID = WAP
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: MID = VaveIn61514259730321
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: WEBSITE = APP_STAGING
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: TXN_AMOUNT = 200
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: CHECKSUMHASH = USrc9aFc7d2t3VHUZlANDs9AF5Yo1Pz9qpQQRmsZ24Ib1+aDUckctvOFt6zJiHei52ZepvR7k2L7
+                                                         bJZ9fzt8VOQbqvcJ5McM/NwYqPuUN1Y=
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-20 19:55:45.917 25525-25525/com.vave.getbike D/PGSDK: URL encoded String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&CHECKSUMHASH=USrc9aFc7d2t3VHUZlANDs9AF5Yo1Pz9qpQQRmsZ24Ib1%2BaDUckctvOFt6zJiHei52ZepvR7k2L7%0AbJZ9fzt8VOQbqvcJ5McM%2FNwYqPuUN1Y%3D&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=VaveIn61514259730321&EMAIL=Siva.nookala%40gmail.com&THEME=merchant&payt_STATUS=1&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=641e30c6-b573-4716-8dec-4eee69aa9836
+02-20 19:55:45.937 25525-25525/com.vave.getbike W/AwContents: nativeOnDraw failed; clearing to background color.
+02-20 19:55:45.977 25525-25525/com.vave.getbike D/PGSDK: Page started loading https://pguat.paytm.com/oltp-web/processTransaction
+02-20 19:55:45.987 25525-25525/com.vave.getbike D/PGSDK: Progress dialog started
+02-20 19:55:46.047 25525-25525/com.vave.getbike W/UiControllerImpl: Waiting for: DELAY_HAS_PAST for 100 iterations.
+02-20 19:55:46.567 25525-25754/com.vave.getbike D/dalvikvm: GC_FOR_ALLOC freed 927K, 49% free 5737K/11180K, paused 22ms, total 22ms
+02-20 19:55:46.867 25525-25525/com.vave.getbike D/PGSDK: Page finished loading https://pguat.paytm.com/oltp-web/processTransaction
+02-20 19:55:46.867 25525-25525/com.vave.getbike D/PGSDK: Progress dialog ended
+02-20 19:55:46.887 25525-25525/com.vave.getbike D/PGSDK: Page started loading https://paytm.com/
+02-20 19:55:46.887 25525-25525/com.vave.getbike D/PGSDK: Progress dialog started
+02-20 19:55:48.377 25525-25525/com.vave.getbike D/PGSDK: Page finished loading https://paytm.com/
+02-20 19:55:48.377 25525-25525/com.vave.getbike D/PGSDK: Progress dialog ended
+02-20 19:55:50.597 25525-25612/com.vave.getbike W/DynamiteModule: Local module descriptor class for com.google.firebase.auth not found.
+
+
+***************************************** SUCCESS START ***********************************************
+
+
+02-21 10:54:42.900 17917-17917/com.vave.getbike I/ViewInteraction: Performing 'single click' action on view with id: com.vave.getbike:id/paytm
+02-21 10:54:42.990 17917-17917/com.vave.getbike D/PGSDK: INDUSTRY_TYPE_ID = Retail
+02-21 10:54:42.990 17917-17917/com.vave.getbike D/PGSDK: ORDER_ID = 81c3cfcf-37c7-4b66-9101-7f2bbd2c7340
+02-21 10:54:42.990 17917-17917/com.vave.getbike D/PGSDK: MOBILE_NO = 9949287789
+02-21 10:54:42.990 17917-17917/com.vave.getbike D/PGSDK: CHANNEL_ID = WAP
+02-21 10:54:42.990 17917-17917/com.vave.getbike D/PGSDK: CUST_ID = CUST23657
+02-21 10:54:42.990 17917-17917/com.vave.getbike D/PGSDK: EMAIL = Siva.nookala@gmail.com
+02-21 10:54:42.990 17917-17917/com.vave.getbike D/PGSDK: MID = WorldP64425807474247
+02-21 10:54:42.990 17917-17917/com.vave.getbike D/PGSDK: THEME = merchant
+02-21 10:54:42.990 17917-17917/com.vave.getbike D/PGSDK: TXN_AMOUNT = 200
+02-21 10:54:42.990 17917-17917/com.vave.getbike D/PGSDK: WEBSITE = APP_STAGING
+02-21 10:54:42.990 17917-17917/com.vave.getbike D/PGSDK: Starting the Service...
+02-21 10:54:42.990 17917-17917/com.vave.getbike D/MonitoringInstrumentation: execStartActivity(context, ibinder, ibinder, activity, intent, int, bundle
+02-21 10:54:42.990 17917-17917/com.vave.getbike I/Timeline: Timeline: Activity_launch_request id:com.vave.getbike time:52824966
+02-21 10:54:43.000 17917-17917/com.vave.getbike D/PGSDK: Service Started.
+02-21 10:54:43.010 17917-17917/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@421215b0 in: PAUSED
+02-21 10:54:43.060 17917-17917/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197b498 in: PRE_ON_CREATE
+02-21 10:54:43.060 17917-17917/com.vave.getbike D/PGSDK: Hide Header true
+02-21 10:54:43.060 17917-17917/com.vave.getbike D/PGSDK: Initializing the UI of Transaction Page...
+02-21 10:54:43.070 17917-17917/com.vave.getbike I/dalvikvm: Could not find method android.webkit.WebSettings.setMixedContentMode, referenced from method com.paytm.pgsdk.PaytmWebView.<init>
+02-21 10:54:43.080 17917-17917/com.vave.getbike W/dalvikvm: VFY: unable to resolve virtual method 1190: Landroid/webkit/WebSettings;.setMixedContentMode (I)V
+02-21 10:54:43.080 17917-17917/com.vave.getbike D/dalvikvm: VFY: replacing opcode 0x6e at 0x002b
+02-21 10:54:43.080 17917-17917/com.vave.getbike I/LibraryLoader: Expected native library version number "",actual native library version number ""
+02-21 10:54:43.080 17917-17917/com.vave.getbike I/chromium: [INFO:library_loader_hooks.cc(116)] Chromium logging enabled: level = 0, default verbosity = 0
+02-21 10:54:43.080 17917-17917/com.vave.getbike I/BrowserStartupController: Initializing chromium process, renderers=0
+02-21 10:54:43.090 17917-17917/com.vave.getbike E/AudioManagerAndroid: BLUETOOTH permission is missing!
+02-21 10:54:43.120 17917-18455/com.vave.getbike W/chromium: [WARNING:proxy_service.cc(890)] PAC support disabled because there is no system implementation
+02-21 10:54:43.140 17917-17917/com.vave.getbike D/PGSDK: Initialized UI of Transaction Page.
+02-21 10:54:43.140 17917-17917/com.vave.getbike D/PGSDK: Starting the Process...
+02-21 10:54:43.140 17917-17917/com.vave.getbike D/PGSDK: Starting the Client Authentication...
+02-21 10:54:43.140 17917-18008/com.vave.getbike D/PGSDK: URL is https://pguat.paytm.com/paytmchecksum/paytmCheckSumGenerator.jsp
+02-21 10:54:43.140 17917-18008/com.vave.getbike D/PGSDK: New Connection is created.
+02-21 10:54:43.140 17917-18008/com.vave.getbike D/PGSDK: Https url
+02-21 10:54:43.140 17917-18008/com.vave.getbike D/PGSDK: Setting SSLSocketFactory to connection...
+02-21 10:54:43.140 17917-18008/com.vave.getbike D/PGSDK: Client certificate is not found
+02-21 10:54:43.140 17917-18008/com.vave.getbike D/PGSDK: so, setting only the trust manager
+02-21 10:54:43.140 17917-18008/com.vave.getbike D/PGSDK: set trust manager
+02-21 10:54:43.140 17917-18008/com.vave.getbike D/PGSDK: SSLSocketFactory is set to connection.
+02-21 10:54:43.140 17917-18008/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-21 10:54:43.140 17917-18008/com.vave.getbike D/PGSDK: Extracted String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=WorldP64425807474247&EMAIL=Siva.nookala@gmail.com&THEME=merchant&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=81c3cfcf-37c7-4b66-9101-7f2bbd2c7340
+02-21 10:54:43.140 17917-18008/com.vave.getbike D/PGSDK: Getting the output stream to post
+02-21 10:54:43.140 17917-17917/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197b498 in: CREATED
+02-21 10:54:43.140 17917-17917/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197b498 in: STARTED
+02-21 10:54:43.140 17917-17917/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197b498 in: RESUMED
+02-21 10:54:43.220 17917-17917/com.vave.getbike I/Timeline: Timeline: Activity_idle id: android.os.BinderProxy@4198c218 time:52825199
+02-21 10:54:43.550 17917-17917/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@421215b0 in: STOPPED
+02-21 10:54:43.590 17917-18008/com.vave.getbike D/PGSDK: posting......
+02-21 10:54:43.590 17917-18008/com.vave.getbike D/PGSDK: posted parameters and closing output stream
+02-21 10:54:43.680 17917-18008/com.vave.getbike D/PGSDK: Response code is 200
+02-21 10:54:43.680 17917-18008/com.vave.getbike D/PGSDK: Response Message is OK
+02-21 10:54:43.680 17917-18008/com.vave.getbike D/PGSDK: Getting the input stream to read response
+02-21 10:54:43.680 17917-18008/com.vave.getbike D/PGSDK: reading......
+02-21 10:54:43.680 17917-18008/com.vave.getbike D/PGSDK: read response and closing input stream
+02-21 10:54:43.680 17917-18008/com.vave.getbike D/PGSDK: connection is disconnected
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: Response is {"CHANNEL_ID":"WAP","CHECKSUMHASH":"hrcuaRueHQXhzVxFzpoWedePVyA/rv7Y2Icb3Dte8404xCKx4A1k1yKQjIkbEPldp8kgm+CEuPcjkxiKt/zLgcJDgiSFqPTH8DUIXKD6BvQ=","CUST_ID":"CUST23657","EMAIL":"Siva.nookala@gmail.com","INDUSTRY_TYPE_ID":"Retail","MID":"WorldP64425807474247","MOBILE_NO":"9949287789","ORDER_ID":"81c3cfcf-37c7-4b66-9101-7f2bbd2c7340","THEME":"merchant","TXN_AMOUNT":"200","WEBSITE":"APP_STAGING","payt_STATUS":"1"}
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: Parsing JSON
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: Appending Key Value pairs
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: Send All Checksum Response Parameters to PG true
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: INDUSTRY_TYPE_ID = Retail
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: payt_STATUS = 1
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: ORDER_ID = 81c3cfcf-37c7-4b66-9101-7f2bbd2c7340
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: MOBILE_NO = 9949287789
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: CUST_ID = CUST23657
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: CHANNEL_ID = WAP
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: EMAIL = Siva.nookala@gmail.com
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: MID = WorldP64425807474247
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: WEBSITE = APP_STAGING
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: TXN_AMOUNT = 200
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: THEME = merchant
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: CHECKSUMHASH = hrcuaRueHQXhzVxFzpoWedePVyA/rv7Y2Icb3Dte8404xCKx4A1k1yKQjIkbEPldp8kgm+CEuPcjkxiKt/zLgcJDgiSFqPTH8DUIXKD6BvQ=
+02-21 10:54:43.680 17917-17917/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-21 10:54:43.690 17917-17917/com.vave.getbike D/PGSDK: URL encoded String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&CHECKSUMHASH=hrcuaRueHQXhzVxFzpoWedePVyA%2Frv7Y2Icb3Dte8404xCKx4A1k1yKQjIkbEPldp8kgm%2BCEuPcjkxiKt%2FzLgcJDgiSFqPTH8DUIXKD6BvQ%3D&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=WorldP64425807474247&EMAIL=Siva.nookala%40gmail.com&THEME=merchant&payt_STATUS=1&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=81c3cfcf-37c7-4b66-9101-7f2bbd2c7340
+02-21 10:54:43.710 17917-17917/com.vave.getbike W/AwContents: nativeOnDraw failed; clearing to background color.
+02-21 10:54:43.770 17917-17917/com.vave.getbike D/PGSDK: Page started loading https://pguat.paytm.com/oltp-web/processTransaction
+02-21 10:54:43.770 17917-17917/com.vave.getbike D/PGSDK: Progress dialog started
+02-21 10:54:43.910 17917-18485/com.vave.getbike D/dalvikvm: GC_FOR_ALLOC freed 1062K, 51% free 5574K/11180K, paused 24ms, total 24ms
+
+***************************************** SUCCESS END ***********************************************
+
+
+
+
+
+02-21 10:57:23.550 19597-19681/com.vave.getbike I/System.out: HTTP Response received for http://test.getbike.co.in/getPrivateProfile
+02-21 10:57:23.550 19597-19681/com.vave.getbike I/System.out: {"privateProfile":{"id":2,"name":"Siva Nookala","email":"Siva.nookala@gmail.com","password":null,"role":null,"phoneNumber":"9949287789","gender":"M","authToken":"672ccd52-8237-4285-9d38-a2dd02629fd0","gcmCode":"elm-h_kHSEU:APA91bFe7RQYo6UBbvDord7aQsP36TXI48jfeWZ5IaIXMNBObG4WoWQza56VtnAZQRna4b2mlII4ChGB8SGa8-OVQlBKs12ZbPYJWyXpmEMM6sFwaHt8mSNScyDUT3mguD7UIg3aadEM","vehiclePlateImageName":"uploads/2-vp-0cee9346-4ce1-4bc5-9476-395367bfcbf1.png","vehicleNumber":"AAp09Bf3497","drivingLicenseImageName":"uploads/2-dl-be746b23-e116-42a0-864f-8e107e0c6517.png","drivingLicenseNumber":"77362862","validProofsUploaded":true,"currentRideId":null,"currentRequestRideId":null,"lastKnownLatitude":14.9026666,"lastKnownLongitude":79.9939655,"lastLocationTime":1487588681541,"occupation":"Apps Developer","city":"Kavali","yearOfBirth":"1992","homeLocation":"Kavali","officeLocation":"Kavali","profileImage":"uploads/2-profile-dd14252c-75e6-48b5-bce8-6b118279a446.png","mobileVerified":false,"accountHolderName":"Siva Nookala","accountNumber":"12345678","ifscCode":"IFC120003","bankName":"Axis","branchName":"KAVALI BRANCH","promoCode":"siva293341","spePrice":null,"signupPromoCode":null,"freeRidesEarned":0,"freeRidesSpent":0,"appVersion":"1.8~8~1.8d","specialPrice":false,"rideInProgress":false,"requestInProgress":false,"displayName":"Siva Nookala"},"result":"success"}
+02-21 10:57:23.950 19597-19597/com.vave.getbike I/ViewInteraction: Performing 'single click' action on view with id: com.vave.getbike:id/amountRadioButton200
+02-21 10:57:24.390 19597-19597/com.vave.getbike I/ViewInteraction: Performing 'single click' action on view with id: com.vave.getbike:id/paytm
+02-21 10:57:24.470 19597-19597/com.vave.getbike D/PGSDK: INDUSTRY_TYPE_ID = Retail
+02-21 10:57:24.470 19597-19597/com.vave.getbike D/PGSDK: ORDER_ID = 44cfca3f-8ecb-44d0-87f9-628ed0aa9022
+02-21 10:57:24.480 19597-19597/com.vave.getbike D/PGSDK: MOBILE_NO = 9949287789
+02-21 10:57:24.480 19597-19597/com.vave.getbike D/PGSDK: CHANNEL_ID = WAP
+02-21 10:57:24.480 19597-19597/com.vave.getbike D/PGSDK: CUST_ID = CUST23657
+02-21 10:57:24.480 19597-19597/com.vave.getbike D/PGSDK: EMAIL = Siva.nookala@gmail.com
+02-21 10:57:24.480 19597-19597/com.vave.getbike D/PGSDK: MID = WorldP64425807474247
+02-21 10:57:24.480 19597-19597/com.vave.getbike D/PGSDK: THEME = merchant
+02-21 10:57:24.480 19597-19597/com.vave.getbike D/PGSDK: TXN_AMOUNT = 200
+02-21 10:57:24.480 19597-19597/com.vave.getbike D/PGSDK: WEBSITE = APP_STAGING
+02-21 10:57:24.480 19597-19597/com.vave.getbike D/PGSDK: Starting the Service...
+02-21 10:57:24.480 19597-19597/com.vave.getbike D/MonitoringInstrumentation: execStartActivity(context, ibinder, ibinder, activity, intent, int, bundle
+02-21 10:57:24.480 19597-19597/com.vave.getbike I/Timeline: Timeline: Activity_launch_request id:com.vave.getbike time:52986456
+02-21 10:57:24.490 19597-19597/com.vave.getbike D/PGSDK: Service Started.
+02-21 10:57:24.490 19597-19597/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@42118690 in: PAUSED
+02-21 10:57:24.520 19597-19597/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197e1e0 in: PRE_ON_CREATE
+02-21 10:57:24.530 19597-19597/com.vave.getbike D/PGSDK: Hide Header true
+02-21 10:57:24.530 19597-19597/com.vave.getbike D/PGSDK: Initializing the UI of Transaction Page...
+02-21 10:57:24.540 19597-19597/com.vave.getbike I/dalvikvm: Could not find method android.webkit.WebSettings.setMixedContentMode, referenced from method com.paytm.pgsdk.PaytmWebView.<init>
+02-21 10:57:24.540 19597-19597/com.vave.getbike W/dalvikvm: VFY: unable to resolve virtual method 1190: Landroid/webkit/WebSettings;.setMixedContentMode (I)V
+02-21 10:57:24.540 19597-19597/com.vave.getbike D/dalvikvm: VFY: replacing opcode 0x6e at 0x002b
+02-21 10:57:24.560 19597-19597/com.vave.getbike I/LibraryLoader: Expected native library version number "",actual native library version number ""
+02-21 10:57:24.560 19597-19597/com.vave.getbike I/chromium: [INFO:library_loader_hooks.cc(116)] Chromium logging enabled: level = 0, default verbosity = 0
+02-21 10:57:24.560 19597-19597/com.vave.getbike I/BrowserStartupController: Initializing chromium process, renderers=0
+02-21 10:57:24.570 19597-19597/com.vave.getbike E/AudioManagerAndroid: BLUETOOTH permission is missing!
+02-21 10:57:24.600 19597-20010/com.vave.getbike W/chromium: [WARNING:proxy_service.cc(890)] PAC support disabled because there is no system implementation
+02-21 10:57:24.620 19597-19597/com.vave.getbike D/PGSDK: Initialized UI of Transaction Page.
+02-21 10:57:24.620 19597-19597/com.vave.getbike D/PGSDK: Starting the Process...
+02-21 10:57:24.620 19597-19597/com.vave.getbike D/PGSDK: Starting the Client Authentication...
+02-21 10:57:24.620 19597-19597/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197e1e0 in: CREATED
+02-21 10:57:24.620 19597-19597/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197e1e0 in: STARTED
+02-21 10:57:24.620 19597-19681/com.vave.getbike D/PGSDK: URL is http://test.getbike.co.in/paytmCheckSumGenerator
+02-21 10:57:24.620 19597-19681/com.vave.getbike D/PGSDK: New Connection is created.
+02-21 10:57:24.620 19597-19681/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-21 10:57:24.620 19597-19681/com.vave.getbike D/PGSDK: Extracted String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=WorldP64425807474247&EMAIL=Siva.nookala@gmail.com&THEME=merchant&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=44cfca3f-8ecb-44d0-87f9-628ed0aa9022
+02-21 10:57:24.620 19597-19681/com.vave.getbike D/PGSDK: Getting the output stream to post
+02-21 10:57:24.620 19597-19597/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197e1e0 in: RESUMED
+02-21 10:57:24.630 19597-19681/com.vave.getbike D/PGSDK: posting......
+02-21 10:57:24.630 19597-19681/com.vave.getbike D/PGSDK: posted parameters and closing output stream
+02-21 10:57:24.700 19597-19597/com.vave.getbike I/Timeline: Timeline: Activity_idle id: android.os.BinderProxy@4199d328 time:52986672
+02-21 10:57:24.930 19597-19681/com.vave.getbike D/PGSDK: Response code is 200
+02-21 10:57:24.930 19597-19681/com.vave.getbike D/PGSDK: Response Message is OK
+02-21 10:57:24.930 19597-19681/com.vave.getbike D/PGSDK: Getting the input stream to read response
+02-21 10:57:24.940 19597-19681/com.vave.getbike D/PGSDK: reading......
+02-21 10:57:24.940 19597-19681/com.vave.getbike D/PGSDK: read response and closing input stream
+02-21 10:57:24.940 19597-19681/com.vave.getbike D/PGSDK: connection is disconnected
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: Response is {"CHANNEL_ID":"WAP","CHECKSUMHASH":"iNSyY6WXfOJTqY6Wdfi9TmkljswsBhFUqojJ+q4LwPehsLdHvqa4ZaQlHGrmeG+mcePOZQeACFaG\nGAhPFDEWbDX+kveyNlgMVczdxLXrg0E=","CUST_ID":"CUST23657","INDUSTRY_TYPE_ID":"Retail","MID":"VaveIn61514259730321","ORDER_ID":"44cfca3f-8ecb-44d0-87f9-628ed0aa9022","TXN_AMOUNT":"200","WEBSITE":"APP_STAGING","payt_STATUS":"1"}
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: Parsing JSON
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: Appending Key Value pairs
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: Send All Checksum Response Parameters to PG true
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: INDUSTRY_TYPE_ID = Retail
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: payt_STATUS = 1
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: ORDER_ID = 44cfca3f-8ecb-44d0-87f9-628ed0aa9022
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: CUST_ID = CUST23657
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: CHANNEL_ID = WAP
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: MID = VaveIn61514259730321
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: WEBSITE = APP_STAGING
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: TXN_AMOUNT = 200
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: CHECKSUMHASH = iNSyY6WXfOJTqY6Wdfi9TmkljswsBhFUqojJ+q4LwPehsLdHvqa4ZaQlHGrmeG+mcePOZQeACFaG
+                                                         GAhPFDEWbDX+kveyNlgMVczdxLXrg0E=
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-21 10:57:24.940 19597-19597/com.vave.getbike D/PGSDK: URL encoded String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&CHECKSUMHASH=iNSyY6WXfOJTqY6Wdfi9TmkljswsBhFUqojJ%2Bq4LwPehsLdHvqa4ZaQlHGrmeG%2BmcePOZQeACFaG%0AGAhPFDEWbDX%2BkveyNlgMVczdxLXrg0E%3D&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=VaveIn61514259730321&EMAIL=Siva.nookala%40gmail.com&THEME=merchant&payt_STATUS=1&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=44cfca3f-8ecb-44d0-87f9-628ed0aa9022
+02-21 10:57:25.010 19597-19597/com.vave.getbike W/AwContents: nativeOnDraw failed; clearing to background color.
+02-21 10:57:25.020 19597-19597/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@42118690 in: STOPPED
+02-21 10:57:25.070 19597-19597/com.vave.getbike D/PGSDK: Page started loading https://pguat.paytm.com/oltp-web/processTransaction
+02-21 10:57:25.070 19597-19597/com.vave.getbike D/PGSDK: Progress dialog started
+02-21 10:57:25.080 19597-19597/com.vave.getbike W/UiControllerImpl: Waiting for: DELAY_HAS_PAST for 100 iterations.
+02-21 10:57:26.150 19597-20039/com.vave.getbike D/dalvikvm: GC_FOR_ALLOC freed 945K, 49% free 5702K/11180K, paused 28ms, total 28ms
+02-21 10:57:26.680 19597-19597/com.vave.getbike D/PGSDK: Page finished loading https://pguat.paytm.com/oltp-web/processTransaction
+02-21 10:57:26.680 19597-19597/com.vave.getbike D/PGSDK: Progress dialog ended
+02-21 10:57:26.690 19597-19597/com.vave.getbike D/PGSDK: Page started loading https://paytm.com/
+02-21 10:57:26.690 19597-19597/com.vave.getbike D/PGSDK: Progress dialog started
+02-21 10:57:29.030 19597-19597/com.vave.getbike D/PGSDK: Page finished loading https://paytm.com/
+02-21 10:57:29.030 19597-19597/com.vave.getbike D/PGSDK: Progress dialog ended
+02-21 11:02:25.220 19597-19597/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197e1e0 in: PAUSED
+02-21 11:02:25.240 19597-19597/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197e1e0 in: STOPPED
+02-21 11:02:26.230 19597-24332/com.vave.getbike D/FA: Application backgrounded. Logging engagement
+02-21 11:02:26.230 19597-24332/com.vave.getbike I/DynamiteModule: Considering local module com.google.android.gms.tagmanager:3 and remote module com.google.android.gms.tagmanager:9
+02-21 11:02:26.230 19597-24332/com.vave.getbike I/DynamiteModule: Selected remote version of com.google.android.gms.tagmanager, version >= 9
+02-21 11:02:26.420 19597-24332/com.vave.getbike W/GoogleTagManager: No container asset found in /assets/containers. Checking top level /assets directory for container assets.
+02-21 11:02:26.610 19597-24332/com.vave.getbike W/GoogleTagManager: Tag Manager's event handler WILL NOT be installed (no container loaded)
+02-21 11:02:26.610 19597-24332/com.vave.getbike I/GoogleTagManager: Tag Manager initilization took 372ms
+02-21 11:02:26.610 19597-24332/com.vave.getbike D/FA: Logging event (FE): _e, Bundle[{_o=auto, _et=373095}]
+02-21 11:02:26.610 19597-24332/com.vave.getbike D/FA: Connected to remote service
+
+
+
+
+
+
+
+
+
+02-21 11:04:37.250 24949-25021/com.vave.getbike I/System.out: HTTP Response received for http://test.getbike.co.in/getPrivateProfile
+02-21 11:04:37.250 24949-25021/com.vave.getbike I/System.out: {"privateProfile":{"id":2,"name":"Siva Nookala","email":"Siva.nookala@gmail.com","password":null,"role":null,"phoneNumber":"9949287789","gender":"M","authToken":"672ccd52-8237-4285-9d38-a2dd02629fd0","gcmCode":"elm-h_kHSEU:APA91bFe7RQYo6UBbvDord7aQsP36TXI48jfeWZ5IaIXMNBObG4WoWQza56VtnAZQRna4b2mlII4ChGB8SGa8-OVQlBKs12ZbPYJWyXpmEMM6sFwaHt8mSNScyDUT3mguD7UIg3aadEM","vehiclePlateImageName":"uploads/2-vp-0cee9346-4ce1-4bc5-9476-395367bfcbf1.png","vehicleNumber":"AAp09Bf3497","drivingLicenseImageName":"uploads/2-dl-be746b23-e116-42a0-864f-8e107e0c6517.png","drivingLicenseNumber":"77362862","validProofsUploaded":true,"currentRideId":null,"currentRequestRideId":null,"lastKnownLatitude":14.9026666,"lastKnownLongitude":79.9939655,"lastLocationTime":1487588681541,"occupation":"Apps Developer","city":"Kavali","yearOfBirth":"1992","homeLocation":"Kavali","officeLocation":"Kavali","profileImage":"uploads/2-profile-dd14252c-75e6-48b5-bce8-6b118279a446.png","mobileVerified":false,"accountHolderName":"Siva Nookala","accountNumber":"12345678","ifscCode":"IFC120003","bankName":"Axis","branchName":"KAVALI BRANCH","promoCode":"siva293341","spePrice":null,"signupPromoCode":null,"freeRidesEarned":0,"freeRidesSpent":0,"appVersion":"1.8~8~1.8d","specialPrice":false,"rideInProgress":false,"requestInProgress":false,"displayName":"Siva Nookala"},"result":"success"}
+02-21 11:04:37.560 24949-24949/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.GetBikeWalletHome@41da5930 in: STOPPED
+02-21 11:04:37.640 24949-24949/com.vave.getbike I/ViewInteraction: Performing 'single click' action on view with id: com.vave.getbike:id/amountRadioButton200
+02-21 11:04:38.080 24949-24949/com.vave.getbike I/ViewInteraction: Performing 'single click' action on view with id: com.vave.getbike:id/paytm
+02-21 11:04:38.160 24949-24949/com.vave.getbike D/PGSDK: INDUSTRY_TYPE_ID = Retail
+02-21 11:04:38.160 24949-24949/com.vave.getbike D/PGSDK: ORDER_ID = d75a6e32-ef37-41a1-a13a-5529c1108b92
+02-21 11:04:38.160 24949-24949/com.vave.getbike D/PGSDK: MOBILE_NO = 9949287789
+02-21 11:04:38.160 24949-24949/com.vave.getbike D/PGSDK: CHANNEL_ID = WAP
+02-21 11:04:38.160 24949-24949/com.vave.getbike D/PGSDK: CUST_ID = CUST23657
+02-21 11:04:38.160 24949-24949/com.vave.getbike D/PGSDK: EMAIL = Siva.nookala@gmail.com
+02-21 11:04:38.160 24949-24949/com.vave.getbike D/PGSDK: MID = VaveIn61514259730321
+02-21 11:04:38.160 24949-24949/com.vave.getbike D/PGSDK: THEME = merchant
+02-21 11:04:38.160 24949-24949/com.vave.getbike D/PGSDK: TXN_AMOUNT = 200
+02-21 11:04:38.160 24949-24949/com.vave.getbike D/PGSDK: WEBSITE = APP_STAGING
+02-21 11:04:38.160 24949-24949/com.vave.getbike D/PGSDK: Starting the Service...
+02-21 11:04:38.160 24949-24949/com.vave.getbike D/MonitoringInstrumentation: execStartActivity(context, ibinder, ibinder, activity, intent, int, bundle
+02-21 11:04:38.160 24949-24949/com.vave.getbike I/Timeline: Timeline: Activity_launch_request id:com.vave.getbike time:53420136
+02-21 11:04:38.170 24949-24949/com.vave.getbike D/PGSDK: Service Started.
+02-21 11:04:38.170 24949-24949/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@42138920 in: PAUSED
+02-21 11:04:38.200 24949-24949/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197a458 in: PRE_ON_CREATE
+02-21 11:04:38.200 24949-24949/com.vave.getbike D/PGSDK: Hide Header true
+02-21 11:04:38.200 24949-24949/com.vave.getbike D/PGSDK: Initializing the UI of Transaction Page...
+02-21 11:04:38.220 24949-24949/com.vave.getbike I/dalvikvm: Could not find method android.webkit.WebSettings.setMixedContentMode, referenced from method com.paytm.pgsdk.PaytmWebView.<init>
+02-21 11:04:38.220 24949-24949/com.vave.getbike W/dalvikvm: VFY: unable to resolve virtual method 1190: Landroid/webkit/WebSettings;.setMixedContentMode (I)V
+02-21 11:04:38.220 24949-24949/com.vave.getbike D/dalvikvm: VFY: replacing opcode 0x6e at 0x002b
+02-21 11:04:38.220 24949-24949/com.vave.getbike I/LibraryLoader: Expected native library version number "",actual native library version number ""
+02-21 11:04:38.230 24949-24949/com.vave.getbike I/chromium: [INFO:library_loader_hooks.cc(116)] Chromium logging enabled: level = 0, default verbosity = 0
+02-21 11:04:38.230 24949-24949/com.vave.getbike I/BrowserStartupController: Initializing chromium process, renderers=0
+02-21 11:04:38.240 24949-24949/com.vave.getbike E/AudioManagerAndroid: BLUETOOTH permission is missing!
+02-21 11:04:38.270 24949-25513/com.vave.getbike W/chromium: [WARNING:proxy_service.cc(890)] PAC support disabled because there is no system implementation
+02-21 11:04:38.280 24949-24949/com.vave.getbike D/PGSDK: Initialized UI of Transaction Page.
+02-21 11:04:38.280 24949-24949/com.vave.getbike D/PGSDK: Starting the Process...
+02-21 11:04:38.280 24949-24949/com.vave.getbike D/PGSDK: Starting the Client Authentication...
+02-21 11:04:38.280 24949-25043/com.vave.getbike D/PGSDK: URL is https://pguat.paytm.com/paytmchecksum/paytmCheckSumGenerator.jsp
+02-21 11:04:38.280 24949-25043/com.vave.getbike D/PGSDK: New Connection is created.
+02-21 11:04:38.280 24949-25043/com.vave.getbike D/PGSDK: Https url
+02-21 11:04:38.280 24949-25043/com.vave.getbike D/PGSDK: Setting SSLSocketFactory to connection...
+02-21 11:04:38.280 24949-25043/com.vave.getbike D/PGSDK: Client certificate is not found
+02-21 11:04:38.280 24949-25043/com.vave.getbike D/PGSDK: so, setting only the trust manager
+02-21 11:04:38.280 24949-25043/com.vave.getbike D/PGSDK: set trust manager
+02-21 11:04:38.280 24949-25043/com.vave.getbike D/PGSDK: SSLSocketFactory is set to connection.
+02-21 11:04:38.280 24949-25043/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-21 11:04:38.280 24949-25043/com.vave.getbike D/PGSDK: Extracted String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=VaveIn61514259730321&EMAIL=Siva.nookala@gmail.com&THEME=merchant&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=d75a6e32-ef37-41a1-a13a-5529c1108b92
+02-21 11:04:38.280 24949-24949/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197a458 in: CREATED
+02-21 11:04:38.280 24949-24949/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197a458 in: STARTED
+02-21 11:04:38.280 24949-24949/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197a458 in: RESUMED
+02-21 11:04:38.280 24949-25043/com.vave.getbike D/PGSDK: Getting the output stream to post
+02-21 11:04:38.530 24949-24949/com.vave.getbike I/Timeline: Timeline: Activity_idle id: android.os.BinderProxy@41b928b8 time:53420506
+02-21 11:04:38.720 24949-25043/com.vave.getbike D/dalvikvm: GC_FOR_ALLOC freed 1080K, 52% free 5466K/11180K, paused 18ms, total 18ms
+02-21 11:04:38.730 24949-25043/com.vave.getbike D/PGSDK: posting......
+02-21 11:04:38.730 24949-25043/com.vave.getbike D/PGSDK: posted parameters and closing output stream
+02-21 11:04:38.790 24949-25043/com.vave.getbike D/PGSDK: Response code is 200
+02-21 11:04:38.790 24949-25043/com.vave.getbike D/PGSDK: Response Message is OK
+02-21 11:04:38.790 24949-25043/com.vave.getbike D/PGSDK: Getting the input stream to read response
+02-21 11:04:38.790 24949-25043/com.vave.getbike D/PGSDK: reading......
+02-21 11:04:38.790 24949-25043/com.vave.getbike D/PGSDK: read response and closing input stream
+02-21 11:04:38.790 24949-25043/com.vave.getbike D/PGSDK: connection is disconnected
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: Response is {"CHANNEL_ID":"WAP","CHECKSUMHASH":"hQiBcHJlPo+TrMTDYsTH3+qfVwoRa3+oC+TIPuXrtGHbuYtNf5+tlZn+iD17PvdwGTigUTyEOWnghHpI32OJYWvqGuOUxp+rKP/DiR00wz8=","CUST_ID":"CUST23657","EMAIL":"Siva.nookala@gmail.com","INDUSTRY_TYPE_ID":"Retail","MID":"VaveIn61514259730321","MOBILE_NO":"9949287789","ORDER_ID":"d75a6e32-ef37-41a1-a13a-5529c1108b92","THEME":"merchant","TXN_AMOUNT":"200","WEBSITE":"APP_STAGING","payt_STATUS":"1"}
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: Parsing JSON
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: Appending Key Value pairs
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: Send All Checksum Response Parameters to PG true
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: INDUSTRY_TYPE_ID = Retail
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: payt_STATUS = 1
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: ORDER_ID = d75a6e32-ef37-41a1-a13a-5529c1108b92
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: MOBILE_NO = 9949287789
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: CUST_ID = CUST23657
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: CHANNEL_ID = WAP
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: EMAIL = Siva.nookala@gmail.com
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: MID = VaveIn61514259730321
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: WEBSITE = APP_STAGING
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: TXN_AMOUNT = 200
+02-21 11:04:38.790 24949-24949/com.vave.getbike D/PGSDK: THEME = merchant
+02-21 11:04:38.800 24949-24949/com.vave.getbike D/PGSDK: CHECKSUMHASH = hQiBcHJlPo+TrMTDYsTH3+qfVwoRa3+oC+TIPuXrtGHbuYtNf5+tlZn+iD17PvdwGTigUTyEOWnghHpI32OJYWvqGuOUxp+rKP/DiR00wz8=
+02-21 11:04:38.800 24949-24949/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-21 11:04:38.800 24949-24949/com.vave.getbike D/PGSDK: URL encoded String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&CHECKSUMHASH=hQiBcHJlPo%2BTrMTDYsTH3%2BqfVwoRa3%2BoC%2BTIPuXrtGHbuYtNf5%2BtlZn%2BiD17PvdwGTigUTyEOWnghHpI32OJYWvqGuOUxp%2BrKP%2FDiR00wz8%3D&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=VaveIn61514259730321&EMAIL=Siva.nookala%40gmail.com&THEME=merchant&payt_STATUS=1&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=d75a6e32-ef37-41a1-a13a-5529c1108b92
+02-21 11:04:38.830 24949-24949/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@42138920 in: STOPPED
+02-21 11:04:38.860 24949-24949/com.vave.getbike W/AwContents: nativeOnDraw failed; clearing to background color.
+02-21 11:04:38.910 24949-24949/com.vave.getbike D/PGSDK: Page started loading https://pguat.paytm.com/oltp-web/processTransaction
+02-21 11:04:38.910 24949-24949/com.vave.getbike D/PGSDK: Progress dialog started
+02-21 11:04:38.960 24949-24949/com.vave.getbike W/UiControllerImpl: Waiting for: DELAY_HAS_PAST for 100 iterations.
+02-21 11:04:39.420 24949-24949/com.vave.getbike D/PGSDK: Page finished loading https://pguat.paytm.com/oltp-web/processTransaction
+02-21 11:04:39.420 24949-24949/com.vave.getbike D/PGSDK: Progress dialog ended
+02-21 11:04:39.440 24949-24949/com.vave.getbike D/PGSDK: Page started loading https://paytm.com/
+02-21 11:04:39.440 24949-24949/com.vave.getbike D/PGSDK: Progress dialog started
+02-21 11:04:44.090 24949-24949/com.vave.getbike D/dalvikvm: GC_FOR_ALLOC freed 738K, 51% free 5574K/11180K, paused 31ms, total 31ms
+02-21 11:04:48.870 24949-24949/com.vave.getbike D/PGSDK: Page finished loading https://paytm.com/
+02-21 11:04:48.870 24949-24949/com.vave.getbike D/PGSDK: Progress dialog ended
+
+
+
+
+
+02-21 11:15:34.910 30111-30204/com.vave.getbike I/System.out: HTTP Response received for http://test.getbike.co.in/wallet/getBalanceAmount
+02-21 11:15:34.910 30111-30204/com.vave.getbike I/System.out: {"result":"failure"}
+02-21 11:15:34.910 30111-30204/com.vave.getbike I/System.out: BaseSyncher AccessToken = 672ccd52-8237-4285-9d38-a2dd02629fd0
+02-21 11:15:35.820 30111-30111/com.vave.getbike W/UiControllerImpl: Waiting for: ASYNC_TASKS_HAVE_IDLED for 100 iterations.
+02-21 11:15:37.500 30111-30111/com.vave.getbike W/UiControllerImpl: Waiting for: ASYNC_TASKS_HAVE_IDLED for 200 iterations.
+02-21 11:15:39.170 30111-30111/com.vave.getbike W/UiControllerImpl: Waiting for: ASYNC_TASKS_HAVE_IDLED for 300 iterations.
+02-21 11:15:40.850 30111-30111/com.vave.getbike W/UiControllerImpl: Waiting for: ASYNC_TASKS_HAVE_IDLED for 400 iterations.
+02-21 11:15:42.520 30111-30111/com.vave.getbike W/UiControllerImpl: Waiting for: ASYNC_TASKS_HAVE_IDLED for 500 iterations.
+02-21 11:15:43.230 30111-30185/com.vave.getbike W/DynamiteModule: Local module descriptor class for com.google.firebase.auth not found.
+02-21 11:15:43.510 30111-30204/com.vave.getbike I/System.out: HTTP Response received for http://test.getbike.co.in/wallet/myEntries
+02-21 11:15:43.510 30111-30204/com.vave.getbike I/System.out: {"entries":[{"id":1545,"userId":2,"transactionDateTime":1487144323939,"amount":-20.0,"description":"Given Ride with Trip ID : 3105 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":null,"statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":1514,"userId":2,"transactionDateTime":1487123020039,"amount":-20.0,"description":"Given Ride with Trip ID : 3073 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":null,"statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":1482,"userId":2,"transactionDateTime":1486622538125,"amount":500.0,"description":"Bonus Points from GetBike","type":"BonusPoints","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":1481,"userId":2,"transactionDateTime":1486622401612,"amount":-10.0,"description":"Recharged amount of Rs. 1.0 for your mobile number 555","type":"MobileRecharge","mobileNumber":"555","operator":"Airtel","circle":"Andhra Pradesh","walletName":null,"isAmountPaidStatus":"Rejected","statusActedAt":1486622420348,"userName":"Siva Nookala","pgDetails":null},{"id":1316,"userId":2,"transactionDateTime":1486371020532,"amount":100.0,"description":"Bonus Points from GetBike","type":"BonusPoints","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":1153,"userId":2,"transactionDateTime":1486114153429,"amount":-10.0,"description":"Recharged amount of Rs. 1.0 for your mobile number 888","type":"MobileRecharge","mobileNumber":"888","operator":"Airtel","circle":"Andhra Pradesh","walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":676,"userId":2,"transactionDateTime":1485491231777,"amount":-20.0,"description":"Given Ride with Trip ID : 2286 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":451,"userId":2,"transactionDateTime":1485214020218,"amount":-20.0,"description":"Given Ride with Trip ID : 1955 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":450,"userId":2,"transactionDateTime":1485213164365,"amount":-20.0,"description":"Given Ride with Trip ID : 1954 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":367,"userId":2,"transactionDateTime":1485161419232,"amount":-20.0,"description":"Given Ride with Trip ID : 1871 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":366,"userId":2,"transactionDateTime":1485160661871,"amount":-20.0,"description":"Given Ride with Trip ID : 1869 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":365,"userId":2,"transactionDateTime":1485160383988,"amount":-20.0,"description":"Given Ride with Trip ID : 1863 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":362,"userId":2,"transactionDateTime":1485159584258,"amount":-20.0,"description":"Given Ride with Trip ID : 1867 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":
+02-21 11:15:43.720 30111-30204/com.vave.getbike D/GetBikeAsyncTask: onPreExecuteEnd
+02-21 11:15:43.720 30111-30204/com.vave.getbike I/System.out: BaseSyncher AccessToken = 672ccd52-8237-4285-9d38-a2dd02629fd0
+02-21 11:15:44.060 30111-30204/com.vave.getbike I/System.out: HTTP Response received for http://test.getbike.co.in/wallet/getBalanceAmount
+02-21 11:15:44.060 30111-30204/com.vave.getbike I/System.out: {"balanceAmount":1660.0,"freeRidesEarned":0,"freeRidesSpent":0,"cashBalance":0.0,"promoBalance":1660.0,"userBalance":1660.0,"result":"success"}
+02-21 11:15:44.080 30111-30204/com.vave.getbike I/System.out: BaseSyncher AccessToken = 672ccd52-8237-4285-9d38-a2dd02629fd0
+02-21 11:15:44.110 30111-30111/com.vave.getbike W/UiControllerImpl: Waiting for: ASYNC_TASKS_HAVE_IDLED for 600 iterations.
+02-21 11:15:45.790 30111-30111/com.vave.getbike W/UiControllerImpl: Waiting for: ASYNC_TASKS_HAVE_IDLED for 700 iterations.
+02-21 11:15:45.800 30111-30204/com.vave.getbike I/System.out: HTTP Response received for http://test.getbike.co.in/wallet/myEntries
+02-21 11:15:45.800 30111-30204/com.vave.getbike I/System.out: {"entries":[{"id":1545,"userId":2,"transactionDateTime":1487144323939,"amount":-20.0,"description":"Given Ride with Trip ID : 3105 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":null,"statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":1514,"userId":2,"transactionDateTime":1487123020039,"amount":-20.0,"description":"Given Ride with Trip ID : 3073 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":null,"statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":1482,"userId":2,"transactionDateTime":1486622538125,"amount":500.0,"description":"Bonus Points from GetBike","type":"BonusPoints","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":1481,"userId":2,"transactionDateTime":1486622401612,"amount":-10.0,"description":"Recharged amount of Rs. 1.0 for your mobile number 555","type":"MobileRecharge","mobileNumber":"555","operator":"Airtel","circle":"Andhra Pradesh","walletName":null,"isAmountPaidStatus":"Rejected","statusActedAt":1486622420348,"userName":"Siva Nookala","pgDetails":null},{"id":1316,"userId":2,"transactionDateTime":1486371020532,"amount":100.0,"description":"Bonus Points from GetBike","type":"BonusPoints","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":1153,"userId":2,"transactionDateTime":1486114153429,"amount":-10.0,"description":"Recharged amount of Rs. 1.0 for your mobile number 888","type":"MobileRecharge","mobileNumber":"888","operator":"Airtel","circle":"Andhra Pradesh","walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":676,"userId":2,"transactionDateTime":1485491231777,"amount":-20.0,"description":"Given Ride with Trip ID : 2286 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":451,"userId":2,"transactionDateTime":1485214020218,"amount":-20.0,"description":"Given Ride with Trip ID : 1955 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":450,"userId":2,"transactionDateTime":1485213164365,"amount":-20.0,"description":"Given Ride with Trip ID : 1954 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":367,"userId":2,"transactionDateTime":1485161419232,"amount":-20.0,"description":"Given Ride with Trip ID : 1871 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":366,"userId":2,"transactionDateTime":1485160661871,"amount":-20.0,"description":"Given Ride with Trip ID : 1869 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":365,"userId":2,"transactionDateTime":1485160383988,"amount":-20.0,"description":"Given Ride with Trip ID : 1863 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":"Raised","statusActedAt":null,"userName":"Siva Nookala","pgDetails":null},{"id":362,"userId":2,"transactionDateTime":1485159584258,"amount":-20.0,"description":"Given Ride with Trip ID : 1867 for Rs. 20.0","type":"RideGiven","mobileNumber":null,"operator":null,"circle":null,"walletName":null,"isAmountPaidStatus":
+02-21 11:15:46.060 30111-30111/com.vave.getbike I/ViewInteraction: Performing 'single click' action on view with id: com.vave.getbike:id/addMoney
+02-21 11:15:46.150 30111-30111/com.vave.getbike D/MonitoringInstrumentation: execStartActivity(context, ibinder, ibinder, activity, intent, int, bundle
+02-21 11:15:46.150 30111-30111/com.vave.getbike I/Timeline: Timeline: Activity_launch_request id:com.vave.getbike time:54088122
+02-21 11:15:46.160 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.GetBikeWalletHome@41dab068 in: PAUSED
+02-21 11:15:46.180 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@4211c740 in: PRE_ON_CREATE
+02-21 11:15:46.240 30111-30111/com.vave.getbike D/GetBikeAsyncTask: onPreExecuteStart
+02-21 11:15:46.270 30111-30111/com.vave.getbike D/GetBikeAsyncTask: onPreExecuteEnd
+02-21 11:15:46.270 30111-30204/com.vave.getbike D/GetBikeAsyncTask: onPreExecuteEnd
+02-21 11:15:46.270 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@4211c740 in: CREATED
+02-21 11:15:46.270 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@4211c740 in: STARTED
+02-21 11:15:46.270 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@4211c740 in: RESUMED
+02-21 11:15:46.270 30111-30204/com.vave.getbike I/System.out: BaseSyncher AccessToken = 672ccd52-8237-4285-9d38-a2dd02629fd0
+02-21 11:15:46.330 30111-30111/com.vave.getbike D/dalvikvm: GC_FOR_ALLOC freed 5392K, 49% free 5723K/11180K, paused 30ms, total 30ms
+02-21 11:15:46.410 30111-30111/com.vave.getbike I/Timeline: Timeline: Activity_idle id: android.os.BinderProxy@42110b60 time:54088384
+02-21 11:15:46.600 30111-30204/com.vave.getbike I/System.out: HTTP Response received for http://test.getbike.co.in/getPrivateProfile
+02-21 11:15:46.600 30111-30204/com.vave.getbike I/System.out: {"privateProfile":{"id":2,"name":"Siva Nookala","email":"Siva.nookala@gmail.com","password":null,"role":null,"phoneNumber":"9949287789","gender":"M","authToken":"672ccd52-8237-4285-9d38-a2dd02629fd0","gcmCode":"elm-h_kHSEU:APA91bFe7RQYo6UBbvDord7aQsP36TXI48jfeWZ5IaIXMNBObG4WoWQza56VtnAZQRna4b2mlII4ChGB8SGa8-OVQlBKs12ZbPYJWyXpmEMM6sFwaHt8mSNScyDUT3mguD7UIg3aadEM","vehiclePlateImageName":"uploads/2-vp-0cee9346-4ce1-4bc5-9476-395367bfcbf1.png","vehicleNumber":"AAp09Bf3497","drivingLicenseImageName":"uploads/2-dl-be746b23-e116-42a0-864f-8e107e0c6517.png","drivingLicenseNumber":"77362862","validProofsUploaded":true,"currentRideId":null,"currentRequestRideId":null,"lastKnownLatitude":14.9026666,"lastKnownLongitude":79.9939655,"lastLocationTime":1487588681541,"occupation":"Apps Developer","city":"Kavali","yearOfBirth":"1992","homeLocation":"Kavali","officeLocation":"Kavali","profileImage":"uploads/2-profile-dd14252c-75e6-48b5-bce8-6b118279a446.png","mobileVerified":false,"accountHolderName":"Siva Nookala","accountNumber":"12345678","ifscCode":"IFC120003","bankName":"Axis","branchName":"KAVALI BRANCH","promoCode":"siva293341","spePrice":null,"signupPromoCode":null,"freeRidesEarned":0,"freeRidesSpent":0,"appVersion":"1.8~8~1.8d","displayName":"Siva Nookala","rideInProgress":false,"specialPrice":false,"requestInProgress":false},"result":"success"}
+02-21 11:15:46.900 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.GetBikeWalletHome@41dab068 in: STOPPED
+02-21 11:15:46.980 30111-30111/com.vave.getbike I/ViewInteraction: Performing 'single click' action on view with id: com.vave.getbike:id/amountRadioButton200
+02-21 11:15:47.430 30111-30111/com.vave.getbike I/ViewInteraction: Performing 'single click' action on view with id: com.vave.getbike:id/paytm
+02-21 11:15:47.520 30111-30111/com.vave.getbike D/PGSDK: INDUSTRY_TYPE_ID = Retail
+02-21 11:15:47.520 30111-30111/com.vave.getbike D/PGSDK: ORDER_ID = 81c3cfcf-37c7-4b66-9101-7f2bbd2c7340
+02-21 11:15:47.520 30111-30111/com.vave.getbike D/PGSDK: MOBILE_NO = 9949287789
+02-21 11:15:47.520 30111-30111/com.vave.getbike D/PGSDK: CHANNEL_ID = WAP
+02-21 11:15:47.520 30111-30111/com.vave.getbike D/PGSDK: CUST_ID = CUST23657
+02-21 11:15:47.520 30111-30111/com.vave.getbike D/PGSDK: EMAIL = Siva.nookala@gmail.com
+02-21 11:15:47.520 30111-30111/com.vave.getbike D/PGSDK: MID = WorldP64425807474247
+02-21 11:15:47.520 30111-30111/com.vave.getbike D/PGSDK: THEME = merchant
+02-21 11:15:47.520 30111-30111/com.vave.getbike D/PGSDK: TXN_AMOUNT = 200
+02-21 11:15:47.520 30111-30111/com.vave.getbike D/PGSDK: WEBSITE = APP_STAGING
+02-21 11:15:47.520 30111-30111/com.vave.getbike D/PGSDK: Starting the Service...
+02-21 11:15:47.520 30111-30111/com.vave.getbike D/MonitoringInstrumentation: execStartActivity(context, ibinder, ibinder, activity, intent, int, bundle
+02-21 11:15:47.520 30111-30111/com.vave.getbike I/Timeline: Timeline: Activity_launch_request id:com.vave.getbike time:54089498
+02-21 11:15:47.550 30111-30111/com.vave.getbike D/PGSDK: Service Started.
+02-21 11:15:47.550 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@4211c740 in: PAUSED
+02-21 11:15:47.580 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@419784e8 in: PRE_ON_CREATE
+02-21 11:15:47.580 30111-30111/com.vave.getbike D/PGSDK: Hide Header true
+02-21 11:15:47.580 30111-30111/com.vave.getbike D/PGSDK: Initializing the UI of Transaction Page...
+02-21 11:15:47.590 30111-30111/com.vave.getbike I/dalvikvm: Could not find method android.webkit.WebSettings.setMixedContentMode, referenced from method com.paytm.pgsdk.PaytmWebView.<init>
+02-21 11:15:47.590 30111-30111/com.vave.getbike W/dalvikvm: VFY: unable to resolve virtual method 1190: Landroid/webkit/WebSettings;.setMixedContentMode (I)V
+02-21 11:15:47.590 30111-30111/com.vave.getbike D/dalvikvm: VFY: replacing opcode 0x6e at 0x002b
+02-21 11:15:47.590 30111-30111/com.vave.getbike I/LibraryLoader: Expected native library version number "",actual native library version number ""
+02-21 11:15:47.590 30111-30111/com.vave.getbike I/chromium: [INFO:library_loader_hooks.cc(116)] Chromium logging enabled: level = 0, default verbosity = 0
+02-21 11:15:47.590 30111-30111/com.vave.getbike I/BrowserStartupController: Initializing chromium process, renderers=0
+02-21 11:15:47.600 30111-30111/com.vave.getbike E/AudioManagerAndroid: BLUETOOTH permission is missing!
+02-21 11:15:47.640 30111-30440/com.vave.getbike W/chromium: [WARNING:proxy_service.cc(890)] PAC support disabled because there is no system implementation
+02-21 11:15:47.660 30111-30111/com.vave.getbike D/PGSDK: Initialized UI of Transaction Page.
+02-21 11:15:47.660 30111-30111/com.vave.getbike D/PGSDK: Starting the Process...
+02-21 11:15:47.660 30111-30111/com.vave.getbike D/PGSDK: Starting the Client Authentication...
+02-21 11:15:47.660 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@419784e8 in: CREATED
+02-21 11:15:47.660 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@419784e8 in: STARTED
+02-21 11:15:47.660 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@419784e8 in: RESUMED
+02-21 11:15:47.660 30111-30204/com.vave.getbike D/PGSDK: URL is http://test.getbike.co.in/paytmCheckSumGenerator
+02-21 11:15:47.660 30111-30204/com.vave.getbike D/PGSDK: New Connection is created.
+02-21 11:15:47.660 30111-30204/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-21 11:15:47.660 30111-30204/com.vave.getbike D/PGSDK: Extracted String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=WorldP64425807474247&EMAIL=Siva.nookala@gmail.com&THEME=merchant&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=81c3cfcf-37c7-4b66-9101-7f2bbd2c7340
+02-21 11:15:47.670 30111-30204/com.vave.getbike D/PGSDK: Getting the output stream to post
+02-21 11:15:47.680 30111-30204/com.vave.getbike D/PGSDK: posting......
+02-21 11:15:47.680 30111-30204/com.vave.getbike D/PGSDK: posted parameters and closing output stream
+02-21 11:15:47.740 30111-30111/com.vave.getbike I/Timeline: Timeline: Activity_idle id: android.os.BinderProxy@419c0568 time:54089718
+02-21 11:15:48.060 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@4211c740 in: STOPPED
+02-21 11:15:48.140 30111-30204/com.vave.getbike D/PGSDK: Response code is 200
+02-21 11:15:48.140 30111-30204/com.vave.getbike D/PGSDK: Response Message is OK
+02-21 11:15:48.140 30111-30204/com.vave.getbike D/PGSDK: Getting the input stream to read response
+02-21 11:15:48.150 30111-30204/com.vave.getbike D/PGSDK: reading......
+02-21 11:15:48.150 30111-30204/com.vave.getbike D/PGSDK: read response and closing input stream
+02-21 11:15:48.150 30111-30204/com.vave.getbike D/PGSDK: connection is disconnected
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: Response is {"CHANNEL_ID":"WAP","CHECKSUMHASH":"hrcuaRueHQXhzVxFzpoWedePVyA/rv7Y2Icb3Dte8404xCKx4A1k1yKQjIkbEPldp8kgm+CEuPcjkxiKt/zLgcJDgiSFqPTH8DUIXKD6BvQ=","CUST_ID":"CUST23657","INDUSTRY_TYPE_ID":"Retail","MID":"VaveIn61514259730321","ORDER_ID":"81c3cfcf-37c7-4b66-9101-7f2bbd2c7340","TXN_AMOUNT":"200","WEBSITE":"APP_STAGING","payt_STATUS":"1"}
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: Parsing JSON
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: Appending Key Value pairs
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: Send All Checksum Response Parameters to PG true
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: INDUSTRY_TYPE_ID = Retail
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: payt_STATUS = 1
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: ORDER_ID = 81c3cfcf-37c7-4b66-9101-7f2bbd2c7340
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: CUST_ID = CUST23657
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: CHANNEL_ID = WAP
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: MID = VaveIn61514259730321
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: WEBSITE = APP_STAGING
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: TXN_AMOUNT = 200
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: CHECKSUMHASH = hrcuaRueHQXhzVxFzpoWedePVyA/rv7Y2Icb3Dte8404xCKx4A1k1yKQjIkbEPldp8kgm+CEuPcjkxiKt/zLgcJDgiSFqPTH8DUIXKD6BvQ=
+02-21 11:15:48.150 30111-30111/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-21 11:15:48.160 30111-30111/com.vave.getbike D/PGSDK: URL encoded String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&CHECKSUMHASH=hrcuaRueHQXhzVxFzpoWedePVyA%2Frv7Y2Icb3Dte8404xCKx4A1k1yKQjIkbEPldp8kgm%2BCEuPcjkxiKt%2FzLgcJDgiSFqPTH8DUIXKD6BvQ%3D&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=VaveIn61514259730321&EMAIL=Siva.nookala%40gmail.com&THEME=merchant&payt_STATUS=1&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=81c3cfcf-37c7-4b66-9101-7f2bbd2c7340
+02-21 11:15:48.170 30111-30111/com.vave.getbike W/AwContents: nativeOnDraw failed; clearing to background color.
+02-21 11:15:48.240 30111-30111/com.vave.getbike D/PGSDK: Page started loading https://pguat.paytm.com/oltp-web/processTransaction
+02-21 11:15:48.240 30111-30111/com.vave.getbike D/PGSDK: Progress dialog started
+02-21 11:15:48.410 30111-30111/com.vave.getbike W/UiControllerImpl: Waiting for: DELAY_HAS_PAST for 100 iterations.
+02-21 11:15:48.780 30111-30468/com.vave.getbike D/dalvikvm: GC_FOR_ALLOC freed 926K, 49% free 5729K/11180K, paused 22ms, total 22ms
+02-21 11:15:49.030 30111-30111/com.vave.getbike D/PGSDK: Page finished loading https://pguat.paytm.com/oltp-web/processTransaction
+02-21 11:15:49.030 30111-30111/com.vave.getbike D/PGSDK: Progress dialog ended
+02-21 11:15:49.040 30111-30111/com.vave.getbike D/PGSDK: Page started loading https://paytm.com/
+02-21 11:15:49.040 30111-30111/com.vave.getbike D/PGSDK: Progress dialog started
+02-21 11:15:50.310 30111-30111/com.vave.getbike D/PGSDK: Page finished loading https://paytm.com/
+02-21 11:15:50.310 30111-30111/com.vave.getbike D/PGSDK: Progress dialog ended
+02-21 11:19:34.180 30111-30111/com.vave.getbike W/UnimplementedWebViewApi: Unimplemented WebView method onKeyDown called from: android.webkit.WebView.onKeyDown(WebView.java:2178)
+02-21 11:19:34.190 30111-30111/com.vave.getbike D/PGSDK: User pressed key and key code is 4
+02-21 11:19:34.190 30111-30111/com.vave.getbike D/PGSDK: User pressed hard key back button
+02-21 11:19:34.190 30111-30111/com.vave.getbike D/PGSDK: Displaying Confirmation Dialog
+02-21 11:19:35.240 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@419784e8 in: PAUSED
+02-21 11:19:35.250 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@4211c740 in: RESTARTED
+02-21 11:19:35.250 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@4211c740 in: STARTED
+02-21 11:19:35.250 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@4211c740 in: RESUMED
+02-21 11:19:35.300 30111-30111/com.vave.getbike I/Timeline: Timeline: Activity_idle id: android.os.BinderProxy@42110b60 time:54317275
+02-21 11:19:35.650 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@419784e8 in: STOPPED
+02-21 11:19:35.650 30111-30111/com.vave.getbike D/PGSDK: Service Stopped.
+02-21 11:19:35.650 30111-30111/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@419784e8 in: DESTROYED
+02-21 11:19:36.260 30111-32748/com.vave.getbike D/FA: Application backgrounded. Logging engagement
+02-21 11:19:36.270 30111-32748/com.vave.getbike I/DynamiteModule: Considering local module com.google.android.gms.tagmanager:3 and remote module com.google.android.gms.tagmanager:9
+02-21 11:19:36.270 30111-32748/com.vave.getbike I/DynamiteModule: Selected remote version of com.google.android.gms.tagmanager, version >= 9
+02-21 11:19:36.500 30111-32748/com.vave.getbike W/GoogleTagManager: No container asset found in /assets/containers. Checking top level /assets directory for container assets.
+02-21 11:19:36.700 30111-32748/com.vave.getbike W/GoogleTagManager: Tag Manager's event handler WILL NOT be installed (no container loaded)
+02-21 11:19:36.710 30111-32748/com.vave.getbike I/GoogleTagManager: Tag Manager initilization took 431ms
+02-21 11:19:36.710 30111-32748/com.vave.getbike D/FA: Logging event (FE): _e, Bundle[{_o=auto, _et=273566}]
+02-21 11:19:36.710 30111-32748/com.vave.getbike D/FA: Connected to remote service
+
+
+
+
+02-22 09:41:01.572 29692-29785/com.vave.getbike D/PGSDK: URL is http://test.getbike.co.in/paytmCheckSumGenerator
+02-22 09:41:01.572 29692-29785/com.vave.getbike D/PGSDK: New Connection is created.
+02-22 09:41:01.572 29692-29785/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-22 09:41:01.582 29692-29785/com.vave.getbike D/PGSDK: Extracted String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=VaveIn61514259730321&EMAIL=Siva.nookala@gmail.com&THEME=merchant&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=5d839fa0-1150-4b5c-9461-42e3a57ceb84
+02-22 09:41:01.582 29692-29785/com.vave.getbike D/PGSDK: Getting the output stream to post
+02-22 09:41:01.592 29692-29785/com.vave.getbike D/PGSDK: posting......
+02-22 09:41:01.592 29692-29785/com.vave.getbike D/PGSDK: posted parameters and closing output stream
+02-22 09:41:01.652 29692-29692/com.vave.getbike I/Timeline: Timeline: Activity_idle id: android.os.BinderProxy@41a277e8 time:82100145
+02-22 09:41:01.942 29692-29785/com.vave.getbike D/PGSDK: Response code is 200
+02-22 09:41:01.942 29692-29785/com.vave.getbike D/PGSDK: Response Message is OK
+02-22 09:41:01.942 29692-29785/com.vave.getbike D/PGSDK: Getting the input stream to read response
+02-22 09:41:01.942 29692-29785/com.vave.getbike D/PGSDK: reading......
+02-22 09:41:01.962 29692-29692/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@4214ca20 in: STOPPED
+02-22 09:41:01.982 29692-29785/com.vave.getbike D/PGSDK: read response and closing input stream
+02-22 09:41:01.982 29692-29785/com.vave.getbike D/PGSDK: connection is disconnected
+02-22 09:41:01.982 29692-29692/com.vave.getbike D/PGSDK: Response is {"CHECKSUMHASH":"f/T48rRmBY0U6Sl4mTzcU7qUhf/Gse68sCFdB18XMe6OEg/GJoJjaK6i1UzDszIgSLemffFGqln2\nzrN+MFNmGDP5ndHbWr41lxb5YP/DRcQ=","ORDER_ID":"5d839fa0-1150-4b5c-9461-42e3a57ceb84","payt_STATUS":"1"}
+02-22 09:41:01.982 29692-29692/com.vave.getbike D/PGSDK: Parsing JSON
+02-22 09:41:01.982 29692-29692/com.vave.getbike D/PGSDK: Appending Key Value pairs
+02-22 09:41:01.982 29692-29692/com.vave.getbike D/PGSDK: Send All Checksum Response Parameters to PG true
+02-22 09:41:01.992 29692-29692/com.vave.getbike D/PGSDK: payt_STATUS = 1
+02-22 09:41:01.992 29692-29692/com.vave.getbike D/PGSDK: ORDER_ID = 5d839fa0-1150-4b5c-9461-42e3a57ceb84
+02-22 09:41:01.992 29692-29692/com.vave.getbike D/PGSDK: CHECKSUMHASH = f/T48rRmBY0U6Sl4mTzcU7qUhf/Gse68sCFdB18XMe6OEg/GJoJjaK6i1UzDszIgSLemffFGqln2
+                                                         zrN+MFNmGDP5ndHbWr41lxb5YP/DRcQ=
+02-22 09:41:01.992 29692-29692/com.vave.getbike D/PGSDK: Extracting Strings from Bundle...
+02-22 09:41:01.992 29692-29692/com.vave.getbike D/PGSDK: URL encoded String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&CHECKSUMHASH=f%2FT48rRmBY0U6Sl4mTzcU7qUhf%2FGse68sCFdB18XMe6OEg%2FGJoJjaK6i1UzDszIgSLemffFGqln2%0AzrN%2BMFNmGDP5ndHbWr41lxb5YP%2FDRcQ%3D&MOBILE_NO=9949287789&TXN_AMOUNT=200&MID=VaveIn61514259730321&EMAIL=Siva.nookala%40gmail.com&THEME=merchant&payt_STATUS=1&CUST_ID=CUST23657&WEBSITE=APP_STAGING&ORDER_ID=5d839fa0-1150-4b5c-9461-42e3a57ceb84
+02-22 09:41:02.102 29692-29692/com.vave.getbike W/AwContents: nativeOnDraw failed; clearing to background color.
+02-22 09:41:02.362 29692-29692/com.vave.getbike D/PGSDK: Page started loading https://pguat.paytm.com/oltp-web/processTransaction
+02-22 09:41:02.362 29692-29692/com.vave.getbike D/PGSDK: Progress dialog started
+02-22 09:41:02.372 29692-29692/com.vave.getbike W/UiControllerImpl: Waiting for: DELAY_HAS_PAST for 100 iterations.
+02-22 09:41:03.702 29692-29692/com.vave.getbike D/dalvikvm: GC_FOR_ALLOC freed 1023K, 51% free 5488K/11180K, paused 32ms, total 32ms
+02-22 09:41:50.262 29692-29698/com.vave.getbike D/dalvikvm: GC_FOR_ALLOC freed 762K, 51% free 5580K/11180K, paused 23ms, total 25ms
+02-22 09:41:53.682 29692-29692/com.vave.getbike D/PGSDK: Page finished loading https://pguat.paytm.com/oltp-web/processTransaction
+02-22 09:41:53.682 29692-29692/com.vave.getbike D/PGSDK: Progress dialog ended
+02-22 09:41:56.252 29692-29692/com.vave.getbike D/PGSDK: Page started loading https://accounts-uat.paytm.com/oauth2/login/otp?response_type=code&scope=paytm&theme=pg-otp&loginData=5d839fa0-1150-4b5c-9461-42e3a57ceb84:VaveIn61514259730321:32297893:WAP:C4F66D6245602305C302785DCD3DC234.VaveIn615142597303215d839fa0-1150-4b5c-9461-42e3a57ceb84.jvm1252:MANUAL:908792283:jvm1252&redirectUri=https://pguat.paytm.com/oltp-web/oauthResponse&clientId=testclient&device=mobile
+02-22 09:41:56.252 29692-29692/com.vave.getbike D/PGSDK: Progress dialog started
+02-22 09:41:57.432 29692-29692/com.vave.getbike D/PGSDK: Page finished loading https://accounts-uat.paytm.com/oauth2/login/otp?response_type=code&scope=paytm&theme=pg-otp&loginData=5d839fa0-1150-4b5c-9461-42e3a57ceb84:VaveIn61514259730321:32297893:WAP:C4F66D6245602305C302785DCD3DC234.VaveIn615142597303215d839fa0-1150-4b5c-9461-42e3a57ceb84.jvm1252:MANUAL:908792283:jvm1252&redirectUri=https://pguat.paytm.com/oltp-web/oauthResponse&clientId=testclient&device=mobile
+02-22 09:41:57.432 29692-29692/com.vave.getbike D/PGSDK: Progress dialog ended
+02-22 09:42:27.092 29692-29692/com.vave.getbike D/PGSDK: Page started loading https://pguat.paytm.com/oltp-web/oauthResponse?code=180d889d-8f0e-4fe2-bc11-dcfa483b74b7&state=5d839fa0-1150-4b5c-9461-42e3a57ceb84:VaveIn61514259730321:32297893:WAP:C4F66D6245602305C302785DCD3DC234.VaveIn615142597303215d839fa0-1150-4b5c-9461-42e3a57ceb84.jvm1252:MANUAL:908792283:jvm1252
+02-22 09:42:27.092 29692-29692/com.vave.getbike D/PGSDK: Progress dialog started
+02-22 09:42:28.952 29692-29692/com.vave.getbike D/PGSDK: Page finished loading https://pguat.paytm.com/oltp-web/oauthResponse?code=180d889d-8f0e-4fe2-bc11-dcfa483b74b7&state=5d839fa0-1150-4b5c-9461-42e3a57ceb84:VaveIn61514259730321:32297893:WAP:C4F66D6245602305C302785DCD3DC234.VaveIn615142597303215d839fa0-1150-4b5c-9461-42e3a57ceb84.jvm1252:MANUAL:908792283:jvm1252
+02-22 09:42:28.952 29692-29692/com.vave.getbike D/PGSDK: Progress dialog ended
+02-22 09:42:28.962 29692-29692/com.vave.getbike D/PGSDK: Page started loading https://pguat.paytm.com/oltp-web/processTransaction?MID=VaveIn61514259730321&ORDER_ID=5d839fa0-1150-4b5c-9461-42e3a57ceb84&route=jvm1252&oauth=true
+02-22 09:42:28.962 29692-29692/com.vave.getbike D/PGSDK: Progress dialog started
+02-22 09:42:30.802 29692-29692/com.vave.getbike D/PGSDK: Page finished loading https://pguat.paytm.com/oltp-web/processTransaction?MID=VaveIn61514259730321&ORDER_ID=5d839fa0-1150-4b5c-9461-42e3a57ceb84&route=jvm1252&oauth=true
+02-22 09:42:30.802 29692-29692/com.vave.getbike D/PGSDK: Progress dialog ended
+02-22 09:42:33.602 29692-29692/com.vave.getbike D/PGSDK: Page started loading https://pguat.paytm.com/oltp-web/submitTransaction?MID=VaveIn61514259730321&ORDER_ID=5d839fa0-1150-4b5c-9461-42e3a57ceb84&route=jvm1252
+02-22 09:42:33.602 29692-29692/com.vave.getbike D/PGSDK: Progress dialog started
+02-22 09:42:34.592 29692-29692/com.vave.getbike D/PGSDK: Page finished loading https://pguat.paytm.com/oltp-web/submitTransaction?MID=VaveIn61514259730321&ORDER_ID=5d839fa0-1150-4b5c-9461-42e3a57ceb84&route=jvm1252
+02-22 09:42:34.592 29692-29692/com.vave.getbike D/PGSDK: Progress dialog ended
+02-22 09:42:34.612 29692-29692/com.vave.getbike D/PGSDK: Page started loading http://test.getbike.co.in/paytmCheckSumVerify
+02-22 09:42:34.612 29692-29692/com.vave.getbike D/PGSDK: Progress dialog started
+02-22 09:42:35.852 29692-29692/com.vave.getbike D/PGSDK: Page finished loading http://test.getbike.co.in/paytmCheckSumVerify
+02-22 09:42:35.852 29692-29692/com.vave.getbike D/PGSDK: Progress dialog ended
+02-22 09:42:35.852 29692-29692/com.vave.getbike D/PGSDK: Merchant specific Callback Url is finished loading. Extract data now.
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: Merchant Response is {"BANKNAME":"","BANKTXNID":"561507","CURRENCY":"INR","GATEWAYNAME":"WALLET","IS_CHECKSUM_VALID":"Y","MID":"VaveIn61514259730321","ORDERID":"5d839fa0-1150-4b5c-9461-42e3a57ceb84","PAYMENTMODE":"PPI","RESPCODE":"01","RESPMSG":"Txn Successful.","STATUS":"TXN_SUCCESS","TXNAMOUNT":"200.00","TXNDATE":"2017-02-22 09:54:13.0","TXNID":"32297893"}
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: Parsing the Merchant Response
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: GATEWAYNAME = WALLET
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: TXNDATE = 2017-02-22 09:54:13.0
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: PAYMENTMODE = PPI
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: STATUS = TXN_SUCCESS
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: MID = VaveIn61514259730321
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: ORDERID = 5d839fa0-1150-4b5c-9461-42e3a57ceb84
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: CURRENCY = INR
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: TXNID = 32297893
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: TXNAMOUNT = 200.00
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: IS_CHECKSUM_VALID = Y
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: BANKTXNID = 561507
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: BANKNAME =
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: RESPMSG = Txn Successful.
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: RESPCODE = 01
+02-22 09:42:35.872 29692-30357/com.vave.getbike D/PGSDK: Valid Checksum
+02-22 09:42:35.882 29692-29692/com.vave.getbike D/LOG: Payment Transaction is successful Bundle[{STATUS=TXN_SUCCESS, BANKNAME=, ORDERID=5d839fa0-1150-4b5c-9461-42e3a57ceb84, TXNAMOUNT=200.00, TXNDATE=2017-02-22 09:54:13.0, MID=VaveIn61514259730321, TXNID=32297893, RESPCODE=01, PAYMENTMODE=PPI, BANKTXNID=561507, CURRENCY=INR, GATEWAYNAME=WALLET, IS_CHECKSUM_VALID=Y, RESPMSG=Txn Successful.}]
+02-22 09:42:35.882 29692-29692/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197e7e0 in: PAUSED
+02-22 09:42:35.902 29692-29692/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@4214ca20 in: RESTARTED
+02-22 09:42:35.902 29692-29692/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@4214ca20 in: STARTED
+02-22 09:42:35.902 29692-29692/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.vave.getbike.activity.PayUPaymentActivity@4214ca20 in: RESUMED
+02-22 09:42:35.922 29692-29692/com.vave.getbike I/Timeline: Timeline: Activity_idle id: android.os.BinderProxy@42140d50 time:82194418
+02-22 09:42:36.272 29692-29692/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197e7e0 in: STOPPED
+02-22 09:42:36.272 29692-29692/com.vave.getbike D/PGSDK: Service Stopped.
+02-22 09:42:36.272 29692-29692/com.vave.getbike D/LifecycleMonitor: Lifecycle status change: com.paytm.pgsdk.PaytmPGActivity@4197e7e0 in: DESTROYED
+
+http://server.getbike.co.in/paytmCheckSumGenerator
+http://server.getbike.co.in/paytmCheckSumVerify
+
+
+0, t0.bank_name c31, t0.branch_name c32, t0.promo_code c33, t0.is_special_price c34, t0.spe_price c35, t0.signup_promo_code c36, t0.free_rides_earned c37, t0.free_rides_spent c38, t0.app_version c39 from user t0 where t0.auth_token = ?
+2017-02-22 11:10:35,685 [INFO] from application in application-akka.actor.default-dispatcher-5 - formUrlEncoded {CUST_ID=[Ljava.lang.String;@715e71e4, MOBILE_NO=[Ljava.lang.String;@89de315, MID=[Ljava.lang.String;@5e9a73b2, CHANNEL_ID=[Ljava.lang.String;@69c2b22c, THEME=[Ljava.lang.String;@6b112fa1, EMAIL=[Ljava.lang.String;@cf3fc9d, ORDER_ID=[Ljava.lang.String;@1790952, TXN_AMOUNT=[Ljava.lang.String;@7dd68883, WEBSITE=[Ljava.lang.String;@1fd8dcbf, INDUSTRY_TYPE_ID=[Ljava.lang.String;@cdccccd}
+2017-02-22 11:10:53,723 [INFO] from application in application-akka.actor.default-dispatcher-9 - formUrlEncoded {TXNID=[Ljava.lang.String;@fec0a7e, ORDERID=[Ljava.lang.String;@40a05705, BANKNAME=[Ljava.lang.String;@2b5dbf6c, TXNAMOUNT=[Ljava.lang.String;@64722839, MID=[Ljava.lang.String;@ba27133, STATUS=[Ljava.lang.String;@4978073d, TXNDATE=[Ljava.lang.String;@f9877a1, RESPCODE=[Ljava.lang.String;@7adea58b, GATEWAYNAME=[Ljava.lang.String;@626d680a, CURRENCY=[Ljava.lang.String;@6ba5da95, CHECKSUMHASH=[Ljava.lang.String;@274c8d3f, PAYMENTMODE=[Ljava.lang.String;@283196a0, RESPMSG=[Ljava.lang.String;@21958694, BANKTXNID=[Ljava.lang.String;@64a19141}
+2017-02-22 11:10:53,725 [INFO] from application in application-akka.actor.default-dispatcher-9 - Paytm Response Param : TXNID=32298068
+2017-02-22 11:10:53,725 [INFO] from application in application-akka.actor.default-dispatcher-9 - Paytm Response Param : ORDERID=23a6618c-8cc7-468e-a05e-099999ed980c
+2017-02-22 11:10:53,725 [INFO] from application in application-akka.actor.default-dispatcher-9 - Paytm Response Param : BANKNAME=
+2017-02-22 11:10:53,725 [INFO] from application in application-akka.actor.default-dispatcher-9 - Paytm Response Param : TXNAMOUNT=200.00
+2017-02-22 11:10:53,725 [INFO] from application in application-akka.actor.default-dispatcher-9 - Paytm Response Param : MID=VaveIn61514259730321
+2017-02-22 11:10:53,725 [INFO] from application in application-akka.actor.default-dispatcher-9 - Paytm Response Param : STATUS=TXN_SUCCESS
+2017-02-22 11:10:53,725 [INFO] from application in application-akka.actor.default-dispatcher-9 - Paytm Response Param : TXNDATE=2017-02-22 11:23:44.0
+2017-02-22 11:10:53,725 [INFO] from application in application-akka.actor.default-dispatcher-9 - Paytm Response Param : RESPCODE=01
+2017-02-22 11:10:53,725 [INFO] from application in application-akka.actor.default-dispatcher-9 - Paytm Response Param : GATEWAYNAME=WALLET
+2017-02-22 11:10:53,725 [INFO] from application in application-akka.actor.default-dispatcher-9 - Paytm Response Param : CURRENCY=INR
+2017-02-22 11:10:53,725 [INFO] from application in application-akka.actor.default-dispatcher-9 - Paytm Response Param : PAYMENTMODE=PPI
+2017-02-22 11:10:53,725 [INFO] from application in application-akka.actor.default-dispatcher-9 - Paytm Response Param : RESPMSG=Txn Successful.
+2017-02-22 11:10:53,725 [INFO] from application in application-akka.actor.default-dispatcher-9 - Paytm Response Param : BANKTXNID=561723
+2017-02-22 11:10:53,728 [DEBUG] from org.avaje.ebean.SQL in application-akka.actor.default-dispatcher-9 - txn[1079] select t0.id c0, t0.order_identifier c1, t0.user_id c2, t0.order_date_time c3, t0.amount c4, t0.order_type c5, t0.ride_id c6, t0.description c7, t0.status c8, t0.txn_id c9, t0.response_date_time c10, t0.pg_details c11 from payment_order t0 where t0.order_identifier = ?
+
+
+
+017-02-22 15:26:45,125 [INFO] from application in application-akka.actor.default-dispatcher-7 - STEP 1
+2017-02-22 15:26:45,126 [INFO] from application in application-akka.actor.default-dispatcher-7 - STEP 2
+2017-02-22 15:26:45,126 [INFO] from application in application-akka.actor.default-dispatcher-7 - STEP 3
+2017-02-22 15:26:45,126 [INFO] from application in application-akka.actor.default-dispatcher-7 - STEP 4
+2017-02-22 15:26:45,127 [INFO] from application in application-akka.actor.default-dispatcher-7 - STEP 5
+
+
+GetBike123
+GetBike@123
+GetBike1234
+GetBike@1234
+
+
+Getbike123
+Getbike@123
+Getbike1234
+Getbike@1234
+
+
+getbike123
+getbike@123
+getbike1234
+getbike@1234
+
+
+getbike
+GetBike
+Getbike
+
+
+naaishtam
+N@@1sh8m.
+
+Freem@n22
+Freem@n1

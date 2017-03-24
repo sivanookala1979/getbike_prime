@@ -1,0 +1,12 @@
+<resources>
+ <string name="density_bucket">xhdpi</string>
+ <dimen name="text_size_very_large">24sp</dimen>
+    <dimen name="text_size_large">22sp</dimen>
+    <dimen name="text_size_medium">20sp</dimen>
+    <dimen name="text_size_intermediate">18sp</dimen>
+    <dimen name="text_size_small">16sp</dimen>
+    <dimen name="text_size_too_small">12sp</dimen>
+   <dimen name="text_size_very_small">12sp</dimen>
+
+
+</resources>

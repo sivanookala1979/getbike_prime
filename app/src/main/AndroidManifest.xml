@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vave.getbike">
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-feature android:name="android.hardware.camera"/>
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <permission
+        android:name="com.vave.getbike.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
+
+    <uses-permission android:name="com.vave.getbike.permission.C2D_MESSAGE"/>
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDxqQEvtdEtl6dDIvG7vcm6QTO45Si0FZs"/>
+
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:theme="@style/SplashTheme">
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SignupActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.RequestRideActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.LocationActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.LogoScreenActivity"
+            android:screenOrientation="portrait"/>
+
+        <receiver
+            android:name=".helpers.SmsBroadcastReceiver"
+            android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+
+                <category android:name="com.vave.getbike"/>
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".gcm.MyGcmListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name=".gcm.MyInstanceIDListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name=".gcm.RegistrationIntentService"
+            android:exported="false"/>
+
+        <activity android:name=".activity.AcceptRejectRideActivity"/>
+        <activity android:name=".activity.WaitForRiderAllocationActivity"/>
+        <activity android:name=".activity.OpenRidesActivity"/>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+
+        <activity android:name=".activity.MyCompletedRidesActivity"/>
+        <activity android:name=".activity.RidesGivenByMeActivity"/>
+        <activity android:name=".activity.ShowCompletedRideActivity"/>
+        <activity android:name=".activity.GiveRideTakeRideActivity"/>
+        <activity android:name=".activity.GiveDestinationAddressActivity"/>
+        <activity android:name=".activity.RiderProfileActivity"/>
+        <activity android:name=".activity.WaitForRiderAfterAcceptanceActivity"/>
+        <activity android:name=".activity.HailCustomerActivity"/>
+        <activity android:name=".activity.ProfileAndSettingsActivity"/>
+        <activity android:name=".activity.RedeemAmountActivity"/>
+        <activity android:name=".activity.PersonalDetailsActivity"/>
+        <activity android:name=".activity.GetBikeWalletHome"/>
+        <activity android:name=".activity.BankAccountDetailsActivity"/>
+        <activity android:name=".activity.FAQActivity"></activity>
+        <activity android:name=".activity.GetBikeFriendsActivity"></activity>
+        <activity android:name=".activity.ShareActivity"></activity>
+        <activity android:name=".activity.ScheduleRideActivity"/>
+        <activity android:name=".activity.ScheduledRidesAndHistoryActivity"/>
+        <activity android:name=".activity.PayUPaymentActivity"/>
+        <activity
+            android:name="com.paytm.pgsdk.PaytmPGActivity"
+            android:configChanges="keyboardHidden|orientation|keyboard"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

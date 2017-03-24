@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#263238</color>
+    <color name="colorPrimaryDark">#263238</color>
+    <color name="colorAccent">#263238</color>
+    <color name="black">#000000</color>
+    <color name="login_background">#1b1b1b</color>
+    <color name="yellow">#efc51b</color>
+    <item name="gray_holo_dark" type="color">#ff464646</item>
+    <item name="gray_holo_light" type="color">#ffd0d0d0</item>
+    <color name="text_color">#999999</color>
+    <color name="white">#ffffff</color>
+    <color name="list_item_background">#101010</color>
+    <color name="list_item_divider">#f7f7f7</color>
+    <color name="login">#999999</color>
+    <color name="color_heading">#CCCCCC</color>
+    <color name="dark_red">#B71C1C</color>
+    <color name="red">#f02b2b</color>
+    <color name="transparent">#50ffffff</color>
+    <color name="get_bike_black">#263338</color>
+    <color name="get_bike_transparent">#50263338</color>
+    <color name="get_bike_orange">#FFA500</color>
+    <color name="background">#e5e5e5</color>
+    <color name="gray">#f2f2f2</color>
+    <color name="light_green">#00ff00</color>
+    <color name="thick_green">#006400</color>
+
+
+
+
+</resources>

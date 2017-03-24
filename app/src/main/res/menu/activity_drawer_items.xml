@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/home_icon"
+            android:title="Home" />
+        <item
+            android:id="@+id/ridesAndHistory"
+            android:icon="@mipmap/history"
+            android:title="Scheduled Rides and History" />
+        <item
+            android:id="@+id/wallet"
+            android:icon="@mipmap/wallet"
+            android:title="Wallet" />
+        <item
+            android:id="@+id/earnFreeRides"
+            android:icon="@drawable/earnings"
+            android:title="Earn Free Rides" />
+        <item
+            android:id="@+id/profilAndSettings"
+            android:icon="@drawable/settings"
+            android:title="Profile And Settings" />
+        <!--<item
+            android:id="@+id/support"
+            android:icon="@drawable/support_icon_hands"
+            android:title="Support" />-->
+        <item
+            android:id="@+id/logout"
+            android:icon="@mipmap/logout"
+            android:title="Logout" />
+    </group>
+
+</menu>

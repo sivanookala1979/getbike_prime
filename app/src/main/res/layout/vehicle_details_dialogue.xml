@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/get_bike_transparent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/get_bike_black"
+                android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Vehicle Details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_intermediate" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minHeight="150dp">
+
+                <ImageView
+                    android:id="@+id/vehiclePicture"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/picture" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Vehicle plate number"
+                    android:textColor="@color/get_bike_black"
+                    android:textSize="@dimen/text_size_intermediate" />
+
+                <TextView
+                    android:id="@+id/vehicleNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/border_style"
+                    android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                    android:gravity="center"
+                    android:hint="TS XX EA XXXX"
+                    android:minHeight="40dp"
+                    android:padding="5dp"
+                    android:textColor="@color/get_bike_black"
+                    android:textSize="@dimen/text_size_intermediate" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/close"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/get_bike_orange"
+                android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Close"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_intermediate" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
