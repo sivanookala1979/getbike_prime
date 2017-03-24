@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/getbike_prime.iml" filepath="$PROJECT_DIR$/getbike_prime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sdkui2/sdkui2.iml" filepath="$PROJECT_DIR$/sdkui2/sdkui2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serverlib/serverlib.iml" filepath="$PROJECT_DIR$/serverlib/serverlib.iml" />
+    </modules>
+  </component>
+</project>

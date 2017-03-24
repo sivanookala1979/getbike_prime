@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="payu-sdk-4.4.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sdkui2/build/intermediates/exploded-aar/com.payu.india/payu-sdk/4.4.1/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/sdkui2/build/intermediates/exploded-aar/com.payu.india/payu-sdk/4.4.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.payu.india/payu-sdk/4.4.1/e6a5ec05a2835afba57d7979d5e8613225c2d506/payu-sdk-4.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
