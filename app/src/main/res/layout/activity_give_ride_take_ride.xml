@@ -102,13 +102,14 @@
                     android:layout_margin="5dp"
                     android:background="@drawable/give_ride_large_2"
                     android:textColor="@color/white"/>
-
-                <ImageButton
-                    android:id="@+id/takeRide"
+                <Button
+                    android:id="@+id/deliverParcel"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:layout_margin="5dp"
-                    android:background="@drawable/take_ride_large_2"
+                    android:text="Deliver Parcel"
+                    android:textSize="20dp"
+                    android:background="@color/colorPrimaryDark"
                     android:textColor="@color/white"/>
 
                 <TextView

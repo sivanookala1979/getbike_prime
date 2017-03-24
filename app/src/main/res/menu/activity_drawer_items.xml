@@ -7,25 +7,30 @@
             android:icon="@drawable/home_icon"
             android:title="Home" />
         <item
-            android:id="@+id/ridesAndHistory"
-            android:icon="@mipmap/history"
-            android:title="Scheduled Rides and History" />
-        <item
-            android:id="@+id/wallet"
-            android:icon="@mipmap/wallet"
-            android:title="Wallet" />
-        <item
-            android:id="@+id/earnFreeRides"
+            android:id="@+id/earnings"
             android:icon="@drawable/earnings"
-            android:title="Earn Free Rides" />
+            android:title="Earnings" />
         <item
-            android:id="@+id/profilAndSettings"
+            android:id="@+id/history"
+            android:icon="@mipmap/history"
+            android:title="History" />
+        <item
+            android:id="@+id/about"
+            android:icon="@mipmap/about"
+            android:title="About" />
+        <item
+            android:id="@+id/deliveries"
+            android:title="Deliveries" />
+        <item
+            android:id="@+id/share"
             android:icon="@drawable/settings"
-            android:title="Profile And Settings" />
-        <!--<item
-            android:id="@+id/support"
-            android:icon="@drawable/support_icon_hands"
-            android:title="Support" />-->
+            android:title="Share" />
+        <item
+            android:id="@+id/notifications"
+            android:title="Notification" />
+        <item
+            android:id="@+id/bills"
+            android:title="Bills" />
         <item
             android:id="@+id/logout"
             android:icon="@mipmap/logout"

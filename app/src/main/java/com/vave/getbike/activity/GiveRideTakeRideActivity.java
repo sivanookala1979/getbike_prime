@@ -90,7 +90,6 @@ public class GiveRideTakeRideActivity extends BaseActivity implements OnMapReady
     String applicationVersionFromStrings = "xxxx";
     private Location mCurrentLocation;
     private LocationManager locationManager;
-    private ImageButton takeRide;
     private ImageButton giveRide;
     boolean geoFencingValidationResult = false;
     String geoFencingAddresses = " ";
@@ -189,8 +188,6 @@ public class GiveRideTakeRideActivity extends BaseActivity implements OnMapReady
                 getSystemService(Context.LOCATION_SERVICE);
         showCurrentRideButton = (Button) findViewById(R.id.show_current_ride_button);
         giveRideTakeRideLinearLayout = (LinearLayout) findViewById(R.id.give_ride_take_ride_linear_layout);
-        takeRide = (ImageButton) findViewById(R.id.takeRide);
-        takeRide.setOnClickListener(this);
         giveRide = (ImageButton) findViewById(R.id.giveRide);
         giveRide.setOnClickListener(this);
         showCurrentRideButton.setOnClickListener(new View.OnClickListener() {
@@ -451,14 +448,6 @@ public class GiveRideTakeRideActivity extends BaseActivity implements OnMapReady
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.takeRide:
-                if (geoFencingValidationResult){
-                    launchActivity(GiveDestinationAddressActivity.class);
-                }
-                else {
-                    geoFencingValidationPopUpMessage(geoFencingAddresses);
-                }
-                break;
             case R.id.giveRide:
                 new GetBikeAsyncTask(GiveRideTakeRideActivity.this) {
                     Profile publicProfile;
