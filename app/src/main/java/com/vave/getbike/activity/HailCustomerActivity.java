@@ -174,7 +174,7 @@ public class HailCustomerActivity extends AppCompatActivity implements OnMapRead
                 @Override
                 public void afterPostExecute() {
                     ArrayList<String> vendorNames = new ArrayList<String>();
-                    vendorNames.add("Not Vendor");
+                    vendorNames.add("Choose the Vendor");
                     for (Vendor vendor : vendors) {
                         vendorNames.add(vendor.getName());
                     }

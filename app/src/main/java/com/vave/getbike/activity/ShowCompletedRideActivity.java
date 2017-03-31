@@ -1,10 +1,14 @@
 package com.vave.getbike.activity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -17,13 +21,16 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.squareup.picasso.Picasso;
 import com.vave.getbike.R;
 import com.vave.getbike.helpers.GetBikeAsyncTask;
 import com.vave.getbike.helpers.GetBikePreferences;
+import com.vave.getbike.helpers.ToastHelper;
 import com.vave.getbike.model.Ride;
 import com.vave.getbike.model.RideLocation;
 import com.vave.getbike.syncher.BaseSyncher;
 import com.vave.getbike.syncher.RideSyncher;
+import com.vave.getbike.utils.HTTPUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -31,8 +38,11 @@ import java.util.List;
 
 import static com.vave.getbike.utils.StringUtils.isStringValid;
 
-public class ShowCompletedRideActivity extends BaseActivity implements OnMapReadyCallback {
+public class ShowCompletedRideActivity extends BaseActivity implements OnMapReadyCallback, View.OnClickListener {
 
+    private static final int GALLERY_REQUET_CODE = 11111;
+    private static final int CAMERA_REQUEST_CODE = 100;
+    String customerImageBitmapToString;
     TextView tripDateTime, tripId, userName, bikeType, fromTime, toTime, fromAddress, toAddress, totalFare, taxAndFee, subTotal, roundingOff, totalBill, cash, currentRatingStatus, freeRideDiscount;
     LinearLayout freeRideDiscountPanel;
     RatingBar ratingBar;
@@ -40,6 +50,9 @@ public class ShowCompletedRideActivity extends BaseActivity implements OnMapRead
     private GoogleMap mMap;
     private Ride ride = null;
     private long rideId;
+    LinearLayout galleryView, camera,uploadBillPictureLayout;
+    ImageView parcelBillPhoto;
+    Button uploadBillPictureButton;
     private List<RideLocation> locations = new ArrayList<>();
 
     @Override
@@ -53,6 +66,14 @@ public class ShowCompletedRideActivity extends BaseActivity implements OnMapRead
         freeRideDiscountPanel = (LinearLayout) findViewById(R.id.freeRideDiscountPanel);
         tripDateTime = (TextView) findViewById(R.id.tipDateTime);
         tripId = (TextView) findViewById(R.id.tripId);
+        galleryView = (LinearLayout) findViewById(R.id.gallery);
+        camera = (LinearLayout) findViewById(R.id.camera);
+        uploadBillPictureLayout = (LinearLayout) findViewById(R.id.uploadBillPictureLayout);
+        parcelBillPhoto = (ImageView) findViewById(R.id.parcelBillPhoto);
+        uploadBillPictureButton = (Button) findViewById(R.id.uploadBillPictureButton);
+        galleryView.setOnClickListener(this);
+        camera.setOnClickListener(this);
+        uploadBillPictureButton.setOnClickListener(this);
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
         userName = (TextView) findViewById(R.id.userName);
         bikeType = (TextView) findViewById(R.id.bikeType);
@@ -181,6 +202,10 @@ public class ShowCompletedRideActivity extends BaseActivity implements OnMapRead
                 freeRideDiscount.setText(indianRupee + " " + ride.getFreeRideDiscount());
                 cash.setText(indianRupee + " " + Math.max(0.0, ride.getTotalBill() - ride.getFreeRideDiscount()));
             }
+            if (isStringValid(ride.getParcelDropoffImageName())){
+                String imageUrl = BaseSyncher.BASE_URL + "/" + ride.getParcelDropoffImageName();
+                Picasso.with(ShowCompletedRideActivity.this).load(imageUrl).placeholder(R.drawable.picture).into(parcelBillPhoto);
+            }
         }
     }
 
@@ -224,6 +249,63 @@ public class ShowCompletedRideActivity extends BaseActivity implements OnMapRead
                 }
 
             }.execute();
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.gallery:
+                Intent i = new Intent(
+                        Intent.ACTION_PICK,
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(i, GALLERY_REQUET_CODE);
+                break;
+            case R.id.camera:
+                Intent takePicture = new Intent(
+                        MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(takePicture, CAMERA_REQUEST_CODE);
+                break;
+            case R.id.uploadBillPictureButton:
+                if (customerImageBitmapToString != null){
+                    new GetBikeAsyncTask(ShowCompletedRideActivity.this) {
+                        boolean result = false;
+
+                        @Override
+                        public void process() {
+                            result = new RideSyncher().storeParcelBillPhoto(customerImageBitmapToString,ride.getId());
+                        }
+
+                        @Override
+                        public void afterPostExecute() {
+                            if (result) {
+                                ToastHelper.redToast(ShowCompletedRideActivity.this, "Data successfully uploaded.");
+                            } else {
+                                ToastHelper.redToast(ShowCompletedRideActivity.this, "Failed to upload data try again.");
+                            }
+                        }
+                    }.execute();
+                }
+
+                break;
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data != null) {
+            Bitmap bitmap;
+            if (requestCode == CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+                bitmap = (Bitmap) data.getExtras().get("data");
+                customerImageBitmapToString = HTTPUtils.BitMapToString(bitmap);
+                parcelBillPhoto.setImageBitmap(bitmap);
+            }
+            if (requestCode == GALLERY_REQUET_CODE && resultCode == Activity.RESULT_OK) {
+                bitmap = HTTPUtils.getBitmapFromCameraData(data, getBaseContext());
+                customerImageBitmapToString = HTTPUtils.BitMapToString(bitmap);
+                parcelBillPhoto.setImageBitmap(bitmap);
+            }
         }
     }
 }

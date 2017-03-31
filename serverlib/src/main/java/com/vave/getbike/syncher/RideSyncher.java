@@ -379,4 +379,25 @@ public class RideSyncher extends BaseSyncher {
         }.handle();
         return promotionsBanner;
     }
+
+    public boolean storeParcelBillPhoto(final String encodedImageData,final long rideId) {
+        final GetBikePointer<Boolean> result = new GetBikePointer<>(false);
+        new JsonPostHandler("/storeParcelBillPhoto") {
+
+            @Override
+            protected void prepareRequest() {
+                put("imageData", encodedImageData);
+                put("rideId", rideId);
+            }
+
+            @Override
+            protected void processResult(JSONObject jsonResult) throws Exception {
+                if (jsonResult.has("result") && "success".equals(jsonResult.get("result"))) {
+                    result.setValue(true);
+                }
+            }
+        }.handle();
+        return result.getValue();
+    }
+
 }
