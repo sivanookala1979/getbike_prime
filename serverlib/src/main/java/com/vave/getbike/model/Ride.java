@@ -43,6 +43,8 @@ public class Ride {
     String parcelDropoffNumber;
     String parcelPickupImageName;
     String parcelDropoffImageName;
+    String parcelPickupDetails;
+    String parcelDropoffDetails;
 
     public String getActualSourceAddress() {
         return actualSourceAddress;
@@ -329,5 +331,21 @@ public class Ride {
 
     public void setParcelDropoffImageName(String parcelDropoffImageName) {
         this.parcelDropoffImageName = parcelDropoffImageName;
+    }
+
+    public String getParcelPickupDetails() {
+        return parcelPickupDetails;
+    }
+
+    public void setParcelPickupDetails(String parcelPickupDetails) {
+        this.parcelPickupDetails = parcelPickupDetails;
+    }
+
+    public String getParcelDropoffDetails() {
+        return parcelDropoffDetails;
+    }
+
+    public void setParcelDropoffDetails(String parcelDropoffDetails) {
+        this.parcelDropoffDetails = parcelDropoffDetails;
     }
 }
