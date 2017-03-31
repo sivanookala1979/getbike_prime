@@ -125,6 +125,8 @@
         <activity android:name=".activity.ScheduleRideActivity"/>
         <activity android:name=".activity.ScheduledRidesAndHistoryActivity"/>
         <activity android:name=".activity.PayUPaymentActivity"/>
+        <activity android:name=".activity.ViewRoasterRecordsActivity"/>
+        <activity android:name=".activity.AddRoasterRecordActivity"/>
         <activity
             android:name="com.paytm.pgsdk.PaytmPGActivity"
             android:configChanges="keyboardHidden|orientation|keyboard"

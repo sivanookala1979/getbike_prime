@@ -4,6 +4,7 @@ import com.vave.getbike.datasource.CallStatus;
 import com.vave.getbike.model.CurrentRideStatus;
 import com.vave.getbike.model.Profile;
 import com.vave.getbike.model.Ride;
+import com.vave.getbike.model.RoasterRecord;
 import com.vave.getbike.model.UserProfile;
 
 import org.junit.After;
@@ -16,6 +17,7 @@ import java.io.InputStream;
 import java.net.InetAddress;
 import java.util.Base64;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import static junit.framework.TestCase.assertEquals;
@@ -158,6 +160,34 @@ public class LoginSyncherTest {
         byte[] encodedData = Base64.getEncoder().encode(targetArray);
         boolean actual = sut.storeDrivingLicense(new String(encodedData), "77362862");
         assertTrue(actual);
+    }
+
+    @Test
+    public void storeRoasterRecordTESTHappyFlow() {
+        BaseSyncher.testSetup();
+        RoasterRecord roasterRecord = new RoasterRecord();
+        roasterRecord.setAmountCollected(300.0);
+        roasterRecord.setCustomerOrderNumber("3327272");
+        boolean actual = sut.saveRoasterRecord(roasterRecord);
+        assertTrue(actual);
+    }
+
+    @Test
+    public void getRoasterTESTHappyFlow() {
+        BaseSyncher.testSetup();
+        RoasterRecord roasterRecord = new RoasterRecord();
+        roasterRecord.setAmountCollected(300.0);
+        roasterRecord.setCustomerOrderNumber(UUID.randomUUID().toString());
+        sut.saveRoasterRecord(roasterRecord);
+        List<RoasterRecord> actual = sut.getRoasterRecord();
+        boolean found = false;
+        for (RoasterRecord record : actual) {
+            if (roasterRecord.getCustomerOrderNumber().equals(record.getCustomerOrderNumber())) {
+                found = true;
+                break;
+            }
+        }
+        assertTrue(found);
     }
 
     @Before

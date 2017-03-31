@@ -4,14 +4,19 @@ import com.google.gson.Gson;
 import com.vave.getbike.datasource.CallStatus;
 import com.vave.getbike.model.CurrentRideStatus;
 import com.vave.getbike.model.Profile;
+import com.vave.getbike.model.RoasterRecord;
 import com.vave.getbike.model.SaveResult;
 import com.vave.getbike.model.UserProfile;
 import com.vave.getbike.utils.GsonUtils;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by sivanookala on 25/10/16.
@@ -238,6 +243,49 @@ public class LoginSyncher extends BaseSyncher {
             protected void processResult(JSONObject jsonResult) throws Exception {
                 if (jsonResult.has("result") && "success".equals(jsonResult.get("result"))) {
                     result.setValid(true);
+                }
+            }
+        }.handle();
+        return result;
+    }
+
+    public boolean saveRoasterRecord(final RoasterRecord roasterRecord) {
+        final GetBikePointer<Boolean> result = new GetBikePointer<>(false);
+        new JsonPostHandler("/addRoasterRecord") {
+
+            @Override
+            protected void prepareRequest() {
+                try {
+                    jsonRequest = new JSONObject(new Gson().toJson(roasterRecord));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            protected void processResult(JSONObject jsonResult) throws Exception {
+                if (jsonResult.has("result") && "success".equals(jsonResult.get("result"))) {
+                    result.setValue(true);
+                }
+            }
+        }.handle();
+        return result.getValue();
+    }
+
+    public List<RoasterRecord> getRoasterRecord() {
+        final ArrayList<RoasterRecord> result = new ArrayList<>();
+        new JsonGetHandler("/getRoaster") {
+
+            @Override
+            protected void processResult(JSONObject jsonResult) throws Exception {
+                if (jsonResult.has("records")) {
+                    JSONArray recordsArray = jsonResult.getJSONArray("records");
+
+                    for (int i = 0; i < recordsArray.length(); i++) {
+                        JSONObject jsonRideObject = (JSONObject) recordsArray.get(i);
+                        RoasterRecord roasterRecord = GsonUtils.getGson().fromJson(jsonRideObject.toString(), RoasterRecord.class);
+                        result.add(roasterRecord);
+                    }
                 }
             }
         }.handle();

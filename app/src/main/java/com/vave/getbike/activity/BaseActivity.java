@@ -108,9 +108,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(this, ShareActivity.class));
                 break;
 */
-            /*case R.id.support:
-                startActivity(new Intent(this, FAQActivity.class));
-                break;*/
+            case R.id.bills:
+                startActivity(new Intent(this, ViewRoasterRecordsActivity.class));
+                break;
             case R.id.logout:
                 startActivity(new Intent(this, LogoScreenActivity.class));
                 try {
