@@ -38,6 +38,11 @@ public class Ride {
     boolean paid;
     boolean userCustomer = false;
     boolean userRider = false;
+    String rideType = "Ride";
+    String parcelPickupNumber;
+    String parcelDropoffNumber;
+    String parcelPickupImageName;
+    String parcelDropoffImageName;
 
     public String getActualSourceAddress() {
         return actualSourceAddress;
@@ -286,4 +291,43 @@ public class Ride {
         this.paid = paid;
     }
 
+    public String getRideType() {
+        return rideType;
+    }
+
+    public void setRideType(String rideType) {
+        this.rideType = rideType;
+    }
+
+    public String getParcelPickupNumber() {
+        return parcelPickupNumber;
+    }
+
+    public void setParcelPickupNumber(String parcelPickupNumber) {
+        this.parcelPickupNumber = parcelPickupNumber;
+    }
+
+    public String getParcelDropoffNumber() {
+        return parcelDropoffNumber;
+    }
+
+    public void setParcelDropoffNumber(String parcelDropoffNumber) {
+        this.parcelDropoffNumber = parcelDropoffNumber;
+    }
+
+    public String getParcelPickupImageName() {
+        return parcelPickupImageName;
+    }
+
+    public void setParcelPickupImageName(String parcelPickupImageName) {
+        this.parcelPickupImageName = parcelPickupImageName;
+    }
+
+    public String getParcelDropoffImageName() {
+        return parcelDropoffImageName;
+    }
+
+    public void setParcelDropoffImageName(String parcelDropoffImageName) {
+        this.parcelDropoffImageName = parcelDropoffImageName;
+    }
 }

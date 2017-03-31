@@ -68,6 +68,9 @@ public class RideAdapter2 extends BaseAdapter {
         }
         if (showAcceptRideTextView) {
             holder.acceptRideTextViewInOpenRides.setVisibility(View.VISIBLE);
+            if ("Parcel".equals(ride.getRideType())) {
+                holder.acceptRideTextViewInOpenRides.setText("ACCEPT PARCEL");
+            }
         }
         holder.fromAddress.setText(ride.getSourceAddress());
         holder.toAddress.setText(ride.getDestinationAddress());
@@ -83,6 +86,5 @@ public class RideAdapter2 extends BaseAdapter {
         TextView price;
         TextView rideDateTime;
         TextView acceptRideTextViewInOpenRides;
-
     }
 }

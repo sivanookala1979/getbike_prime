@@ -28,6 +28,19 @@
             android:background="@color/white"
             android:orientation="vertical">
 
+            <Spinner
+                android:id="@+id/vendorName"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="2"
+                android:background="@drawable/gray_border_style"
+                android:fontFamily="fonts/AvenirNextLTPro-Regular.otf"
+                android:padding="5dp"
+                android:textColor="@color/get_bike_black"
+                android:textSize="@dimen/text_size_intermediate"/>
+
+
             <EditText
                 android:id="@+id/customerMobileNumber"
                 android:layout_width="match_parent"

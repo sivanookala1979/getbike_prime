@@ -5,6 +5,7 @@ import com.vave.getbike.datasource.CallStatus;
 import com.vave.getbike.datasource.RideLocationDataSource;
 import com.vave.getbike.model.Ride;
 import com.vave.getbike.model.RideLocation;
+import com.vave.getbike.model.Vendor;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,14 +38,14 @@ public class RideSyncherTest {
 
     @Test
     public void requestRideTESTHappyFlow() {
-        Ride ride = sut.requestRide(54.2122, 98.22111);
+        Ride ride = sut.requestRide(54.2122, 98.22111, "Cash");
         assertNotNull(ride);
         assertTrue(ride.getId() > 0);
     }
 
     @Test
     public void getRideByIdTESTHappyFlow() {
-        Ride ride = sut.requestRide(24.56, 24.57, "Kavali", "Musunur");
+        Ride ride = sut.requestRide(24.56, 24.57, "Kavali", "Musunur", "Cash");
         Ride actual = sut.getRideById(ride.getId());
         assertNotNull(actual);
         assertEquals(ride.getId(), actual.getId());
@@ -57,7 +58,7 @@ public class RideSyncherTest {
 
     @Test
     public void hailCustomerTESTHappyFlow() {
-        CallStatus callStatus = sut.hailCustomer(24.56, 24.57, "Kavali", "Musunur", "9383787373", "Jyothi", "jyothi36636@gmail.com", 'F');
+        CallStatus callStatus = sut.hailCustomer(24.56, 24.57, "Kavali", "Musunur", "9383787373", "Jyothi", "jyothi36636@gmail.com", 'F', "Cash", null);
         Ride actual = sut.getRideById(callStatus.getId());
         assertNotNull(actual);
         assertEquals(callStatus.getId(), actual.getId());
@@ -70,7 +71,7 @@ public class RideSyncherTest {
 
     @Test
     public void acceptRideTESTHappyFlow() {
-        Ride ride = sut.requestRide(24.56, 24.57);
+        Ride ride = sut.requestRide(24.56, 24.57, "Cash");
         CallStatus actual = sut.acceptRide(ride.getId());
         assertTrue(actual.isSuccess());
     }
@@ -78,7 +79,7 @@ public class RideSyncherTest {
     @Test
     public void closeRideTESTHappyFlow() {
         // Setup
-        Ride ride = sut.requestRide(24.56, 24.57);
+        Ride ride = sut.requestRide(24.56, 24.57, "Cash");
         sut.acceptRide(ride.getId());
         RideLocationDataSource dataSource = new RideLocationDataSource(null);
         dataSource.setUpdataSource();
@@ -98,9 +99,9 @@ public class RideSyncherTest {
     @Test
     public void openRidesTESTHappyFlow() {
         // Setup
-        Ride ride1 = sut.requestRide(24.56, 24.57);
-        Ride ride2 = sut.requestRide(24.56, 24.57);
-        Ride ride3 = sut.requestRide(24.56, 24.57);
+        Ride ride1 = sut.requestRide(24.56, 24.57, "Cash");
+        Ride ride2 = sut.requestRide(24.56, 24.57, "Cash");
+        Ride ride3 = sut.requestRide(24.56, 24.57, "Cash");
         // Exercise SUT
         List<Ride> actual = sut.openRides(24.56, 24.57);
         // Verify
@@ -116,9 +117,9 @@ public class RideSyncherTest {
     @Test
     public void getMyCompletedRidesTESTHappyFlow() {
         // Setup
-        Ride ride1 = sut.requestRide(24.56, 24.57);
-        Ride ride2 = sut.requestRide(24.56, 24.57);
-        Ride ride3 = sut.requestRide(24.56, 24.57);
+        Ride ride1 = sut.requestRide(24.56, 24.57, "Cash");
+        Ride ride2 = sut.requestRide(24.56, 24.57, "Cash");
+        Ride ride3 = sut.requestRide(24.56, 24.57, "Cash");
         sut.acceptRide(ride2.getId());
         sut.closeRide(ride2.getId());
         sut.acceptRide(ride3.getId());
@@ -136,9 +137,9 @@ public class RideSyncherTest {
     @Test
     public void getRidesGivenByMeTESTHappyFlow() {
         // Setup
-        Ride ride1 = sut.requestRide(24.56, 24.57);
-        Ride ride2 = sut.requestRide(24.56, 24.57);
-        Ride ride3 = sut.requestRide(24.56, 24.57);
+        Ride ride1 = sut.requestRide(24.56, 24.57, "Cash");
+        Ride ride2 = sut.requestRide(24.56, 24.57, "Cash");
+        Ride ride3 = sut.requestRide(24.56, 24.57, "Cash");
         sut.acceptRide(ride2.getId());
         sut.closeRide(ride2.getId());
         sut.acceptRide(ride3.getId());
@@ -156,7 +157,7 @@ public class RideSyncherTest {
     @Test
     public void getCompleteRideByIdTESTHappyFlow() {
         // Setup
-        Ride ride = sut.requestRide(24.56, 24.57);
+        Ride ride = sut.requestRide(24.56, 24.57, "Cash");
         sut.acceptRide(ride.getId());
         RideLocationDataSource dataSource = new RideLocationDataSource(null);
         dataSource.setUpdataSource();
@@ -186,6 +187,21 @@ public class RideSyncherTest {
         // Verify
         int knownNumberOfRiders = 4;
         assertEquals(knownNumberOfRiders, actual.size());
+    }
+
+    @Test
+    public void getVendorsTESTHappyFlow() {
+        // Setup
+        // Exercise SUT
+        List<Vendor> actual = sut.getVendors();
+        // Verify
+        boolean found = false;
+        for (Vendor vendor : actual) {
+            if ("Apollo".equals(vendor.getName())) {
+                found = true;
+            }
+        }
+        assertTrue(found);
     }
 
     @Test

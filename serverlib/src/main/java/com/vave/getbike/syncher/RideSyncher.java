@@ -5,6 +5,7 @@ import com.vave.getbike.model.GeoFencingLocation;
 import com.vave.getbike.model.PromotionsBanner;
 import com.vave.getbike.model.Ride;
 import com.vave.getbike.model.RideLocation;
+import com.vave.getbike.model.Vendor;
 import com.vave.getbike.utils.GsonUtils;
 import com.vave.getbike.utils.HTTPUtils;
 
@@ -48,7 +49,7 @@ public class RideSyncher extends BaseSyncher {
         return result.getValue();
     }
 
-    public CallStatus hailCustomer(final double latitude, final double longitude, final String sourceAddress, final String destinationAddress, final String phoneNumber, final String name, final String email, final char gender, final String modeOfPayment) {
+    public CallStatus hailCustomer(final double latitude, final double longitude, final String sourceAddress, final String destinationAddress, final String phoneNumber, final String name, final String email, final char gender, final String modeOfPayment, final Long vendorId) {
         final CallStatus result = new CallStatus();
         new JsonPostHandler("/hailCustomer") {
 
@@ -58,10 +59,14 @@ public class RideSyncher extends BaseSyncher {
                 put("longitude", longitude);
                 put("sourceAddress", sourceAddress);
                 put("destinationAddress", destinationAddress);
-                put("phoneNumber", phoneNumber);
-                put("name", name);
-                put("email", email);
-                put("gender", gender + "");
+                if (vendorId != null) {
+                    put("vendorId", vendorId);
+                } else {
+                    put("phoneNumber", phoneNumber);
+                    put("name", name);
+                    put("email", email);
+                    put("gender", gender + "");
+                }
                 put("modeOfPayment", modeOfPayment);
             }
 
@@ -230,6 +235,26 @@ public class RideSyncher extends BaseSyncher {
                     JSONArray ridesArray = jsonResult.getJSONArray("rides");
                     for (int i = 0; i < ridesArray.length(); i++) {
                         result.add(createRideFromJson(ridesArray.getJSONObject(i)));
+                    }
+                }
+            }
+        }.handle();
+        return result;
+    }
+
+    public List<Vendor> getVendors() {
+        final ArrayList<Vendor> result = new ArrayList<>();
+        new JsonGetHandler("/getVendors") {
+
+            @Override
+            protected void processResult(JSONObject jsonResult) throws Exception {
+                if (jsonResult.has("vendors")) {
+                    JSONArray ridesArray = jsonResult.getJSONArray("vendors");
+                    for (int i = 0; i < ridesArray.length(); i++) {
+                        Vendor vendor = new Vendor();
+                        vendor.setId(ridesArray.getJSONObject(i).getLong("id"));
+                        vendor.setName(ridesArray.getJSONObject(i).getString("name"));
+                        result.add(vendor);
                     }
                 }
             }

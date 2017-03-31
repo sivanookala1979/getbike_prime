@@ -85,7 +85,7 @@ public class LoginSyncherTest {
         // Setup
         BaseSyncher.testSetup();
         RideSyncher rideSyncher = new RideSyncher();
-        Ride ride = rideSyncher.requestRide(21.34, 32.56, "Chennai", "Mumbai");
+        Ride ride = rideSyncher.requestRide(21.34, 32.56, "Chennai", "Mumbai", "Cash");
         rideSyncher.acceptRide(ride.getId());
         // Execute
         CurrentRideStatus currentRideStatus = sut.getCurrentRide("version222");

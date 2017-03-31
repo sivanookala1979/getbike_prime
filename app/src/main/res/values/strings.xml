@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">getbike</string>
+    <string name="app_name">getbike prime</string>
     <string name="title_activity_signup">Sign up</string>
 
     <!-- Strings related to login -->
@@ -22,8 +22,8 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="get_bike">getbike</string>
-    <string name="app_version">2.1a</string>
+    <string name="get_bike">getbikeprime</string>
+    <string name="app_version">2.1ap</string>
 
 
     <string name="latitude_label">Latitude</string>

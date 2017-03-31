@@ -22,6 +22,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,7 +48,9 @@ import com.vave.getbike.helpers.LocationSyncher;
 import com.vave.getbike.helpers.ToastHelper;
 import com.vave.getbike.model.Ride;
 import com.vave.getbike.model.RideLocation;
+import com.vave.getbike.model.Vendor;
 import com.vave.getbike.syncher.RideSyncher;
+import com.vave.getbike.utils.StringUtils;
 
 import org.w3c.dom.Document;
 
@@ -74,7 +77,9 @@ public class HailCustomerActivity extends AppCompatActivity implements OnMapRead
     Document document;
     Polyline polyline;
     List<String> locations = new ArrayList<String>();
+    List<Vendor> vendors = new ArrayList<>();
     private LocationManager locationManager;
+    private Spinner vendorName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +88,7 @@ public class HailCustomerActivity extends AppCompatActivity implements OnMapRead
         customerMobileNumber = (EditText) findViewById(R.id.customerMobileNumber);
         customerName = (EditText) findViewById(R.id.customerName);
         customerEmailId = (EditText) findViewById(R.id.customerEmailId);
+        vendorName = (Spinner) findViewById(R.id.vendorName);
 
         destination = (AutoCompleteTextView) findViewById(R.id.destination);
         rideEstimateTextView = (TextView) findViewById(R.id.rideEstimate);
@@ -158,6 +164,23 @@ public class HailCustomerActivity extends AppCompatActivity implements OnMapRead
                     .position(new LatLng(yourLocationLatLng.latitude, yourLocationLatLng.longitude))
                     .icon(BitmapDescriptorFactory.fromResource(R.mipmap.bike_pointer)));
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(yourLocationLatLng, 16.0f));
+            new GetBikeAsyncTask(HailCustomerActivity.this) {
+
+                @Override
+                public void process() {
+                    vendors = new RideSyncher().getVendors();
+                }
+
+                @Override
+                public void afterPostExecute() {
+                    ArrayList<String> vendorNames = new ArrayList<String>();
+                    vendorNames.add("Not Vendor");
+                    for (Vendor vendor : vendors) {
+                        vendorNames.add(vendor.getName());
+                    }
+                    setArrayAdapter(vendorName, vendorNames);
+                }
+            }.execute();
         }
 
     }
@@ -329,15 +352,34 @@ public class HailCustomerActivity extends AppCompatActivity implements OnMapRead
                 final Pattern pattern2 = Pattern.compile("[^a-z A-Z]");
                 final Boolean stringCheck1 = pattern2.matcher(customerName.getText().toString()).find();
                 boolean patternCheck = pattern1.matcher(customerMobileNumber.getText().toString()).find();
-                if ((customerMobileNumber.getText().toString().length() != 10) || (patternCheck)) {
-                    customerMobileNumber.setError("Required 10 digits number");
-                    customerMobileNumber.requestFocus();
-                } else if ((customerName.getText().toString().length() == 0) || (stringCheck1)) {
-                    customerName.setError("Required only alphabets");
-                    customerName.requestFocus();
-                } else if (genderGroup.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(HailCustomerActivity.this, "Please select Gender", Toast.LENGTH_LONG).show();
-                } else {
+                boolean isVendor = false;
+                Long vendorId = null;
+                boolean valid = false;
+                if (StringUtils.isStringValid(vendorName.getSelectedItem().toString())) {
+                    for (Vendor vendor : vendors) {
+                        if (vendor.getName().equals(vendorName.getSelectedItem().toString())) {
+                            vendorId = vendor.getId();
+                            isVendor = true;
+                            valid = true;
+                            break;
+                        }
+                    }
+                }
+                if (!isVendor) {
+                    if ((customerMobileNumber.getText().toString().length() != 10) || (patternCheck)) {
+                        customerMobileNumber.setError("Required 10 digits number");
+                        customerMobileNumber.requestFocus();
+                    } else if ((customerName.getText().toString().length() == 0) || (stringCheck1)) {
+                        customerName.setError("Required only alphabets");
+                        customerName.requestFocus();
+                    } else if (genderGroup.getCheckedRadioButtonId() == -1) {
+                        Toast.makeText(HailCustomerActivity.this, "Please select Gender", Toast.LENGTH_LONG).show();
+                    } else {
+                        valid = true;
+                    }
+                }
+                final Long finalVendorId = vendorId;
+                if (valid) {
                     final String email;
                     email = (customerEmailId.getText().toString().length() == 0) ? "NA" : customerEmailId.getText().toString();
                     new GetBikeAsyncTask(HailCustomerActivity.this) {
@@ -346,7 +388,7 @@ public class HailCustomerActivity extends AppCompatActivity implements OnMapRead
                         @Override
                         public void process() {
                             RideSyncher sut = new RideSyncher();
-                            callStatus = sut.hailCustomer(yourLocationLatLng.latitude, yourLocationLatLng.longitude, yourLocation, destination.getText().toString(), customerMobileNumber.getText().toString(), customerName.getText().toString(), email, gender, "Cash");
+                            callStatus = sut.hailCustomer(yourLocationLatLng.latitude, yourLocationLatLng.longitude, yourLocation, destination.getText().toString(), customerMobileNumber.getText().toString(), customerName.getText().toString(), email, gender, "Cash", finalVendorId);
                         }
 
                         @Override
@@ -396,5 +438,12 @@ public class HailCustomerActivity extends AppCompatActivity implements OnMapRead
                 }
                 break;
         }
+    }
+
+    @NonNull
+    private void setArrayAdapter(Spinner spinner, List<String> list) {
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_text_lay_out, list);
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_text_lay_out);
+        spinner.setAdapter(arrayAdapter);
     }
 }

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.vave.getbike.R;
@@ -28,11 +29,14 @@ public class AcceptRejectRideActivity extends BaseActivity implements View.OnCli
     TextView rideRequestAddress;
     TextView rideRequestLatLng;
     TextView rideRequestMobileNumber;
+    TextView ridePickupMobileNumber;
+    TextView rideDropoffMobileNumber;
     TextView rideDestination;
     TextView modeOfPayment;
     Button acceptRide;
     Button rejectRide;
     Button callRequestorButton;
+    LinearLayout parcelLayout;
 
     Ride ride = null;
     private long rideId;
@@ -49,11 +53,14 @@ public class AcceptRejectRideActivity extends BaseActivity implements View.OnCli
         rideRequestAddress = (TextView) findViewById(R.id.rideRequestAddress);
         rideRequestLatLng = (TextView) findViewById(R.id.rideRequestLatLng);
         rideRequestMobileNumber = (TextView) findViewById(R.id.rideRequestMobileNumber);
+        ridePickupMobileNumber = (TextView) findViewById(R.id.pickupMobileNumber);
+        rideDropoffMobileNumber = (TextView) findViewById(R.id.dropoffMobileNumber);
         rideDestination = (TextView) findViewById(R.id.rideDestinationAddress);
         modeOfPayment = (TextView) findViewById(R.id.rideModeOfPayment);
         acceptRide = (Button) findViewById(R.id.acceptRide);
         rejectRide = (Button) findViewById(R.id.rejectRide);
         callRequestorButton = (Button) findViewById(R.id.callRideRequestor);
+        parcelLayout = (LinearLayout) findViewById(R.id.parcelDetails);
         callRequestorButton.setOnClickListener(this);
         if (rideId > 0) {
             new GetBikeAsyncTask(AcceptRejectRideActivity.this) {
@@ -78,6 +85,14 @@ public class AcceptRejectRideActivity extends BaseActivity implements View.OnCli
                             rideRequestMobileNumber.setText(ride.getRequestorPhoneNumber());
                             rideDestination.setText(ride.getDestinationAddress());
                             modeOfPayment.setText(ride.getModeOfPayment());
+                            if ("Parcel".equals(ride.getRideType())) {
+                                acceptRide.setText("Accept Parcel");
+                                rejectRide.setText("Reject Parcel");
+                                callRequestorButton.setText("Call Vendor");
+                                parcelLayout.setVisibility(View.VISIBLE);
+                                ridePickupMobileNumber.setText(ride.getParcelPickupNumber());
+                                rideDropoffMobileNumber.setText(ride.getParcelDropoffNumber());
+                            }
                         }
                     } else {
                         showOpenRides(R.string.error_ride_is_not_valid);

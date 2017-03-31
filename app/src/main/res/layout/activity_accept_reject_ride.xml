@@ -118,7 +118,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-
             android:text="Lat Lng"/>
 
         <TextView
@@ -128,6 +127,53 @@
             android:text="Latitude Longitude"
             android:textColor="@color/black"
             android:textSize="17sp"/>
+
+        <LinearLayout
+            android:id="@+id/parcelDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/parcelSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parcel Details"
+                android:textColor="@color/payu_blue"
+                android:textSize="17dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Pickup Mobile Number"/>
+
+            <TextView
+                android:id="@+id/pickupMobileNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pickup Mobile Number"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Dropoff Mobile Number"/>
+
+            <TextView
+                android:id="@+id/dropoffMobileNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dropoff Mobile Number"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"

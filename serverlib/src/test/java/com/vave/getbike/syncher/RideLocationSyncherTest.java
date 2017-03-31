@@ -23,7 +23,7 @@ public class RideLocationSyncherTest {
     @Test
     public void storePendingLocationsTESTHappyFlow() {
         RideSyncher rideSyncher = new RideSyncher();
-        Ride ride = rideSyncher.requestRide(24.56, 24.57);
+        Ride ride = rideSyncher.requestRide(24.56, 24.57, "Cash");
         rideSyncher.acceptRide(ride.getId());
         RideLocationDataSource dataSource = new RideLocationDataSource(null);
         dataSource.setUpdataSource();
