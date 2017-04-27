@@ -365,6 +365,27 @@ public class RideSyncher extends BaseSyncher {
         }.handle();
     }
 
+    public boolean saveUserCashInAdvanceRequest(final double amount, final String riderDescription) {
+        final GetBikePointer<Boolean> result = new GetBikePointer<>(false);
+        new JsonPostHandler("/saveUserCashInAdvanceRequest") {
+
+            @Override
+            protected void prepareRequest() {
+                put("amount", amount);
+                put("riderDescription", riderDescription);
+            }
+
+            @Override
+            protected void processResult(JSONObject jsonResult) throws Exception {
+                if (jsonResult.has("result") && "success".equals(jsonResult.get("result"))) {
+                    result.setValue(true);
+                }
+            }
+        }.handle();
+        return result.getValue();
+    }
+
+
     public PromotionsBanner getPromotionalBannerWithUrl(final String resolution) {
         final PromotionsBanner promotionsBanner = new PromotionsBanner();
         new JsonGetHandler("/promotion/sendPromotion?resolution=" + resolution) {
@@ -398,6 +419,36 @@ public class RideSyncher extends BaseSyncher {
             }
         }.handle();
         return result.getValue();
+    }
+
+    double customerTripsAmount = 0.0;
+    double parcelTripsAmount = 0.0;
+    public double getCustomerTripsAmountForDate(final String date){
+        new JsonGetHandler("/getTripsAmountForDate?dateString=" + date) {
+
+            @Override
+            protected void processResult(JSONObject jsonResult) throws Exception {
+                if (jsonResult.has("result") && jsonResult.get("result").equals("success")) {
+                    System.out.println("TEsting phase ... .. customer trips amount......"+jsonResult.getDouble("customerTripsAmount"));
+                    customerTripsAmount = jsonResult.getDouble("customerTripsAmount");
+                }
+            }
+        }.handle();
+        return customerTripsAmount;
+    }
+
+    public double getParcelTripsAmountForDate(final String date){
+        new JsonGetHandler("/getTripsAmountForDate?dateString=" + date) {
+
+            @Override
+            protected void processResult(JSONObject jsonResult) throws Exception {
+                if (jsonResult.has("result") && jsonResult.get("result").equals("success")) {
+                    System.out.println("TEsting phase ... .. parcel trips amount......"+jsonResult.getDouble("parcelTripsAmount"));
+                    parcelTripsAmount = jsonResult.getDouble("parcelTripsAmount");
+                }
+            }
+        }.handle();
+        return parcelTripsAmount;
     }
 
 }

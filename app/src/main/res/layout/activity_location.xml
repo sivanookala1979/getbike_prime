@@ -92,12 +92,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:visibility="gone">
 
         <Button
             android:id="@+id/start_updates_button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
@@ -110,7 +110,7 @@
 
         <Button
             android:id="@+id/stop_updates_button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
@@ -120,6 +120,53 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/parcelDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/call_parcel_customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="3.25"
+                android:background="@color/get_bike_black"
+                android:gravity="center"
+                android:text="CALL CUSTOMER"
+                android:textColor="@color/white"
+                android:visibility="visible"/>
+
+            <Button
+                android:id="@+id/navigate_customer_parcel_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1.98"
+                android:background="@color/get_bike_black"
+                android:gravity="center"
+                android:text="Navigation"
+                android:textColor="@color/white"
+                android:visibility="visible"/>
+
+            <Button
+                android:id="@+id/call_parcel_vendor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@color/get_bike_black"
+                android:text="  Call Vendor  "
+                android:textColor="@color/white"
+                android:visibility="visible"
+                />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

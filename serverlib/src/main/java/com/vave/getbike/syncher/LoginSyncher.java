@@ -2,6 +2,7 @@ package com.vave.getbike.syncher;
 
 import com.google.gson.Gson;
 import com.vave.getbike.datasource.CallStatus;
+import com.vave.getbike.model.CashInAdvance;
 import com.vave.getbike.model.CurrentRideStatus;
 import com.vave.getbike.model.Profile;
 import com.vave.getbike.model.RoasterRecord;
@@ -285,6 +286,26 @@ public class LoginSyncher extends BaseSyncher {
                         JSONObject jsonRideObject = (JSONObject) recordsArray.get(i);
                         RoasterRecord roasterRecord = GsonUtils.getGson().fromJson(jsonRideObject.toString(), RoasterRecord.class);
                         result.add(roasterRecord);
+                    }
+                }
+            }
+        }.handle();
+        return result;
+    }
+
+    public List<CashInAdvance> getCashRequests() {
+        final ArrayList<CashInAdvance> result = new ArrayList<>();
+        new JsonGetHandler("/getCashRequests") {
+
+            @Override
+            protected void processResult(JSONObject jsonResult) throws Exception {
+                if (jsonResult.has("records")) {
+                    JSONArray recordsArray = jsonResult.getJSONArray("records");
+
+                    for (int i=0; i < recordsArray.length(); i++) {
+                        JSONObject jsonRideObject = (JSONObject) recordsArray.get(i);
+                        CashInAdvance cashInAdvance = GsonUtils.getGson().fromJson(jsonRideObject.toString(),CashInAdvance.class);
+                        result.add(cashInAdvance);
                     }
                 }
             }

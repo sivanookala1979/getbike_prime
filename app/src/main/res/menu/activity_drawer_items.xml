@@ -7,6 +7,10 @@
             android:icon="@drawable/home_icon"
             android:title="Home" />
         <item
+            android:id="@+id/wallet"
+            android:icon="@drawable/wallet_icon"
+            android:title="Wallet" />
+        <item
             android:id="@+id/earnings"
             android:icon="@drawable/earnings"
             android:title="Earnings" />
@@ -15,22 +19,17 @@
             android:icon="@mipmap/history"
             android:title="History" />
         <item
-            android:id="@+id/about"
-            android:icon="@mipmap/about"
-            android:title="About" />
-        <item
-            android:id="@+id/deliveries"
-            android:title="Deliveries" />
-        <item
-            android:id="@+id/share"
+            android:id="@+id/profilAndSettings"
             android:icon="@drawable/settings"
-            android:title="Share" />
-        <item
-            android:id="@+id/notifications"
-            android:title="Notification" />
+            android:title="Profile" />
         <item
             android:id="@+id/bills"
-            android:title="Bills" />
+            android:icon="@mipmap/about"
+            android:title="Roaster Sheet" />
+        <item
+            android:id="@+id/cashInAdvance"
+            android:icon="@mipmap/about"
+            android:title="Cash In Advance" />
         <item
             android:id="@+id/logout"
             android:icon="@mipmap/logout"

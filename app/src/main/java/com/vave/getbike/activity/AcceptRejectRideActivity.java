@@ -22,6 +22,9 @@ import com.vave.getbike.model.Ride;
 import com.vave.getbike.syncher.BaseSyncher;
 import com.vave.getbike.syncher.RideSyncher;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class AcceptRejectRideActivity extends BaseActivity implements View.OnClickListener {
 
     // UI Widgets.
@@ -33,10 +36,14 @@ public class AcceptRejectRideActivity extends BaseActivity implements View.OnCli
     TextView rideDropoffMobileNumber;
     TextView rideDestination;
     TextView modeOfPayment;
+    TextView rideRequestAddressTextViewLabel;
+    TextView rideDestinationAddressTextViewLabel;
+    TextView rideRequestMobileNumberTextViewLabel ,pickUpDetails ,dropOffDetails;
     Button acceptRide;
     Button rejectRide;
     Button callRequestorButton;
     LinearLayout parcelLayout;
+    TextView rideRequestAt;
 
     Ride ride = null;
     private long rideId;
@@ -57,6 +64,12 @@ public class AcceptRejectRideActivity extends BaseActivity implements View.OnCli
         rideDropoffMobileNumber = (TextView) findViewById(R.id.dropoffMobileNumber);
         rideDestination = (TextView) findViewById(R.id.rideDestinationAddress);
         modeOfPayment = (TextView) findViewById(R.id.rideModeOfPayment);
+        rideRequestAt = (TextView) findViewById(R.id.rideRequestAt);
+        rideRequestAddressTextViewLabel = (TextView) findViewById(R.id.rideRequestAddressTextViewLabel);
+        rideDestinationAddressTextViewLabel = (TextView) findViewById(R.id.rideDestinationAddressTextViewLabel);
+        rideRequestMobileNumberTextViewLabel = (TextView) findViewById(R.id.rideRequestMobileNumberTextViewLabel);
+        pickUpDetails = (TextView) findViewById(R.id.pickUpDetails);
+        dropOffDetails = (TextView) findViewById(R.id.dropOffDetails);
         acceptRide = (Button) findViewById(R.id.acceptRide);
         rejectRide = (Button) findViewById(R.id.rejectRide);
         callRequestorButton = (Button) findViewById(R.id.callRideRequestor);
@@ -78,18 +91,28 @@ public class AcceptRejectRideActivity extends BaseActivity implements View.OnCli
                             showOpenRides(R.string.error_ride_is_already_allocated);
                         } else if ("RideCancelled".equals(ride.getRideStatus())) {
                             showOpenRides(R.string.error_ride_is_cancelled_by_customer);
+                        } else if (getDifferenceInMinutes(new Date(), ride.getRequestedAt()) >= 15) {
+                            showOpenRides(R.string.error_ride_is_expired);
                         } else {
+                            SimpleDateFormat dateFormat = new SimpleDateFormat("EEE MMM dd h:mm a");
                             rideRequestedBy.setText(ride.getRequestorName());
                             rideRequestAddress.setText(ride.getSourceAddress());
                             rideRequestLatLng.setText(ride.getStartLatitude() + "," + ride.getStartLongitude());
                             rideRequestMobileNumber.setText(ride.getRequestorPhoneNumber());
                             rideDestination.setText(ride.getDestinationAddress());
                             modeOfPayment.setText(ride.getModeOfPayment());
+                            rideRequestAt.setText(""+dateFormat.format(ride.getRequestedAt()));
                             if ("Parcel".equals(ride.getRideType())) {
                                 acceptRide.setText("Accept Parcel");
                                 rejectRide.setText("Reject Parcel");
                                 callRequestorButton.setText("Call Vendor");
                                 parcelLayout.setVisibility(View.VISIBLE);
+                                rideRequestAddressTextViewLabel.setText("Parcel pickup location address");
+                                rideDestinationAddressTextViewLabel.setText("Parcel destination location address");
+                                pickUpDetails.setText(ride.getParcelPickupDetails());
+                                dropOffDetails.setText(ride.getParcelDropoffDetails());
+                                rideRequestMobileNumberTextViewLabel.setVisibility(View.GONE);
+                                rideRequestMobileNumber.setVisibility(View.GONE);
                                 ridePickupMobileNumber.setText(ride.getParcelPickupNumber());
                                 rideDropoffMobileNumber.setText(ride.getParcelDropoffNumber());
                             }
@@ -177,7 +200,12 @@ public class AcceptRejectRideActivity extends BaseActivity implements View.OnCli
                 showOpenRides(R.string.error_ride_is_rejected);
                 break;
             case R.id.callRideRequestor: {
-                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ride.getRequestorPhoneNumber()));
+                Intent intent;
+                if ("Parcel".equals(ride.getRideType())) {
+                    intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ride.getParcelPickupNumber()));
+                } else {
+                    intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ride.getRequestorPhoneNumber()));
+                }
                 if (ActivityCompat.checkSelfPermission(AcceptRejectRideActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
                     //    ActivityCompat#requestPermissions
@@ -199,5 +227,12 @@ public class AcceptRejectRideActivity extends BaseActivity implements View.OnCli
         finish();
         Intent intent = new Intent(AcceptRejectRideActivity.this, OpenRidesActivity.class);
         startActivity(intent);
+    }
+
+    public long getDifferenceInMinutes(Date currentDate, Date requestedDate) {
+        long diff = currentDate.getTime() - requestedDate.getTime();
+        long seconds = diff / 1000;
+        long minutes = seconds / 60;
+        return minutes; //returning time in minutes;
     }
 }

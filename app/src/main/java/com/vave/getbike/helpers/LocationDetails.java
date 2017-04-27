@@ -24,8 +24,11 @@ import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.vave.getbike.activity.ShowCompletedRideActivity;
 import com.vave.getbike.datasource.RideLocationDataSource;
 import com.vave.getbike.model.Ride;
+import com.vave.getbike.syncher.LoginSyncher;
 import com.vave.getbike.syncher.RideLocationSyncher;
 import com.vave.getbike.syncher.RideSyncher;
+
+import java.util.Date;
 
 /**
  * @author Adarsh.T
@@ -135,6 +138,22 @@ public class LocationDetails {
                 }
             }
         });
+    }
+
+    public static void storeUserLastKnownLocation(Context context,final double latitude, final double longitude) {
+        new GetBikeAsyncTask(context) {
+
+            @Override
+            public void process() {
+                LoginSyncher loginSyncher = new LoginSyncher();
+                loginSyncher.storeLastKnownLocation(new Date(), latitude, longitude);
+            }
+
+            @Override
+            public void afterPostExecute() {
+
+            }
+        }.execute();
     }
 
     public String getCity() {

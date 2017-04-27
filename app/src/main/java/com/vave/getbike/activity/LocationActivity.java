@@ -23,6 +23,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
@@ -54,6 +55,7 @@ import com.vave.getbike.model.RideLocation;
 import com.vave.getbike.syncher.LoginSyncher;
 import com.vave.getbike.syncher.RideSyncher;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -111,13 +113,13 @@ public class LocationActivity extends BaseActivity implements
     // UI Widgets.
     protected Button mStartUpdatesButton;
     protected Button mStopUpdatesButton;
-    protected Button navigationButton;
+    protected Button navigationButton, navigateCustomerDestination,callParcelCustomer,callParcelVendor;
     protected TextView mLastUpdateTimeTextView;
     protected TextView mLocationCountTextView;
     protected Button callCustomerButton;
     protected Button reachedCustomerButton;
     protected LinearLayout reachCustomerPanel;
-    protected LinearLayout locationTrackingPanel;
+    protected LinearLayout locationTrackingPanel,parcelDetailsLayout;
     //    protected ListView listView;
     //protected LocationAdapter adapter;
     // Labels.
@@ -165,6 +167,10 @@ public class LocationActivity extends BaseActivity implements
         callCustomerButton = (Button) findViewById(R.id.call_customer_button);
         reachedCustomerButton = (Button) findViewById(R.id.reached_customer_button);
         navigationButton = (Button) findViewById(R.id.navigation_button);
+        navigateCustomerDestination = (Button) findViewById(R.id.navigate_customer_parcel_location);
+        callParcelCustomer = (Button) findViewById(R.id.call_parcel_customer);
+        callParcelVendor = (Button) findViewById(R.id.call_parcel_vendor);
+        parcelDetailsLayout = (LinearLayout) findViewById(R.id.parcelDetailsLayout);
         // Set labels.
         mLatitudeLabel = getResources().getString(R.string.latitude_label);
         mLongitudeLabel = getResources().getString(R.string.longitude_label);
@@ -176,6 +182,9 @@ public class LocationActivity extends BaseActivity implements
         callCustomerButton.setOnClickListener(this);
         reachedCustomerButton.setOnClickListener(this);
         navigationButton.setOnClickListener(this);
+        navigateCustomerDestination.setOnClickListener(this);
+        callParcelCustomer.setOnClickListener(this);
+        callParcelVendor.setOnClickListener(this);
 
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -224,6 +233,9 @@ public class LocationActivity extends BaseActivity implements
                 tripStarted = true;
             }
         }.execute();
+        if ("Parcel".equals(ride.getRideType())){
+            parcelDetailsLayout.setVisibility(View.VISIBLE);
+        }
     }
 
     /**
@@ -411,7 +423,12 @@ public class LocationActivity extends BaseActivity implements
                     ToastHelper.redToast(getApplicationContext(), "Ride is not loaded. This is an error. Please try restarting the application.");
                     return;
                 }
-                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ride.getRequestorPhoneNumber()));
+                Intent intent;
+                if ("Parcel".equals(ride.getRideType())) {
+                    intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ride.getParcelDropoffNumber()));
+                } else {
+                    intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ride.getRequestorPhoneNumber()));
+                }
                 if (ActivityCompat.checkSelfPermission(LocationActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
                     //    ActivityCompat#requestPermissions
@@ -423,6 +440,48 @@ public class LocationActivity extends BaseActivity implements
                     return;
                 }
                 startActivity(intent);
+                break;
+            case R.id.call_parcel_customer:
+                if (ride == null || ride.getRequestorPhoneNumber() == null) {
+                    ToastHelper.redToast(getApplicationContext(), "Ride is not loaded. This is an error. Please try restarting the application.");
+                    return;
+                }
+                Intent callCustomerIntent;
+                if ("Parcel".equals(ride.getRideType())) {
+                    callCustomerIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ride.getParcelDropoffNumber()));
+                } else {
+                    callCustomerIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ride.getRequestorPhoneNumber()));
+                }
+                if (ActivityCompat.checkSelfPermission(LocationActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
+                startActivity(callCustomerIntent);
+                break;
+            case R.id.call_parcel_vendor:
+                if (ride == null || ride.getParcelDropoffNumber() == null){
+                    ToastHelper.redToast(getApplicationContext(), "Ride is not loaded. This is an error. Please try restarting the application.");
+                    return;
+                }
+                Intent callVendorIntent;
+                callVendorIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ride.getParcelDropoffNumber()));
+                if (ActivityCompat.checkSelfPermission(LocationActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
+                startActivity(callVendorIntent);
                 break;
             case R.id.reached_customer_button:
                 startTracking();
@@ -461,6 +520,43 @@ public class LocationActivity extends BaseActivity implements
                     }
                 });
                 navigationBuilder.show();
+                break;
+            case R.id.navigate_customer_parcel_location:
+                //Navigate rider to the customer location if ride type is parcel.
+                final AlertDialog.Builder navigationBuilder1 = new AlertDialog.Builder(LocationActivity.this);
+                navigationBuilder1.setCancelable(false);
+                navigationBuilder1.setTitle("Navigation");
+                navigationBuilder1.setMessage("This action will open Google maps with driving directions to reach customer, please press back button for 3 times to resume this application.");
+                navigationBuilder1.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (ride != null && ride.getStartLatitude() != null && ride.getStartLongitude() != null) {
+                            if (ride.getStartLongitude() != 0.0 && ride.getStartLatitude() != 0.0) {
+                                LatLng customerDestinationLocation = getLocationFromAddress(LocationActivity.this,ride.getDestinationAddress());
+                                String url = null;
+                                if (customerDestinationLocation != null) {
+                                    url = "google.navigation:q=" + customerDestinationLocation.latitude + "," + customerDestinationLocation.longitude + "&mode=d";
+                                }
+                                Uri gmmIntentUri = Uri.parse(url);
+                                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                                mapIntent.setPackage("com.google.android.apps.maps");
+                                startActivity(mapIntent);
+                            } else {
+                                Toast.makeText(LocationActivity.this, "Invalid customer location", Toast.LENGTH_LONG).show();
+                            }
+                        } else {
+                            Toast.makeText(LocationActivity.this, "Invalid customer location", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+                navigationBuilder1.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                navigationBuilder1.show();
+                break;
         }
     }
 
@@ -509,6 +605,9 @@ public class LocationActivity extends BaseActivity implements
                                     .title("Customer Location")
                                     .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location_pointer)));
                         }
+                        if ("Parcel".equals(ride.getRideType())) {
+                            reachedCustomerButton.setText("Reached Vendor");
+                        }
                     }
                 }
             }.execute();
@@ -548,5 +647,31 @@ public class LocationActivity extends BaseActivity implements
     protected void onResume() {
         super.onResume();
         animateToLocation();
+    }
+
+    public LatLng getLocationFromAddress(Context context,String strAddress) {
+
+        Geocoder coder = new Geocoder(context);
+        List<android.location.Address> address;
+        LatLng p1 = null;
+
+        try {
+            // May throw an IOException
+            address = coder.getFromLocationName(strAddress, 5);
+            if (address == null) {
+                return null;
+            }
+            android.location.Address location = address.get(0);
+            location.getLatitude();
+            location.getLongitude();
+
+            p1 = new LatLng(location.getLatitude(), location.getLongitude() );
+
+        } catch (IOException ex) {
+
+            ex.printStackTrace();
+        }
+
+        return p1;
     }
 }

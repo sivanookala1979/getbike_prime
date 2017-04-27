@@ -1,7 +1,9 @@
 package com.vave.getbike.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -170,5 +172,14 @@ public class AddRoasterRecordActivity extends BaseActivity {
         });
 
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case android.R.id.home:
+                Intent homeIntent = new Intent(this, ViewRoasterRecordsActivity.class);
+                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(homeIntent);
+        }
+        return (super.onOptionsItemSelected(menuItem));
+    }
 }

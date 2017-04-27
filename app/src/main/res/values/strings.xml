@@ -16,6 +16,7 @@
     <string name="error_ride_is_already_allocated">Ride is already allocated to someone else.</string>
     <string name="error_ride_is_cancelled_by_customer">Ride is cancelled by customer</string>
     <string name="error_ride_is_rejected">Ride is rejected.</string>
+    <string name="error_ride_is_expired">Ride is expired.</string>
     <string name="error_failed_to_accept_ride">Error failed to accept ride. Probably it is already allocated to someone else or you already have a previous ride in progress.</string>
     <string name="success_account_details">Account details successfully updated.</string>
     <string name="message_no_open_rides">Currently there are no open rides.</string>

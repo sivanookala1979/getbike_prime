@@ -100,16 +100,23 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         int id = menuItem.getItemId();
 
         switch (id) {
-/*
+            case R.id.wallet:
+                startActivity(new Intent(this, GetBikeWalletHome.class));
+                break;
+            case R.id.earnings:
+                startActivity(new Intent(this,EarningsActivity.class));
+                break;
             case R.id.history:
                 startActivity(new Intent(this, ScheduledRidesAndHistoryActivity.class));
                 break;
-            case R.id.earnFreeRides:
-                startActivity(new Intent(this, ShareActivity.class));
+            case R.id.profilAndSettings:
+                startActivity(new Intent(this, ProfileAndSettingsActivity.class));
                 break;
-*/
             case R.id.bills:
                 startActivity(new Intent(this, ViewRoasterRecordsActivity.class));
+                break;
+            case R.id.cashInAdvance:
+                startActivity(new Intent(this,CashInAdvanceActivity.class));
                 break;
             case R.id.logout:
                 startActivity(new Intent(this, LogoScreenActivity.class));
@@ -121,11 +128,6 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 GetBikePreferences.reset();
                 finish();
                 break;
-/*
-            case R.id.wallet:
-                startActivity(new Intent(this, GetBikeWalletHome.class));
-                break;
-*/
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
