@@ -5,26 +5,28 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
-import android.net.Uri;
+import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
+import android.telephony.CellLocation;
+import android.telephony.PhoneStateListener;
+import android.telephony.ServiceState;
+import android.telephony.SignalStrength;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -36,43 +38,29 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.squareup.picasso.Picasso;
 import com.vave.getbike.R;
 import com.vave.getbike.helpers.GetBikeAsyncTask;
 import com.vave.getbike.helpers.GetBikePreferences;
 import com.vave.getbike.helpers.LocationDetails;
 import com.vave.getbike.helpers.ToastHelper;
 import com.vave.getbike.model.CurrentRideStatus;
-import com.vave.getbike.model.GeoFencingLocation;
 import com.vave.getbike.model.Profile;
-import com.vave.getbike.model.PromotionsBanner;
 import com.vave.getbike.model.Ride;
-import com.vave.getbike.model.RideLocation;
-import com.vave.getbike.syncher.BaseSyncher;
+import com.vave.getbike.model.UserProfile;
 import com.vave.getbike.syncher.LoginSyncher;
 import com.vave.getbike.syncher.RideSyncher;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-import java.util.StringTokenizer;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-
-import pl.droidsonroids.gif.GifImageView;
 
 public class GiveRideTakeRideActivity extends BaseActivity implements OnMapReadyCallback, View.OnClickListener, LocationListener,
         GoogleApiClient.ConnectionCallbacks,
@@ -99,6 +87,9 @@ public class GiveRideTakeRideActivity extends BaseActivity implements OnMapReady
     private ImageButton giveRide;
     ScheduledFuture<?> future = null;
     private ScheduledExecutorService scheduler = null;
+    String networkServiceState = "IN SERVICE", callStatus = "IDLE", dataConnectionState = "Connected";
+    int signalStrength = 10;
+    TelephonyManager telephonyManager;
 
     public static GiveRideTakeRideActivity instance() {
         return activeInstance;
@@ -127,8 +118,22 @@ public class GiveRideTakeRideActivity extends BaseActivity implements OnMapReady
         applicationVersionFromStrings = getString(R.string.app_version);
         appVersionTextView.setText(applicationVersionName + "~" + applicationVersionCode + "~" + applicationVersionFromStrings);
 
+        telephonyManager= (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        telephonyManager.listen(phoneStateListener,
+                phoneStateListener.LISTEN_CALL_FORWARDING_INDICATOR |
+                        phoneStateListener.LISTEN_CALL_STATE |
+                        phoneStateListener.LISTEN_CELL_INFO |
+                        phoneStateListener.LISTEN_CELL_LOCATION |
+                        phoneStateListener.LISTEN_DATA_ACTIVITY |
+                        phoneStateListener.LISTEN_MESSAGE_WAITING_INDICATOR |
+                        phoneStateListener.LISTEN_CELL_INFO |
+                        phoneStateListener.LISTEN_DATA_CONNECTION_STATE |
+                        phoneStateListener.LISTEN_SERVICE_STATE |
+                        phoneStateListener.LISTEN_SIGNAL_STRENGTHS
+        );
+
         Log.d(TAG, "onCreate ...............................");
-        //show error dialog if GoolglePlayServices not available
+        //show error dialog if GooglePlayServices not available
         if (!isGooglePlayServicesAvailable()) {
             finish();
         }
@@ -563,11 +568,27 @@ public class GiveRideTakeRideActivity extends BaseActivity implements OnMapReady
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    String addressLocationString = "NA";
                     if (LocationDetails.isValid(fusedCurrentLocation)){
                         LocationDetails.storeUserLastKnownLocation(GiveRideTakeRideActivity.this,fusedCurrentLocation.getLatitude(),fusedCurrentLocation.getLongitude());
+                        addressLocationString = LocationDetails.getCompleteAddressString(GiveRideTakeRideActivity.this,fusedCurrentLocation.getLatitude(),fusedCurrentLocation.getLongitude());
                     } else if (LocationDetails.isValid(mCurrentLocation)){
                         LocationDetails.storeUserLastKnownLocation(GiveRideTakeRideActivity.this,mCurrentLocation.getLatitude(),mCurrentLocation.getLongitude());
+                        addressLocationString = LocationDetails.getCompleteAddressString(GiveRideTakeRideActivity.this,mCurrentLocation.getLatitude(),mCurrentLocation.getLongitude());
                     }
+                    UserProfile userProfile = new UserProfile();
+                    userProfile.setMobileBatteryLevel(batteryLevelPercentage());
+                    userProfile.setMobileSignalLevel(signalStrength);
+                    userProfile.setMobileCallStatus(callStatus);
+                    userProfile.setMobileNetworkOperator(telephonyManager.getNetworkOperatorName());
+                    userProfile.setMobileServiceState(networkServiceState);
+                    userProfile.setMobileOperatingSystem(android.os.Build.VERSION.RELEASE);
+                    userProfile.setMobileIMEI(telephonyManager.getDeviceId());
+                    userProfile.setMobileBrand(android.os.Build.BRAND);
+                    userProfile.setMobileModel(android.os.Build.MODEL);
+                    userProfile.setLastKnownAddress(addressLocationString);
+                    userProfile.setMobileDataConnection(dataConnectionState);
+                    LocationDetails.storeMobileTrackingInfo(GiveRideTakeRideActivity.this,userProfile);
                 }
             });
         }
@@ -579,4 +600,140 @@ public class GiveRideTakeRideActivity extends BaseActivity implements OnMapReady
             future = null;
         }
     }
+
+    private int batteryLevelPercentage() {
+        IntentFilter intentFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        Intent batteryStatus = registerReceiver(null, intentFilter);
+        int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+        int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+        float batteryPct = level / (float)scale;
+        return (int)(batteryPct*100);
+    }
+
+    private final PhoneStateListener phoneStateListener = new PhoneStateListener() {
+        @Override
+        public void onCallForwardingIndicatorChanged(boolean cfi) {
+            super.onCallForwardingIndicatorChanged(cfi);
+        }
+
+        @Override
+        public void onCallStateChanged(int state, String incomingNumber) {
+            //checkInternetConnection();
+            String callState = "UNKNOWN";
+            switch (state) {
+                case TelephonyManager.CALL_STATE_IDLE:
+                    callState = "IDLE";
+                    break;
+                case TelephonyManager.CALL_STATE_RINGING:
+                    callState = "Ringing (" + incomingNumber + ")";
+                    break;
+                case TelephonyManager.CALL_STATE_OFFHOOK:
+                    callState = "Offhook";
+                    break;
+            }
+            Log.i("Phone Stats", "onCallStateChanged " + callState);
+            callStatus = callState;
+            super.onCallStateChanged(state, incomingNumber);
+        }
+
+        public void onCellLocationChanged(CellLocation location) {
+            String cellLocationString = location.toString();
+            System.out.println("cell location : "+cellLocationString);
+            super.onCellLocationChanged(location);
+        }
+
+        @Override
+        public void onDataActivity(int direction) {
+            String directionString = "none";
+            switch (direction) {
+                case TelephonyManager.DATA_ACTIVITY_IN:
+                    directionString = "IN";
+                    break;
+                case TelephonyManager.DATA_ACTIVITY_OUT:
+                    directionString = "OUT";
+                    break;
+                case TelephonyManager.DATA_ACTIVITY_INOUT:
+                    directionString = "INOUT";
+                    break;
+                case TelephonyManager.DATA_ACTIVITY_NONE:
+                    directionString = "NONE";
+                    break;
+                default:
+                    directionString = "UNKNOWN: " + direction;
+                    break;
+            }
+            Log.i("Phone Stats", "onDataActivity " + directionString);
+            super.onDataActivity(direction);
+        }
+
+        @Override
+        public void onDataConnectionStateChanged(int state,int networktype) {
+            String connectionState = "Unknown";
+            switch (state) {
+                case TelephonyManager.DATA_CONNECTED :
+                    connectionState = "Connected";
+                    break;
+                case TelephonyManager.DATA_CONNECTING:
+                    connectionState = "Connecting";
+                    break;
+                case TelephonyManager.DATA_DISCONNECTED:
+                    connectionState = "Disconnected";
+                    break;
+                case TelephonyManager.DATA_SUSPENDED:
+                    connectionState = "Suspended";
+                    break;
+                default:
+                    connectionState = "Unknown: " + state;
+                    break;
+            }
+            super.onDataConnectionStateChanged(state);
+            Log.i("Phone Stats", "onDataConnectionStateChanged "
+                    + connectionState);
+            dataConnectionState = connectionState;
+        }
+
+        @Override
+        public void onMessageWaitingIndicatorChanged(boolean mwi) {
+            super.onMessageWaitingIndicatorChanged(mwi);
+        }
+
+        @Override
+        public void onServiceStateChanged(ServiceState serviceState) {
+            String serviceStateString = "UNKNOWN";
+            switch (serviceState.getState()) {
+                case ServiceState.STATE_IN_SERVICE:
+                    serviceStateString = "IN SERVICE";
+                    break;
+                case ServiceState.STATE_EMERGENCY_ONLY:
+                    serviceStateString = "EMERGENCY ONLY";
+                    break;
+                case ServiceState.STATE_OUT_OF_SERVICE:
+                    serviceStateString = "OUT OF SERVICE";
+                    break;
+                case ServiceState.STATE_POWER_OFF:
+                    serviceStateString = "POWER OFF";
+                    break;
+                default:
+                    serviceStateString = "UNKNOWN";
+                    break;
+            }
+            Log.i("Phone Stats", "onServiceStateChanged " + serviceStateString);
+            networkServiceState = serviceStateString;
+            super.onServiceStateChanged(serviceState);
+        }
+
+        @RequiresApi(api = Build.VERSION_CODES.M)
+        @Override
+        public void onSignalStrengthsChanged(SignalStrength signalStrength) {
+            Log.i("Phone Stats", "onSignalStrengthChanged " + signalStrength);
+            setSignalLevel(signalStrength.getLevel());
+            super.onSignalStrengthsChanged(signalStrength);
+        }
+        private void setSignalLevel(int level) {
+            int sLevel = (int) ((level / 31.0) * 100);
+            Log.i("signalLevel ", "" + sLevel);
+            signalStrength = sLevel;
+        }
+    };
+
 }

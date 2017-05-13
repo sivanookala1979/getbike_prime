@@ -8,6 +8,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.util.Log;
@@ -24,11 +26,14 @@ import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.vave.getbike.activity.ShowCompletedRideActivity;
 import com.vave.getbike.datasource.RideLocationDataSource;
 import com.vave.getbike.model.Ride;
+import com.vave.getbike.model.UserProfile;
 import com.vave.getbike.syncher.LoginSyncher;
 import com.vave.getbike.syncher.RideLocationSyncher;
 import com.vave.getbike.syncher.RideSyncher;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * @author Adarsh.T
@@ -154,6 +159,51 @@ public class LocationDetails {
 
             }
         }.execute();
+    }
+
+    public static void storeMobileTrackingInfo(Context context, final UserProfile userProfile) {
+
+        new GetBikeAsyncTask(context) {
+
+            @Override
+            public void process() {
+
+                LoginSyncher loginSyncher = new LoginSyncher();
+                loginSyncher.storeMobileTrackingDetails(userProfile);
+            }
+
+            @Override
+            public void afterPostExecute() {
+
+            }
+        }.execute();
+    }
+
+    public static String getCompleteAddressString(Context context,double LATITUDE, double LONGITUDE) {
+        String strAdd = "";
+        Geocoder geocoder = new Geocoder(context, Locale.getDefault());
+        try {
+            List<Address> addresses = geocoder.getFromLocation(LATITUDE, LONGITUDE, 1);
+            if (addresses != null) {
+                Address returnedAddress = addresses.get(0);
+                StringBuilder strReturnedAddress = new StringBuilder("");
+
+                for (int i = 0; i < returnedAddress.getMaxAddressLineIndex(); i++) {
+                    strReturnedAddress.append(returnedAddress.getAddressLine(i)).append(", ");
+                }
+                strAdd = strReturnedAddress.toString();
+                if (strAdd.endsWith(", ")) {
+                    strAdd = strAdd.substring(0, strAdd.length() - 2);
+                }
+                Log.w("My Current loction", "" + strReturnedAddress.toString());
+            } else {
+                Log.w("My Current loction", "No Address returned!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.w("My Current loction", "Canont get Address!");
+        }
+        return strAdd;
     }
 
     public String getCity() {

@@ -45,6 +45,8 @@ public class Ride {
     String parcelDropoffImageName;
     String parcelPickupDetails;
     String parcelDropoffDetails;
+    String parcelOrderId;
+    Double codAmount;
 
     public String getActualSourceAddress() {
         return actualSourceAddress;
@@ -347,5 +349,21 @@ public class Ride {
 
     public void setParcelDropoffDetails(String parcelDropoffDetails) {
         this.parcelDropoffDetails = parcelDropoffDetails;
+    }
+
+    public String getParcelOrderId() {
+        return parcelOrderId;
+    }
+
+    public void setParcelOrderId(String parcelOrderId) {
+        this.parcelOrderId = parcelOrderId;
+    }
+
+    public Double getCodAmount() {
+        return codAmount;
+    }
+
+    public void setCodAmount(Double codAmount) {
+        this.codAmount = codAmount;
     }
 }

@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.vave.getbike.datasource.CallStatus;
 import com.vave.getbike.model.CashInAdvance;
 import com.vave.getbike.model.CurrentRideStatus;
+import com.vave.getbike.model.LeaveInAdvance;
 import com.vave.getbike.model.Profile;
 import com.vave.getbike.model.RoasterRecord;
 import com.vave.getbike.model.SaveResult;
@@ -210,6 +211,34 @@ public class LoginSyncher extends BaseSyncher {
         return result.getValue();
     }
 
+    public boolean storeMobileTrackingDetails(final UserProfile userProfile) {
+        final GetBikePointer<UserProfile> result = new GetBikePointer<>(null);
+        new JsonPostHandler("/storeMobileTrackingDetails") {
+
+            @Override
+            protected void prepareRequest() {
+                put("batteryLevel", userProfile.getMobileBatteryLevel());
+                put("signalLevel", userProfile.getMobileSignalLevel());
+                put("callStatus", userProfile.getMobileCallStatus());
+                put("networkOperator", userProfile.getMobileNetworkOperator());
+                put("serviceState", userProfile.getMobileServiceState());
+                put("operatingSystem", userProfile.getMobileOperatingSystem());
+                put("IMEI", userProfile.getMobileIMEI());
+                put("brand", userProfile.getMobileBrand());
+                put("model", userProfile.getMobileModel());
+                put("dataConnection", userProfile.getMobileDataConnection());
+                put("address", userProfile.getLastKnownAddress());
+            }
+
+            @Override
+            protected void processResult(JSONObject jsonResult) throws Exception {
+                if (jsonResult.has("result") && "success".equals(jsonResult.get("result"))) {
+                }
+            }
+        }.handle();
+        return true;
+    }
+
     public UserProfile getUserProfile() {
         final GetBikePointer<UserProfile> result = new GetBikePointer<>(null);
         new JsonGetHandler("/getPrivateProfile") {
@@ -312,4 +341,25 @@ public class LoginSyncher extends BaseSyncher {
         }.handle();
         return result;
     }
+
+    public List<LeaveInAdvance> getLeaveRequests() {
+        final ArrayList<LeaveInAdvance> result = new ArrayList<>();
+        new JsonGetHandler("/getLeaveRequests") {
+
+            @Override
+            protected void processResult(JSONObject jsonResult) throws Exception {
+                if (jsonResult.has("records")) {
+                    JSONArray recordsArray = jsonResult.getJSONArray("records");
+
+                    for (int i = 0; i < recordsArray.length(); i++) {
+                        JSONObject jsonRideObject = (JSONObject) recordsArray.get(i);
+                        LeaveInAdvance leaveInAdvance = GsonUtils.getGson().fromJson(jsonRideObject.toString(), LeaveInAdvance.class);
+                        result.add(leaveInAdvance);
+                    }
+                }
+            }
+        }.handle();
+        return result;
+    }
+
 }

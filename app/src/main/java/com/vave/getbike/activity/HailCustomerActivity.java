@@ -59,7 +59,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
-public class HailCustomerActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener {
+public class HailCustomerActivity extends BaseActivity implements OnMapReadyCallback, View.OnClickListener {
 
     GoogleMap googleMap;
     String yourLocation;
@@ -85,6 +85,7 @@ public class HailCustomerActivity extends AppCompatActivity implements OnMapRead
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hail_customer);
+        addToolbarView();
         customerMobileNumber = (EditText) findViewById(R.id.customerMobileNumber);
         customerName = (EditText) findViewById(R.id.customerName);
         customerEmailId = (EditText) findViewById(R.id.customerEmailId);
@@ -115,13 +116,13 @@ public class HailCustomerActivity extends AppCompatActivity implements OnMapRead
         double longitude = getIntent().getDoubleExtra("longitude", 0);
         yourLocationLatLng = new LatLng(latitude, longitude);
         if (latitude > 0 && longitude > 0) {
-            yourLocation = getCompleteAddressString(latitude, longitude);
+            yourLocation = LocationDetails.getCompleteAddressString(HailCustomerActivity.this,latitude, longitude);
         } else {
             Location mCurrentLocation = LocationDetails.getLocationOrShowToast(HailCustomerActivity.this, locationManager);
             locationManager = (LocationManager)
                     getSystemService(Context.LOCATION_SERVICE);
             if (mCurrentLocation != null && mCurrentLocation.getLatitude() > 0 && mCurrentLocation.getLongitude() > 0) {
-                yourLocation = getCompleteAddressString(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
+                yourLocation = LocationDetails.getCompleteAddressString(HailCustomerActivity.this,mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
             }
         }
         googleMapV2Direction = new GMapV2Direction();
@@ -129,32 +130,6 @@ public class HailCustomerActivity extends AppCompatActivity implements OnMapRead
 
     }
 
-    private String getCompleteAddressString(double LATITUDE, double LONGITUDE) {
-        String strAdd = "";
-        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-        try {
-            List<Address> addresses = geocoder.getFromLocation(LATITUDE, LONGITUDE, 1);
-            if (addresses != null) {
-                Address returnedAddress = addresses.get(0);
-                StringBuilder strReturnedAddress = new StringBuilder("");
-
-                for (int i = 0; i < returnedAddress.getMaxAddressLineIndex(); i++) {
-                    strReturnedAddress.append(returnedAddress.getAddressLine(i)).append(", ");
-                }
-                strAdd = strReturnedAddress.toString();
-                if (strAdd.endsWith(", ")) {
-                    strAdd = strAdd.substring(0, strAdd.length() - 2);
-                }
-                Log.w("My Current loction", "" + strReturnedAddress.toString());
-            } else {
-                Log.w("My Current loction", "No Address returned!");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.w("My Current loction", "Canont get Address!");
-        }
-        return strAdd;
-    }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -273,8 +248,10 @@ public class HailCustomerActivity extends AppCompatActivity implements OnMapRead
                 public void process() {
                     document = googleMapV2Direction.getDocument(yourLocationLatLng,
                             destPosition, GMapV2Direction.MODE_DRIVING);
+                    System.out.println("Testing phase initial=================== document "+document);
                     directionPoints = googleMapV2Direction
                             .getDirection(document);
+                    System.out.println("Testing phase initial=================== directionPoints "+directionPoints);
                     RideSyncher rideSyncher = new RideSyncher();
                     ArrayList<RideLocation> rideLocations = new ArrayList<RideLocation>();
                     if (directionPoints.size() <= 20) {

@@ -20,6 +20,8 @@ public class UserProfile {
     boolean mobileVerified;
     boolean profileImageUpdated;
     char gender;
+    Integer mobileSignalLevel,mobileBatteryLevel;
+    String mobileCallStatus,mobileNetworkOperator,mobileServiceState,mobileOperatingSystem,mobileIMEI,mobileBrand,mobileModel,mobileDataConnection,lastKnownAddress;
 
     public boolean isProfileImageUpdated() {
         return profileImageUpdated;
@@ -155,4 +157,91 @@ public class UserProfile {
         return result;
     }
 
+    public Integer getMobileSignalLevel() {
+        return mobileSignalLevel;
+    }
+
+    public void setMobileSignalLevel(Integer mobileSignalLevel) {
+        this.mobileSignalLevel = mobileSignalLevel;
+    }
+
+    public Integer getMobileBatteryLevel() {
+        return mobileBatteryLevel;
+    }
+
+    public void setMobileBatteryLevel(Integer mobileBatteryLevel) {
+        this.mobileBatteryLevel = mobileBatteryLevel;
+    }
+
+    public String getMobileCallStatus() {
+        return mobileCallStatus;
+    }
+
+    public void setMobileCallStatus(String mobileCallStatus) {
+        this.mobileCallStatus = mobileCallStatus;
+    }
+
+    public String getMobileNetworkOperator() {
+        return mobileNetworkOperator;
+    }
+
+    public void setMobileNetworkOperator(String mobileNetworkOperator) {
+        this.mobileNetworkOperator = mobileNetworkOperator;
+    }
+
+    public String getMobileServiceState() {
+        return mobileServiceState;
+    }
+
+    public void setMobileServiceState(String mobileServiceState) {
+        this.mobileServiceState = mobileServiceState;
+    }
+
+    public String getMobileOperatingSystem() {
+        return mobileOperatingSystem;
+    }
+
+    public void setMobileOperatingSystem(String mobileOperatingSystem) {
+        this.mobileOperatingSystem = mobileOperatingSystem;
+    }
+
+    public String getMobileIMEI() {
+        return mobileIMEI;
+    }
+
+    public void setMobileIMEI(String mobileIMEI) {
+        this.mobileIMEI = mobileIMEI;
+    }
+
+    public String getMobileBrand() {
+        return mobileBrand;
+    }
+
+    public void setMobileBrand(String mobileBrand) {
+        this.mobileBrand = mobileBrand;
+    }
+
+    public String getMobileModel() {
+        return mobileModel;
+    }
+
+    public void setMobileModel(String mobileModel) {
+        this.mobileModel = mobileModel;
+    }
+
+    public String getMobileDataConnection() {
+        return mobileDataConnection;
+    }
+
+    public void setMobileDataConnection(String mobileDataConnection) {
+        this.mobileDataConnection = mobileDataConnection;
+    }
+
+    public String getLastKnownAddress() {
+        return lastKnownAddress;
+    }
+
+    public void setLastKnownAddress(String lastKnownAddress) {
+        this.lastKnownAddress = lastKnownAddress;
+    }
 }

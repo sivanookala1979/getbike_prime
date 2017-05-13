@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -132,7 +133,9 @@
             android:screenOrientation="portrait" />
         <activity android:name=".activity.EarningsActivity" />
         <activity android:name=".activity.CashInAdvanceActivity" />
-        <activity android:name=".activity.AddCashRequestActivity"></activity>
+        <activity android:name=".activity.AddCashRequestActivity" />
+        <activity android:name=".activity.LeaveInAdvanceActivity" />
+        <activity android:name=".activity.LeaveRequestsHistoryActivity"></activity>
     </application>
 
 </manifest>

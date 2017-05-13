@@ -385,6 +385,30 @@ public class RideSyncher extends BaseSyncher {
         return result.getValue();
     }
 
+    public boolean saveLeaveRequest(final String leavesRequired,final String riderDescription, final String fromDate, final String toDate) {
+        final GetBikePointer<Boolean> result = new GetBikePointer<>(false);
+        new JsonPostHandler("/saveLeaveRequest") {
+
+            @Override
+            protected void prepareRequest() {
+                put("leavesRequired",leavesRequired);
+                put("riderDescription",riderDescription);
+                put("fromDate",fromDate);
+                put("toDate",toDate);
+
+            }
+
+            @Override
+            protected void processResult(JSONObject jsonResult) throws Exception {
+                if (jsonResult.has("result") && "success".equals(jsonResult.get("result"))) {
+                    result.setValue(true);
+                }
+            }
+        }.handle();
+        return result.getValue();
+    }
+
+
 
     public PromotionsBanner getPromotionalBannerWithUrl(final String resolution) {
         final PromotionsBanner promotionsBanner = new PromotionsBanner();
@@ -429,7 +453,7 @@ public class RideSyncher extends BaseSyncher {
             @Override
             protected void processResult(JSONObject jsonResult) throws Exception {
                 if (jsonResult.has("result") && jsonResult.get("result").equals("success")) {
-                    System.out.println("TEsting phase ... .. customer trips amount......"+jsonResult.getDouble("customerTripsAmount"));
+                    System.out.println("Testing phase ... .. customer trips amount......"+jsonResult.getDouble("customerTripsAmount"));
                     customerTripsAmount = jsonResult.getDouble("customerTripsAmount");
                 }
             }
@@ -443,7 +467,7 @@ public class RideSyncher extends BaseSyncher {
             @Override
             protected void processResult(JSONObject jsonResult) throws Exception {
                 if (jsonResult.has("result") && jsonResult.get("result").equals("success")) {
-                    System.out.println("TEsting phase ... .. parcel trips amount......"+jsonResult.getDouble("parcelTripsAmount"));
+                    System.out.println("Testing phase ... .. parcel trips amount......"+jsonResult.getDouble("parcelTripsAmount"));
                     parcelTripsAmount = jsonResult.getDouble("parcelTripsAmount");
                 }
             }

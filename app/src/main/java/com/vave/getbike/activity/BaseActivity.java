@@ -118,6 +118,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             case R.id.cashInAdvance:
                 startActivity(new Intent(this,CashInAdvanceActivity.class));
                 break;
+            case R.id.leaveRequests:
+                startActivity(new Intent(this,LeaveRequestsHistoryActivity.class));
+                break;
             case R.id.logout:
                 startActivity(new Intent(this, LogoScreenActivity.class));
                 try {

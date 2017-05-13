@@ -36,7 +36,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="30"
+            android:layout_weight="39"
             android:text="Open Rides"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/large_text_size"/>
@@ -44,6 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
+            android:visibility="gone"
             android:text="  HAIL   "
             android:id="@+id/hail_model_text_view"
             android:textSize="22sp"/>

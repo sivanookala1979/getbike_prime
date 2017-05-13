@@ -38,7 +38,7 @@ public class AcceptRejectRideActivity extends BaseActivity implements View.OnCli
     TextView modeOfPayment;
     TextView rideRequestAddressTextViewLabel;
     TextView rideDestinationAddressTextViewLabel;
-    TextView rideRequestMobileNumberTextViewLabel ,pickUpDetails ,dropOffDetails;
+    TextView rideRequestMobileNumberTextViewLabel ,pickUpDetails ,dropOffDetails, parcelOrderId, codAmount;
     Button acceptRide;
     Button rejectRide;
     Button callRequestorButton;
@@ -70,6 +70,8 @@ public class AcceptRejectRideActivity extends BaseActivity implements View.OnCli
         rideRequestMobileNumberTextViewLabel = (TextView) findViewById(R.id.rideRequestMobileNumberTextViewLabel);
         pickUpDetails = (TextView) findViewById(R.id.pickUpDetails);
         dropOffDetails = (TextView) findViewById(R.id.dropOffDetails);
+        parcelOrderId = (TextView) findViewById(R.id.parcelOrderId);
+        codAmount = (TextView) findViewById(R.id.codAmount);
         acceptRide = (Button) findViewById(R.id.acceptRide);
         rejectRide = (Button) findViewById(R.id.rejectRide);
         callRequestorButton = (Button) findViewById(R.id.callRideRequestor);
@@ -107,6 +109,12 @@ public class AcceptRejectRideActivity extends BaseActivity implements View.OnCli
                                 rejectRide.setText("Reject Parcel");
                                 callRequestorButton.setText("Call Vendor");
                                 parcelLayout.setVisibility(View.VISIBLE);
+                                if (ride.getParcelOrderId() != null) {
+                                    parcelOrderId.setText(ride.getParcelOrderId());
+                                }
+                                if (ride.getCodAmount() != null){
+                                    codAmount.setText(ride.getCodAmount().toString());
+                                }
                                 rideRequestAddressTextViewLabel.setText("Parcel pickup location address");
                                 rideDestinationAddressTextViewLabel.setText("Parcel destination location address");
                                 pickUpDetails.setText(ride.getParcelPickupDetails());

@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.vave.getbike.R;
+import com.vave.getbike.adapter.CashInAdvanceItemAdapter;
 import com.vave.getbike.helpers.GetBikeAsyncTask;
+import com.vave.getbike.helpers.ToastHelper;
 import com.vave.getbike.model.CashInAdvance;
 import com.vave.getbike.model.RoasterRecord;
 import com.vave.getbike.syncher.LoginSyncher;
@@ -53,13 +56,22 @@ public class CashInAdvanceActivity extends BaseActivity {
 
             @Override
             public void afterPostExecute() {
-                List<String> recordStrings = new ArrayList<String>();
+                System.out.println("date is : "+recordList);
+                /*List<String> recordStrings = new ArrayList<String>();
                 for (CashInAdvance record : recordList) {
                     recordStrings.add(record.toString());
                 }
                 cashInAdvanceListViewListView.setAdapter(new ArrayAdapter<String>(
                         getApplicationContext(),
-                        R.layout.package_spinner_item, recordStrings));
+                        R.layout.package_spinner_item, recordStrings));*/
+
+                if (recordList != null) {
+                    cashInAdvanceListViewListView.setAdapter(new CashInAdvanceItemAdapter(CashInAdvanceActivity.this,recordList));
+                    if (recordList.size() == 0) {
+                        ToastHelper.blueToast(CashInAdvanceActivity.this, "No Requests");
+                    }
+                }
+
             }
         }.execute();
     }
