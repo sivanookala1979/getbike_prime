@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.vave.getbike.R;
+import com.vave.getbike.adapter.LeaveInAdvanceItemAdapter;
 import com.vave.getbike.helpers.GetBikeAsyncTask;
+import com.vave.getbike.helpers.ToastHelper;
 import com.vave.getbike.model.LeaveInAdvance;
 import com.vave.getbike.syncher.LoginSyncher;
 
@@ -52,13 +54,20 @@ public class LeaveRequestsHistoryActivity extends BaseActivity {
             @Override
             public void afterPostExecute() {
                 System.out.println("date is : "+recordList);
-                List<String> recordStrings = new ArrayList<String>();
+                /*List<String> recordStrings = new ArrayList<String>();
                 for (LeaveInAdvance record : recordList) {
                     recordStrings.add(record.toString());
                 }
                 leaveInAdvanceListView.setAdapter(new ArrayAdapter<String>(
                         getApplicationContext(),
-                        R.layout.package_spinner_item, recordStrings));
+                        R.layout.package_spinner_item, recordStrings));*/
+
+                if (recordList != null) {
+                    leaveInAdvanceListView.setAdapter(new LeaveInAdvanceItemAdapter(LeaveRequestsHistoryActivity.this,recordList));
+                    if (recordList.size() == 0) {
+                        ToastHelper.blueToast(LeaveRequestsHistoryActivity.this, "No Requests");
+                    }
+                }
 
             }
         }.execute();
