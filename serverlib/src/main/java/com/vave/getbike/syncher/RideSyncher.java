@@ -2,6 +2,7 @@ package com.vave.getbike.syncher;
 
 import com.vave.getbike.datasource.CallStatus;
 import com.vave.getbike.model.GeoFencingLocation;
+import com.vave.getbike.model.GroupRider;
 import com.vave.getbike.model.PromotionsBanner;
 import com.vave.getbike.model.Ride;
 import com.vave.getbike.model.RideLocation;
@@ -14,6 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -237,6 +239,29 @@ public class RideSyncher extends BaseSyncher {
                         result.add(createRideFromJson(ridesArray.getJSONObject(i)));
                     }
                 }
+                if (jsonResult.has("groupRides")) {
+                    JSONArray groupRidesArray = jsonResult.getJSONArray("groupRides");
+                    for (int i = 0; i < groupRidesArray.length(); i++) {
+                        JSONObject jsonObject = groupRidesArray.getJSONObject(i);
+                        Ride groupRide = new Ride();
+                        if (jsonObject.has("groupId"))
+                            groupRide.setId(jsonObject.getLong("groupId"));
+                        if (jsonObject.has("isGroupRide"))
+                            groupRide.setGroupRide(jsonObject.getBoolean("isGroupRide"));
+                        if (jsonObject.has("numberOfRides"))
+                            groupRide.setNumberOfRides(jsonObject.getInt("numberOfRides"));
+                        if (jsonObject.has("firstRide")) {
+                            JSONObject jsonFirstRideObject = (JSONObject) jsonObject.get("firstRide");
+                            groupRide.setRequestedAt(new Date(jsonFirstRideObject.getLong("requestedAt")));
+                            groupRide.setSourceAddress(jsonFirstRideObject.getString("sourceAddress"));
+                        }
+                        if (jsonObject.has("lastRide")) {
+                            JSONObject jsonLastRideObject = (JSONObject) jsonObject.get("lastRide");
+                            groupRide.setDestinationAddress(jsonLastRideObject.getString("destinationAddress"));
+                        }
+                        result.add(groupRide);
+                    }
+                }
             }
         }.handle();
         return result;
@@ -260,6 +285,43 @@ public class RideSyncher extends BaseSyncher {
             }
         }.handle();
         return result;
+    }
+
+    public GroupRider getRiderLocations(Long groupId) {
+        final GroupRider groupRider = new GroupRider();
+        final ArrayList<RideLocation> result = new ArrayList<>();
+        new JsonGetHandler("/getRiderLocations/"+groupId) {
+
+            @Override
+            protected void processResult(JSONObject jsonResult) throws Exception {
+                if (jsonResult.has("groupId"))
+                    groupRider.setGroupId(jsonResult.getLong("groupId"));
+                    if (jsonResult.has("groupRiderId"))
+                        groupRider.setGroupRiderId(jsonResult.getLong("groupRiderId"));
+                    if (jsonResult.has("riderLocations")) {
+                    JSONArray ridesArray = jsonResult.getJSONArray("riderLocations");
+                    for (int i = 0; i < ridesArray.length(); i++) {
+                        JSONObject jsonObject = ridesArray.getJSONObject(i);
+                        RideLocation rideLocation = new RideLocation();
+                        if (jsonObject.has("rideId"))
+                            rideLocation.setRideId(jsonObject.getLong("rideId"));
+                        if (jsonObject.has("lat"))
+                            rideLocation.setLatitude(jsonObject.getDouble("lat"));
+                        if (jsonObject.has("lng"))
+                            rideLocation.setLongitude(jsonObject.getDouble("lng"));
+                        if (jsonObject.has("source"))
+                            rideLocation.setSourse(jsonObject.getBoolean("source"));
+                        if (jsonObject.has("sourceAddress"))
+                            rideLocation.setSourseAddress(jsonObject.getString("sourceAddress"));
+                        if (jsonObject.has("destinationAddress"))
+                            rideLocation.setDestinationAddress(jsonObject.getString("destinationAddress"));
+                        result.add(rideLocation);
+                    }
+                }
+                groupRider.setGroupRiderLocations(result);
+            }
+        }.handle();
+        return groupRider;
     }
 
     public List<Ride> getMyCompletedRides() {

@@ -52,6 +52,7 @@ public class RideAdapter2 extends BaseAdapter {
             holder.fromAddress = (TextView) convertView.findViewById(R.id.fromAddress);
             holder.toAddress = (TextView) convertView.findViewById(R.id.toAddress);
             holder.price = (TextView) convertView.findViewById(R.id.price);
+            holder.isGroup = (TextView) convertView.findViewById(R.id.isGroup);
             holder.acceptRideTextViewInOpenRides = (TextView) convertView.findViewById(R.id.acceptRideTextView);
             holder.rideDateTime = (TextView) convertView.findViewById(R.id.rideDateTime);
             convertView.setTag(holder);
@@ -75,6 +76,9 @@ public class RideAdapter2 extends BaseAdapter {
         holder.fromAddress.setText(ride.getSourceAddress());
         holder.toAddress.setText(ride.getDestinationAddress());
         holder.rideDateTime.setText(ride.getRequestedAt() + "");
+        if(ride.isGroupRide()){
+            holder.isGroup.setText("Group Ride");
+        }
         return convertView;
     }
 
@@ -84,6 +88,7 @@ public class RideAdapter2 extends BaseAdapter {
         TextView fromAddress;
         TextView toAddress;
         TextView price;
+        TextView isGroup;
         TextView rideDateTime;
         TextView acceptRideTextViewInOpenRides;
     }

@@ -20,6 +20,7 @@ import com.vave.getbike.model.Ride;
 import com.vave.getbike.syncher.LoginSyncher;
 import com.vave.getbike.syncher.RideSyncher;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -32,7 +33,7 @@ public class OpenRidesActivity extends BaseActivity {
     // UI Widgets
     ListView openRidesListView;
     TextView hailModelTextView;
-    List<Ride> result = null;
+    List<Ride> openRidesList = new ArrayList<>();
     Button refreshButton;
     ScheduledFuture<?> s = null;
     private ScheduledExecutorService scheduler = null;
@@ -61,9 +62,15 @@ public class OpenRidesActivity extends BaseActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (result != null) {
-                    Intent intent = new Intent(OpenRidesActivity.this, AcceptRejectRideActivity.class);
-                    intent.putExtra("rideId", result.get(position).getId());
+                Intent intent;
+                if (openRidesList != null) {
+                    Ride openRide = openRidesList.get(position);
+                    if(openRide.isGroupRide()){
+                        intent = new Intent(OpenRidesActivity.this, GroupRideRouteMapActivity.class);
+                    }else{
+                        intent = new Intent(OpenRidesActivity.this, AcceptRejectRideActivity.class);
+                    }
+                    intent.putExtra("rideId", openRide.getId());
                     startActivity(intent);
                     finish();
                 }
@@ -123,14 +130,14 @@ public class OpenRidesActivity extends BaseActivity {
                     LoginSyncher loginSyncher = new LoginSyncher();
                     RideSyncher rideSyncher = new RideSyncher();
                     loginSyncher.storeLastKnownLocation(new Date(), mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
-                    result = rideSyncher.openRides(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
+                    openRidesList = rideSyncher.openRides(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
                 }
 
                 @Override
                 public void afterPostExecute() {
-                    if (result != null) {
-                        openRidesListView.setAdapter(new RideAdapter2(OpenRidesActivity.this, result, true));
-                        if (result.size() == 0) {
+                    if (openRidesList != null) {
+                        openRidesListView.setAdapter(new RideAdapter2(OpenRidesActivity.this, openRidesList, true));
+                        if (openRidesList.size() == 0) {
                             ToastHelper.blueToast(OpenRidesActivity.this, R.string.message_no_open_rides);
                         }
                     }

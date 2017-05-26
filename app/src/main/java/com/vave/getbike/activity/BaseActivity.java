@@ -121,6 +121,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             case R.id.leaveRequests:
                 startActivity(new Intent(this,LeaveRequestsHistoryActivity.class));
                 break;
+            case R.id.groupRides:
+                startActivity(new Intent(this,GroupRideDetailsActivity.class));
+                break;
             case R.id.logout:
                 startActivity(new Intent(this, LogoScreenActivity.class));
                 try {

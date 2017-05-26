@@ -34,6 +34,7 @@ public class Ride {
     String actualSourceAddress;
     String actualDestinationAddress;
     boolean freeRide = false;
+    boolean groupRide = false;
     Double freeRideDiscount;
     boolean paid;
     boolean userCustomer = false;
@@ -47,6 +48,23 @@ public class Ride {
     String parcelDropoffDetails;
     String parcelOrderId;
     Double codAmount;
+    int numberOfRides;
+
+    public int getNumberOfRides() {
+        return numberOfRides;
+    }
+
+    public void setNumberOfRides(int numberOfRides) {
+        this.numberOfRides = numberOfRides;
+    }
+
+    public boolean isGroupRide() {
+        return groupRide;
+    }
+
+    public void setGroupRide(boolean groupRide) {
+        this.groupRide = groupRide;
+    }
 
     public String getActualSourceAddress() {
         return actualSourceAddress;

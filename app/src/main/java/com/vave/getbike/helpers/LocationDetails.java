@@ -86,16 +86,16 @@ public class LocationDetails {
                 locationSyncher.storePendingLocations(rideId);
                 dataSource.close();
                 RideSyncher sut = new RideSyncher();
-                closedRide = sut.closeRide(rideId);
+                //closedRide = sut.closeRide(rideId);
             }
 
             @Override
             public void afterPostExecute() {
-                if (closedRide != null) {
+                //if (closedRide != null) {
                     Intent intent = new Intent(context, ShowCompletedRideActivity.class);
-                    intent.putExtra("rideId", closedRide.getId());
+                    intent.putExtra("rideId", 5138L);//closedRide.getId()
                     context.startActivity(intent);
-                }
+                //}
             }
         }.execute();
     }

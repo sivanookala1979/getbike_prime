@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vave.getbike.activity.GroupRideRouteMapActivity"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ToolbarColoredBackArrow"
+        app:titleTextColor="@android:color/white">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Route Map"
+            android:textColor="@android:color/white"/>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/start_group_ride"
+        android:background="@color/gray">
+
+        <ListView
+            android:id="@+id/groupRideRoute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/cb_grey"
+            android:dividerHeight="2dp">
+    </ListView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/start_group_ride"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_alignParentBottom="true"
+        android:layout_weight="1"
+        android:background="@color/thick_green"
+        android:gravity="center"
+        android:text="START GROUP RIDE"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

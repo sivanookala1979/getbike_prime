@@ -135,7 +135,10 @@
         <activity android:name=".activity.CashInAdvanceActivity" />
         <activity android:name=".activity.AddCashRequestActivity" />
         <activity android:name=".activity.LeaveInAdvanceActivity" />
-        <activity android:name=".activity.LeaveRequestsHistoryActivity"></activity>
+        <activity android:name=".activity.LeaveRequestsHistoryActivity" />
+        <activity android:name=".activity.GroupRideRouteMapActivity" />
+        <activity android:name=".activity.GroupRideLocationActivity" />
+        <activity android:name=".activity.GroupRideDetailsActivity"></activity>
     </application>
 
 </manifest>

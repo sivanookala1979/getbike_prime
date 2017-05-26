@@ -14,6 +14,34 @@ public class RideLocation {
     Double latitude;
     Double longitude;
     Boolean posted;
+    boolean sourse;
+    String sourseAddress;
+    String destinationAddress;
+
+
+    public String getDestinationAddress() {
+        return destinationAddress;
+    }
+
+    public void setDestinationAddress(String destinationAddress) {
+        this.destinationAddress = destinationAddress;
+    }
+
+    public String getSourseAddress() {
+        return sourseAddress;
+    }
+
+    public void setSourseAddress(String sourseAddress) {
+        this.sourseAddress = sourseAddress;
+    }
+
+    public boolean isSourse() {
+        return sourse;
+    }
+
+    public void setSourse(boolean sourse) {
+        this.sourse = sourse;
+    }
 
     public Long getRideId() {
         return rideId;

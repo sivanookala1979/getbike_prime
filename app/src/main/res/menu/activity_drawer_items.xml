@@ -28,12 +28,17 @@
             android:title="Roaster Sheet" />
         <item
             android:id="@+id/cashInAdvance"
-            android:icon="@mipmap/money"
+            android:icon="@drawable/earnings"
             android:title="Cash In Advance" />
         <item
             android:id="@+id/leaveRequests"
             android:icon="@mipmap/about"
             android:title="Leave In Advance" />
+
+        <item
+            android:id="@+id/groupRides"
+            android:icon="@mipmap/top_view_bike_icon"
+            android:title="Group Rides" />
 
         <item
             android:id="@+id/logout"
